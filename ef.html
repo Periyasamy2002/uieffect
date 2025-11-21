@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Futura Stones – About Us</title>
+
+    <!-- AOS Scroll Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: url('banner.jpg') center/cover no-repeat;
+            height: 70vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-shadow: 0px 4px 10px black;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 42px;
+        }
+
+        /* Section default */
+        section {
+            padding: 70px 5%;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .timeline {
+            border-left: 4px solid #333;
+            padding-left: 30px;
+        }
+
+        .timeline-item {
+            margin-bottom: 40px;
+        }
+
+        .timeline-item h3 {
+            margin: 0;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            background: #f5f5f5;
+            padding: 70px 5%;
+        }
+
+        .testimonial-box {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        /* CTA */
+        .cta {
+            text-align: center;
+            padding: 70px 5%;
+            background: #333;
+            color: white;
+        }
+
+        .cta a {
+            background: white;
+            padding: 12px 30px;
+            display: inline-block;
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            border-radius: 8px;
+        }
+
+        /* Mobile */
+        @media(max-width: 768px) {
+            .grid-2 {
+                grid-template-columns: 1fr;
+            }
+            .hero h1 {
+                font-size: 30px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HERO -->
+    <div class="hero" data-aos="fade-up">
+        <h1>About Futura Stones</h1>
+    </div>
+
+    <!-- SECTION 1 – COMPANY ABOUT -->
+    <section>
+        <div class="grid-2">
+            <div data-aos="fade-right">
+                <img src="stone1.jpg" width="100%" style="border-radius: 10px;">
+            </div>
+
+            <div data-aos="fade-left">
+                <h2>Who We Are</h2>
+                <p>
+                    Futura Stones in collaboration with HJS Granite is one of the country’s renowned pioneers 
+                    in mining, processing, and export of Granite, Marble, ONYX, Quartz, and other natural stones.
+                </p>
+                <p>
+                    With 50+ years of global leadership, Futura Stones stands on the foundation of commitment, 
+                    quality, integrity, and advanced manufacturing technology.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 2 – TIMELINE -->
+    <section>
+        <h2 data-aos="fade-up">Our Journey</h2>
+
+        <div class="timeline">
+
+            <div class="timeline-item" data-aos="fade-up">
+                <h3>1970</h3>
+                <p>Foundation of Futura Stones with small-scale mining.</p>
+            </div>
+
+            <div class="timeline-item" data-aos="fade-up">
+                <h3>1995</h3>
+                <p>Expansion into global exports with high-quality stone products.</p>
+            </div>
+
+            <div class="timeline-item" data-aos="fade-up">
+                <h3>2010</h3>
+                <p>Adoption of new generation machinery and automation.</p>
+            </div>
+
+            <div class="timeline-item" data-aos="fade-up">
+                <h3>2024</h3>
+                <p>Global distribution with facilities in India and Dubai.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SECTION 3 – INFRASTRUCTURE -->
+    <section>
+        <h2 data-aos="fade-up">Infrastructure</h2>
+        <div class="grid-2">
+
+            <div data-aos="zoom-in">
+                <img src="factory.jpg" width="100%" style="border-radius: 10px;">
+            </div>
+
+            <div data-aos="fade-left">
+                <h3>Advanced Technology</h3>
+                <ul>
+                    <li>Gangsaw Machines</li>
+                    <li>CNC Machines</li>
+                    <li>High-precision cutting tools</li>
+                    <li>Automated polishing lines</li>
+                    <li>Professional logistic team</li>
+                </ul>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SECTION 4 – TESTIMONIALS -->
+    <div class="testimonials">
+        <h2 data-aos="fade-up">What Our Clients Say</h2>
+
+        <div class="testimonial-box" data-aos="fade-up">
+            <p>“Futura Stones provides world-class quality and timely delivery. Highly recommended!”</p>
+            <strong>- Global Importer, UAE</strong>
+        </div>
+    </div>
+
+    <!-- SECTION 5 – CTA -->
+    <div class="cta" data-aos="zoom-in">
+        <h2>Work With Us</h2>
+        <p>Need high-quality Granite, Marble, or Quartz for your next project?</p>
+        <a href="contact.html">Contact Us</a>
+    </div>
+
+    <!-- AOS Script -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+
+</body>
+</html>

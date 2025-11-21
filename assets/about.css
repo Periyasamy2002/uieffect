@@ -1,0 +1,229 @@
+  /* ================================
+           GLOBAL RESET
+        ================================= */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: "Poppins", sans-serif;
+            background: #f5f5f5;
+            color: #222;
+            line-height: 1.6;
+        }
+
+        /* ================================
+           SECTION 1 – PARALLAX SLIDER
+        ================================= */
+        .parallax-slider {
+            position: relative;
+            height: 90vh;
+            overflow: hidden;
+        }
+        .parallax-layer {
+            position: absolute;
+            width: 130%;
+            height: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background-size: cover;
+            background-position: center;
+            will-change: transform;
+        }
+
+        .parallax-overlay {
+            position: absolute;
+            bottom: 18%;
+            left: 8%;
+            color: #000000;
+            z-index: 10;
+            max-width: 550px;
+            animation: fadeUp 1s ease-in-out forwards;
+        }
+
+        .parallax-overlay h2 {
+            font-size: 48px;
+            font-weight: 700;
+        }
+        .parallax-overlay p {
+            margin-top: 10px;
+            font-size: 18px;
+            opacity: 0.95;
+        }
+
+        @keyframes fadeUp {
+            0% { transform: translateY(40px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+
+        /* ================================
+           SECTION 2 – ABOUT
+        ================================= */
+        .u2-about {
+            background: #fff;
+            padding: 80px 5%;
+        }
+
+        .u2-container {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .u2-left {
+            position: relative;
+            width: 50%;
+        }
+
+        .u2-left img {
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+            object-fit: cover;
+            transition: transform 0.4s ease, filter 0.3s;
+        }
+
+        .u2-left:hover img {
+            transform: scale(1.03);
+            filter: brightness(1.05);
+        }
+
+        .about-summary {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            background: rgba(0,0,0,0.55);
+            padding: 20px;
+            border-radius: 10px;
+            color: #fff;
+            width: 70%;
+            backdrop-filter: blur(4px);
+            animation: fadeUp 1s ease-in-out;
+        }
+
+        .about-summary h3 {
+            font-size: 22px;
+            margin-bottom: 6px;
+        }
+
+        .btn-summary {
+            display: inline-block;
+            margin-top: 10px;
+            background: #ffb100;
+            padding: 8px 18px;
+            font-weight: 600;
+            border-radius: 5px;
+            color: #000;
+        }
+
+        /* right content */
+        .u2-right {
+            width: 50%;
+        }
+        .u2-right h2 {
+            font-size: 38px;
+            margin-bottom: 12px;
+        }
+        .u2-right p {
+            font-size: 18px;
+            opacity: 0.9;
+        }
+
+
+        /* ================================
+           SECTION 3 – VISION & CUSTOMER
+        ================================= */
+        .u3-vision {
+            text-align: center;
+            padding: 80px 5%;
+        }
+        .u3-main-img {
+            width: 100%;
+            height: 320px;
+            object-fit: cover;
+            border-radius: 14px;
+            margin-bottom: 40px;
+        }
+
+        /* two boxes in one line */
+        .u3-boxes {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: -60px;
+        }
+
+        .u3-box {
+            background: #fff;
+            width: 300px;
+            padding: 30px;
+            border-radius: 16px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: 0.4s ease;
+        }
+        .u3-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 6px 25px rgba(0,0,0,0.15);
+        }
+        .u3-icon {
+            font-size: 48px;
+            color: #ffb100;
+            margin-bottom: 15px;
+            transition: 0.3s;
+        }
+        .u3-box:hover .u3-icon {
+            transform: scale(1.2);
+            color: #ff6a00;
+        }
+
+        .u3-quote {
+            margin-top: 50px;
+            font-size: 20px;
+            font-style: italic;
+            opacity: 0.8;
+        }
+
+        .u3-infra {
+            margin-top: 50px;
+            background: #fff;
+            padding: 40px;
+            max-width: 600px;
+            margin-inline: auto;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+
+        /* ================================
+           SECTION 4 – STATEMENT
+        ================================= */
+        .u4-statement {
+            text-align: center;
+            padding: 80px 10%;
+            background: #f6f8f7;
+            color: #8dc1f3;
+        }
+        .u4-statement h2 {
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+        .u4-statement p {
+            font-size: 18px;
+            opacity: 0.85;
+        }
+
+
+        /* RESPONSIVE */
+        @media(max-width: 900px) {
+            .u2-container {
+                flex-direction: column;
+            }
+            .u2-left, .u2-right {
+                width: 100%;
+            }
+            .u3-boxes {
+                flex-direction: column;
+            }
+        }

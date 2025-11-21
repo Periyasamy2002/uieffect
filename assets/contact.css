@@ -1,0 +1,372 @@
+/* GLOBAL */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg: #ffffff;
+    --text: #111;
+    --primary-accent-blue: #26a0da;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    transition: 0.3s;
+}
+
+body.dark {
+    --bg: #111;
+    --text: #ffffff;
+}
+
+/* DARK MODE BUTTON */
+.dark-toggle {
+    position: fixed;
+    right: 20px;
+    top: 20px;
+    background: #222;
+    color: #fff;
+    padding: 10px 14px;
+    border-radius: 20px;
+    cursor: pointer;
+    z-index: 9999;
+}
+
+/* PARALLAX */
+.parallax {
+    background: url("assets/contact-banner.jpg") center/cover fixed no-repeat;
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.parallax video {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.ptext {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+}
+
+.ptext h1 {
+    font-size: 50px;
+    color: #fff;
+    text-shadow: 0 0 12px black;
+}
+
+.ptext p {
+    color: #e6f3ff;
+    font-size: 18px;
+}
+
+/* INTRO */
+.intro-section {
+    padding: 50px 10%;
+    text-align: center;
+}
+
+.intro-section h2 {
+    font-size: 32px;
+    color: #111;
+    margin-bottom: 15px;
+}
+
+.intro-section p {
+    font-size: 16px;
+    color: #666;
+}
+
+/* CONTACT AREA */
+.contact-area {
+    padding: 50px 10%;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 70px;
+    align-items: stretch;
+}
+
+.form-box,
+.details-box {
+    background: #f4f6f9;
+    padding: 25px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.form-box h3,
+.details-box h3 {
+    font-size: 22px;
+    color: #111;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 16px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #333;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 90%;
+    padding: 12px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+.form-group textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.btn-primary {
+    margin-top: 10px;
+    padding: 12px 20px;
+    width: 90%;
+    background: #004aad;
+    border: none;
+    color: #fff;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.btn-primary:hover {
+    background: #003580;
+}
+
+.details-box p {
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.details-box i {
+    color: #004aad;
+    margin-right: 12px;
+    font-size: 18px;
+}
+
+/* MAP */
+.map-section {
+    padding: 40px 10%;
+}
+
+.map-section iframe {
+    width: 100%;
+    height: 420px;
+    border: none;
+    border-radius: 10px;
+}
+
+/* INFO BOXES */
+.info-box-container {
+    padding: 40px 10%;
+    display: flex;
+    gap: 20px;
+}
+
+.info-box {
+    flex: 1;
+    background: #eef6ff;
+    padding: 25px;
+    border-radius: 10px;
+}
+
+.info-box h3 {
+    font-size: 20px;
+    color: #004aad;
+    margin-bottom: 12px;
+}
+
+.info-box p {
+    color: #666;
+    line-height: 1.6;
+}
+
+/* WHATSAPP BUTTON */
+.whatsapp-float {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    background: #25D366;
+    color: white;
+    padding: 16px;
+    border-radius: 50%;
+    font-size: 24px;
+    text-decoration: none;
+    z-index: 999;
+}
+
+.whatsapp-float:hover {
+    background: #1ebe57;
+}
+
+/* ===== Animation utilities (used by script.js observer) ===== */
+.entrance {
+    opacity: 0;
+    transform: translateY(18px);
+    transition: transform .7s cubic-bezier(.2,.9,.25,1), opacity .7s ease;
+    will-change: transform, opacity;
+}
+
+.entrance.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Button & field micro-interactions */
+.form-box input:focus, .form-box textarea:focus {
+    outline: none;
+    box-shadow: 0 8px 18px rgba(38,160,218,0.12);
+    border-color: var(--primary-accent-blue);
+    transform: translateY(-2px);
+    transition: all .18s ease;
+}
+
+/* Slight reveal for parallax video header */
+.parallax .ptext { opacity: 0; transform: translateY(12px); transition: all .9s ease; }
+.parallax .ptext.visible { opacity: 1; transform: translateY(0); }
+
+/* FOOTER */
+footer {
+    padding: 20px;
+    background: #004aad;
+    color: white;
+    text-align: center;
+}
+
+/* RESPONSIVE MEDIA QUERIES */
+@media(max-width: 768px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .info-box-container {
+        flex-direction: column;
+    }
+
+    .parallax { 
+        height: 40vh; 
+    }
+
+    .ptext h1 {
+        font-size: 32px;
+    }
+}
+
+@media(max-width: 600px) {
+    .contact-area,
+    .map-section,
+    .info-box-container {
+        padding: 30px 5%;
+    }
+
+    .ptext h1 {
+        font-size: 24px;
+    }
+
+    .form-group input,
+    .form-group textarea,
+    .btn-primary {
+        width: 100%;
+    }
+}
+/* ----------------- RESET ----------------- */
+
+/* ----------------- PARALLAX ----------------- */
+.parallax {
+    background-image:url('https://images.unsplash.com/photo-1522199710521-72d69614c702?w=1600');
+    height:350px;
+    background-size:cover;
+    background-position:center;
+    background-attachment:fixed;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:#fff;
+    text-shadow:0 3px 6px rgba(0,0,0,0.5);
+    font-size:40px;
+    font-weight:bold;
+}
+
+/* ----------------- SECTION ----------------- */
+.section {
+    padding:50px 40px;
+}
+.contact-grid {
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:30px;
+    margin-top:20px;
+}
+
+.form-group { margin-bottom:15px; }
+label { font-weight:bold; margin-bottom:6px; display:block; }
+input, textarea {
+    width:100%; padding:10px;
+    border:1px solid #ccc; border-radius:6px;
+}
+textarea { height:120px; resize:none; }
+
+.btn-primary {
+    padding:12px 22px;
+    background:#0a3d62;
+    color:#fff; border:none;
+    border-radius:6px;
+    cursor:pointer;
+    transition:0.3s;
+}
+.btn-primary:hover { background:#07497c; }
+
+/* ----------------- WHATSAPP FLOAT ----------------- */
+.whatsapp-float {
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    z-index:999;
+}
+.whatsapp-float img {
+    width:60px;
+    transition:0.3s;
+}
+.whatsapp-float img:hover { transform:scale(1.1); }
+
+/* ----------------- DARK MODE BUTTON ----------------- */
+.dark-toggle {
+    position:fixed;
+    bottom:100px;
+    right:25px;
+    background:#0a3d62;
+    color:white;
+    padding:10px 15px;
+    border-radius:8px;
+    cursor:pointer;
+    z-index:999;
+}
+
+/* ----------------- ANIMATION ----------------- */

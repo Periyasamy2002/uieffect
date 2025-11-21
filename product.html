@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products | Atula International</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="assets/product.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+
+<!-- CUSTOM GRADIENT NAVBAR (Same as other pages) -->
+<header class="custom-gradient-bg">
+    <div class="header-container">
+        
+        <!-- Top Row: Logo and Utility Bar -->
+        <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+            
+            <!-- Logo Section -->
+            <div class="logo-area">
+                <img src="./Images/logo.png" alt="Atula International Logo" width="52" height="52">
+                <div class="logo-text">
+                    <h1>ATULA</h1>
+                    <p>INTERNATIONAL</p>
+                </div>
+            </div>
+
+            <!-- Utility Bar (Top Right) -->
+            <div class="utility-bar">
+                
+                <!-- Contact Info -->
+                <div class="contact-info">
+                    <i class="fas fa-phone"></i>
+                    <span>+91 9886715088</span>
+                </div>
+
+                <!-- Enquire Button -->
+                <button class="enquire-btn">
+                    <i class="fas fa-envelope"></i>
+                    ENQUIRE NOW
+                </button>
+
+                <!-- Social Icons -->
+                <div class="social-icons">
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                </div>
+
+                <!-- Language Selector -->
+                <div class="language-selector">
+                    <select>
+                        <option value="en">Select Language</option>
+                        <option value="es">Español</option>
+                        <option value="fr">Français</option>
+                    </select>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+
+                <!-- Search Icon -->
+                <a href="#" class="search-icon" aria-label="Search">
+                    <i class="fas fa-search"></i>
+                </a>
+            </div>
+        </div>
+
+        <!-- Main Navigation Links (Bottom) -->
+        <nav style="width: 100%;">
+            <ul class="nav-links-container">
+                <li><a href="index.html" class="nav-link nav-link-dark">Home</a></li>
+                <li><a href="product.html" class="nav-link active">Products</a></li>
+                <li><a href="about.html" class="nav-link nav-link-dark">About us</a></li>
+                <li><a href="contact.html" class="nav-link nav-link-dark">Contact</a></li>
+            </ul>
+        </nav>
+
+    </div>
+</header>
+
+<main>
+    <!-- Product Banner -->
+    <section class="bg-gray-800 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-extrabold tracking-tight">Products</h2>
+        </div>
+    </section>
+
+    <!-- Description Text Block -->
+    <section class="py-8 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <p class="text-lg text-gray-700 leading-relaxed max-w-8xl">
+                Futura Stones' plant is equipped with state-of-the-art machinery from some of the world's leading manufacturers. A strict 100% inspection system is adopted during all stages of manufacturing process. Futura makes a wide range of popular finishes including Polished Finish, Flamed Finish, Honed Finish, Brushed Finish, Leather Finish and Caress Finish.
+            </p>
+        </div>
+    </section>
+
+    <!-- START: Tabbed Product Content Section -->
+    <section class="bg-white pb-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- Tab Buttons -->
+            <div class="flex border-b border-gray-200 mb-8 overflow-x-auto whitespace-nowrap space-x-4">
+                <button class="tab-button py-3 px-6 text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors" data-tab-target="granite">Granite</button>
+                <button class="tab-button py-3 px-6 text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors" data-tab-target="countertops">Countertops</button>
+                <button class="tab-button py-3 px-6 text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors" data-tab-target="cladding">Natural Stone Veeners/Wall cladding</button>
+                <button class="tab-button py-3 px-6 text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors" data-tab-target="landscaping">Landscaping</button>
+                <button class="tab-button py-3 px-6 text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors" data-tab-target="cabinets">Engineering wood Cabinets</button>
+            </div>
+
+            <!-- Tab Content Containers -->
+            <div class="tab-content-container">
+                
+                <!-- 1. Granite Tab Content (Initial Tab) -->
+                <div id="granite" class="tab-content">
+                    <h4 class="text-2xl font-bold mb-6 text-gray-800 border-b pb-2">Granite: Slabs and Monuments</h4>
+                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                        
+                        <!-- Product Categories -->
+                        <div class="lg:col-span-1 bg-gray-100 p-0 rounded-lg overflow-hidden shadow-inner">
+                            <h3 class="bg-gray-700 text-white text-lg font-semibold px-6 py-3">Product Types</h3>
+                            <div class="p-6 space-y-2 text-gray-700">
+                                <p class="font-medium flex items-center"><i data-lucide="check-circle" class="w-4 h-4 text-blue-500 mr-2"></i>Monuments</p>
+                                <p class="font-medium flex items-center"><i data-lucide="check-circle" class="w-4 h-4 text-blue-500 mr-2"></i>Slabs (Rough and Polished)</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Size & Packing (Reused structure) -->
+                        <div class="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="bg-gray-800 p-0 rounded-lg overflow-hidden shadow-lg">
+                                <h3 class="bg-gray-700 text-white text-lg font-semibold px-6 py-3">Slab Size</h3>
+                                <div class="p-6 space-y-4 text-gray-200 text-sm">
+                                    <div class="flex justify-between border-b border-gray-600 pb-2">
+                                        <span class="font-medium">Length</span>
+                                        <span class="font-light">260 ~ 330 cms</span>
+                                    </div>
+                                    <div class="flex justify-between border-b border-gray-600 pb-2">
+                                        <span class="font-medium">Width</span>
+                                        <span class="font-light">140 ~ 190 cms</span>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <span class="font-medium">Thickness</span>
+                                        <span class="font-light">20 mm / 30 mm / 40 mm</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bg-gray-800 p-0 rounded-lg overflow-hidden shadow-lg">
+                                <h3 class="bg-gray-700 text-white text-lg font-semibold px-6 py-3">Packing Details</h3>
+                                <div class="p-6 text-gray-200 text-sm h-full flex items-center">
+                                    <p class="text-base">
+                                        Slabs are packed in seaworthy wooden bundles with polythene sheets between the polished surfaces of two slabs to ensure zero transit damage.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product Gallery (24 Colors in 6 Rows of 4) -->
+                    <div class="mt-8 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+
+                        <!-- Row 1 -->
+                    <div class="aspect-square bg-purple-900 rounded-lg shadow-md overflow-hidden color-card relative">
+                           <img src="./Images/ANTIQUE-BROWN-scaled.jpg" alt=""> <div class="color-card-text">ANTIQUE-BROWN-scaled</div>
+                    </div>
+                    <div class="aspect-square bg-gray-600 rounded-lg shadow-md overflow-hidden color-card relative">
+                           <img src="./Images/AZUL-BAHIA-scaled.jpg" alt=""> <div class="color-card-text">AZUL-BAHIA-scaled</div>
+                    </div>
+                    <div class="aspect-square bg-gray-700 rounded-lg shadow-md overflow-hidden color-card relative">
+                           <img src="./Images/AZUL-MACAUBAS-scaled.jpg" alt=""> <div class="color-card-text">AZUL-MACAUBAS-scaled</div>
+                    </div>
+                    <div class="aspect-square bg-amber-800 rounded-lg shadow-md overflow-hidden color-card relative">
+                        <img src="./Images/COPACABANA-scaled.jpg" alt=""><div class="color-card-text">COPACABANA-scaled</div>
+                    </div>
+                                                        
+                    <!-- Row 2 -->
+                    <div class="aspect-square bg-purple-900 rounded-lg shadow-md overflow-hidden color-card relative">
+                           <img src="./Images/BLUE-ANTIQUE-LABRADOR-scaled.jpg" alt=""> <div class="color-card-text">BLUE-ANTIQUE-LABRADOR-scaled</div>
+                    </div>
+                    <div class="aspect-square bg-gray-600 rounded-lg shadow-md overflow-hidden color-card relative">
+                           <img src="./Images/COSMIC-BLACK-scaled.jpg" alt=""> <div class="color-card-text">COSMIC-BLACK-scaled</div>
+                    </div>
+                    <div class="aspect-square bg-gray-700 rounded-lg shadow-md overflow-hidden color-card relative">
+                           <img src="./Images/BLUE-MARE-scaled.jpg" alt=""> <div class="color-card-text">BLUE-MARE-scaled</div>
+                    </div>
+                    <div class="aspect-square bg-amber-800 rounded-lg shadow-md overflow-hidden color-card relative">
+                        <img src="./Images/BLUE-PEARL-HQ-scaled.jpg" alt=""><div class="color-card-text">BLUE-PEARL-HQ-scaled</div>
+                    </div>
+
+                    <!-- Row 3 -->
+                    <div class="aspect-square bg-blue-900 rounded-lg shadow-md overflow-hidden color-card relative">
+                           <img src="./Images/BLUE-ROMA-scaled.jpg" alt=""> <div class="color-card-text">BLUE-ROMA-scaled</div>
+                    </div>
+                    <div class="aspect-square bg-slate-700 rounded-lg shadow-md overflow-hidden color-card relative">
+                        <img src="./Images/BROWN-SILK-scaled.jpg" alt=""><div class="color-card-text">BROWN-SILK-scaled</div>
+                    </div>
+                    <div class="aspect-square bg-yellow-100 rounded-lg shadow-md overflow-hidden color-card relative">
+                           <img src="./Images/TITANIUM-GOLD-scaled.jpg" alt=""> <div class="color-card-text">TITANIUM-GOLD-scaled</div>
+                    </div>
+                    <div class="aspect-square bg-gray-100 rounded-lg shadow-md overflow-hidden color-card relative">
+                           <img src="./Images/COPACABANA-scaled.jpg" alt=""> <div class="color-card-text">COPACABANA-scaled</div>
+                    </div>
+
+                    <!-- Row 4 -->
+                    <div class="aspect-square bg-pink-900 rounded-lg shadow-md overflow-hidden color-card relative">
+                        <img src="./Images/COSMIC-BLACK-scaled.jpg" alt=""><div class="color-card-text">COSMIC-BLACK-scaled</div>
+                    </div>
+                    <div class="aspect-square bg-green-700 rounded-lg shadow-md overflow-hidden color-card relative">
+                           <img src="./Images/VERDE-FUSION-scaled.jpg" alt=""> <div class="color-card-text">VERDE-FUSION-scaled</div>
+                    </div>
+                    <div class="aspect-square bg-lime-800 rounded-lg shadow-md overflow-hidden color-card relative">
+                        <img src="./Images/EMERALD-PEARL-BLUE-scaled.jpg" alt=""><div class="color-card-text">EMERALD-PEARL-BLUE-scaled</div>
+                    </div>
+                    <div class="aspect-square bg-gray-300 rounded-lg shadow-md overflow-hidden color-card relative">
+                        <img src="./Images/VOLGA-BLUE-scaled.jpg" alt=""><div class="color-card-text">VOLGA-BLUE-scaled</div>
+                    </div>
+                    
+                    <!-- Row 5
+                    <div class="aspect-square bg-red-900 rounded-lg shadow-md overflow-hidden color-card relative">
+                        <div class="color-card-text">Red Multicolor</div>
+                    </div>
+                    <div class="aspect-square bg-yellow-500 rounded-lg shadow-md overflow-hidden color-card relative">
+                        <div class="color-card-text">Shivakashi Yellow</div>
+                    </div>
+                    <div class="aspect-square bg-white border border-gray-200 rounded-lg shadow-md overflow-hidden color-card relative">
+                        <div class="color-card-text">River White</div>
+                    </div>
+                    <div class="aspect-square bg-teal-700 rounded-lg shadow-md overflow-hidden color-card relative">
+                        <div class="color-card-text">Tropical Green</div>
+                    </div>-->
+
+                    <!-- Row 6 -->
+                    <!-- <div class="aspect-square bg-orange-900 rounded-lg shadow-md overflow-hidden color-card relative">
+                        <div class="color-card-text">Desert Brown</div>
+                    </div>
+                    <div class="aspect-square bg-yellow-300 rounded-lg shadow-md overflow-hidden color-card relative">
+                        <div class="color-card-text">Crystal Yellow</div>
+                    </div>
+                    <div class="aspect-square bg-emerald-500 rounded-lg shadow-md overflow-hidden color-card relative">
+                        <div class="color-card-text">Seafoam Green</div>
+                    </div>
+                    <div class="aspect-square bg-indigo-900 rounded-lg shadow-md overflow-hidden color-card relative">
+                        <div class="color-card-text">Orion Blue</div>
+                    </div>  -->
+
+                </div>
+            </div>
+
+            <!-- 2. Countertops Tab Content -->
+           <div id="countertops" class="tab-content hidden">
+                <h4 class="text-2xl font-bold mb-6 text-gray-800 border-b pb-2">Countertops: Engineered and Natural Stone</h4>
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    
+                    <!-- Product Categories (Countertop Focus) -->
+                    <div class="lg:col-span-1 bg-gray-100 p-0 rounded-lg overflow-hidden shadow-inner">
+                        <h3 class="bg-gray-700 text-white text-lg font-semibold px-6 py-3">Countertop Materials</h3>
+                        <div class="p-6 space-y-2 text-gray-700">
+                            <p class="font-medium flex items-center"><i data-lucide="check-circle" class="w-4 h-4 text-blue-500 mr-2"></i>Quartz (Engineered)</p>
+                            <p class="font-medium flex items-center"><i data-lucide="check-circle" class="w-4 h-4 text-blue-500 mr-2"></i>Granite & Marble (Natural)</p>
+                            <p class="font-medium flex items-center"><i data-lucide="check-circle" class="w-4 h-4 text-blue-500 mr-2"></i>Porcelain Slabs</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Edge Finishes & Thickness -->
+                    <div class="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="bg-gray-800 p-0 rounded-lg overflow-hidden shadow-lg">
+                            <h3 class="bg-gray-700 text-white text-lg font-semibold px-6 py-3">Edge Finishes & Thickness</h3>
+                            <div class="p-6 space-y-4 text-gray-200 text-sm">
+                                <div class="flex justify-between border-b border-gray-600 pb-2">
+                                    <span class="font-medium">Standard Edges</span>
+                                    <span class="font-light">Eased, Bevel, Bullnose</span>
+                                </div>
+                                <div class="flex justify-between border-b border-gray-600 pb-2">
+                                    <span class="font-medium">Premium Edges</span>
+                                    <span class="font-light">Ogee, Waterfall, Mitered</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="font-medium">Thickness</span>
+                                    <span class="font-light">2 cm / 3 cm (Standard)</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-gray-800 p-0 rounded-lg overflow-hidden shadow-lg">
+                            <h3 class="bg-gray-700 text-white text-lg font-semibold px-6 py-3">Performance Features</h3>
+                            <div class="p-6 text-gray-200 text-sm h-full flex items-center">
+                                <ul class="space-y-2">
+                                    <li class="flex items-center"><i data-lucide="gem" class="w-4 h-4 mr-2 text-yellow-400"></i> Scratch & Impact Resistance</li>
+                                    <li class="flex items-center"><i data-lucide="thermometer" class="w-4 h-4 mr-2 text-red-400"></i> Heat Resistance (Stone only)</li>
+                                    <li class="flex items-center"><i data-lucide="droplet" class="w-4 h-4 mr-2 text-blue-400"></i> Low Porosity & Stain Resistance</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Gallery (24 Countertop Materials in 6 Rows of 4) -->
+                <div class="mt-8 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+
+                    <!-- Row 1: Whites and Greys (Quartz/Marble look) -->
+                    <div class="aspect-square bg-gray-200 rounded-lg shadow-md overflow-hidden color-card relative">
+                        <img src="./Images/BROWN-SILK-scaled.jpg" alt=""><div class="color-card-text">BROWN-SILK-scaled</div>
+                    </div>
+                    <div class="aspect-square bg-white border border-gray-300 rounded-lg shadow-md overflow-hidden color-card relative">
+                       <img src="./Images/BLUE-PEARL-HQ-scaled.jpg" alt=""> <div class="color-card-text">BLUE-PEARL-HQ-scaled</div>
+                    </div>
+                    <div class="aspect-square bg-gray-500 rounded-lg shadow-md overflow-hidden color-card relative">
+                       <img src="./Images/BLUE-ANTIQUE-LABRADOR-scaled.jpg" alt=""> <div class="color-card-text">BLUE-ANTIQUE-LABRADOR</div>
+                    </div>
+                    <div class="aspect-square bg-slate-800 rounded-lg shadow-md overflow-hidden color-card relative">
+                       <img src="./Images/COPACABANA-scaled.jpg" alt=""> <div class="color-card-text">COPACABANA-scaled</div>
+                    </div>
+                    
+                    <!-- Row 2: Beige and Browns (Granite/Quartzite look) -->
+                    <div class="aspect-square bg-pink-900 rounded-lg shadow-md overflow-hidden color-card relative">
+                        <img src="./Images/COSMIC-BLACK-scaled.jpg" alt=""><div class="color-card-text">COSMIC-BLACK-scaled</div>
+                    </div>
+                    <div class="aspect-square bg-green-700 rounded-lg shadow-md overflow-hidden color-card relative">
+                       <img src="./Images/VERDE-FUSION-scaled.jpg" alt=""> <div class="color-card-text">VERDE-FUSION-scaled</div>
+                    </div>
+                    <div class="aspect-square bg-lime-800 rounded-lg shadow-md overflow-hidden color-card relative">
+                        <img src="./Images/EMERALD-PEARL-BLUE-scaled.jpg" alt=""><div class="color-card-text">EMERALD-PEARL-BLUE-scaled</div>
+                    </div>
+                    <div class="aspect-square bg-gray-300 rounded-lg shadow-md overflow-hidden color-card relative">
+                        <img src="./Images/VOLGA-BLUE-scaled.jpg" alt=""><div class="color-card-text">VOLGA-BLUE-scaled</div>
+                    </div>
+
+                    <!-- Row 3: Dark and Exotic -->
+                     <div class="aspect-square bg-blue-900 rounded-lg shadow-md overflow-hidden color-card relative">
+                       <img src="./Images/BLUE-ROMA-scaled.jpg" alt=""> <div class="color-card-text">BLUE-ROMA-scaled</div>
+                    </div>
+                    <div class="aspect-square bg-slate-700 rounded-lg shadow-md overflow-hidden color-card relative">
+                        <img src="./Images/BROWN-SILK-scaled.jpg" alt=""><div class="color-card-text">BROWN-SILK-scaled</div>
+                    </div>
+                    <div class="aspect-square bg-yellow-100 rounded-lg shadow-md overflow-hidden color-card relative">
+                       <img src="./Images/TITANIUM-GOLD-scaled.jpg" alt=""> <div class="color-card-text">TITANIUM-GOLD-scaled</div>
+                    </div>
+                    <div class="aspect-square bg-gray-100 rounded-lg shadow-md overflow-hidden color-card relative">
+                       <img src="./Images/COPACABANA-scaled.jpg" alt=""> <div class="color-card-text">COPACABANA-scaled</div>
+                    </div>
+                    <!-- Row 4: Modern Grey and Cement Look -->
+                        <!-- Row 1 -->
+                <div class="aspect-square bg-purple-900 rounded-lg shadow-md overflow-hidden color-card relative">
+                       <img src="./Images/ANTIQUE-BROWN-scaled.jpg" alt=""> <div class="color-card-text">ANTIQUE-BROWN-scaled</div>
+                </div>
+                <div class="aspect-square bg-gray-600 rounded-lg shadow-md overflow-hidden color-card relative">
+                       <img src="./Images/AZUL-BAHIA-scaled.jpg" alt=""> <div class="color-card-text">AZUL-BAHIA-scaled</div>
+                </div>
+                <div class="aspect-square bg-gray-700 rounded-lg shadow-md overflow-hidden color-card relative">
+                       <img src="./Images/AZUL-MACAUBAS-scaled.jpg" alt=""> <div class="color-card-text">AZUL-MACAUBAS-scaled</div>
+                </div>
+                <div class="aspect-square bg-amber-800 rounded-lg shadow-md overflow-hidden color-card relative">
+                    <img src="./Images/COPACABANA-scaled.jpg" alt=""><div class="color-card-text">COPACABANA-scaled</div>
+                </div>
+                
+                <!-- Row 5: Unique Colors and Patterns -->
+                <!-- <div class="aspect-square bg-pink-300 rounded-lg shadow-md overflow-hidden color-card relative">
+                    <div class="color-card-text">Rose Quartzite</div>
+                </div>
+                <div class="aspect-square bg-purple-700 rounded-lg shadow-md overflow-hidden color-card relative">
+                    <div class="color-card-text">Fantasy Brown Marble</div>
+                </div>
+                <div class="aspect-square bg-teal-400 rounded-lg shadow-md overflow-hidden color-card relative">
+                    <div class="color-card-text">Verde Butterfly Granite</div>
+                </div>
+                <div class="aspect-square bg-red-500 rounded-lg shadow-md overflow-hidden color-card relative">
+                    <div class="color-card-text">Rosso Levanto Marble</div>
+                </div> -->
+
+                <!-- Row 6: Luxury and Premium -->
+                <!-- <div class="aspect-square bg-yellow-950 rounded-lg shadow-md overflow-hidden color-card relative">
+                    <div class="color-card-text">Black Fusion Granite</div>
+                </div>
+                <div class="aspect-square bg-gray-900 rounded-lg shadow-md overflow-hidden color-card relative">
+                    <div class="color-card-text">Cosmic Black Granite</div>
+                </div>
+                <div class="aspect-square bg-lime-200 rounded-lg shadow-md overflow-hidden color-card relative">
+                    <div class="color-card-text">Onyx Backlit Stone</div>
+                </div>
+                <div class="aspect-square bg-blue-400 rounded-lg shadow-md overflow-hidden color-card relative">
+                    <div class="color-card-text">Macabus Quartzite</div>
+                </div> -->
+
+                    </div>
+                </div>
+
+                <!-- 3. Natural Stone Veeners/Wall cladding Tab Content -->
+             <div id="cladding" class="tab-content hidden">
+                    <h4 class="text-2xl font-bold mb-6 text-gray-800 border-b pb-2">Natural Stone Veneer and Wall Cladding</h4>
+                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                        
+                        <!-- Product Types/Features -->
+                        <div class="lg:col-span-1 bg-gray-100 p-0 rounded-lg overflow-hidden shadow-inner">
+                            <h3 class="bg-gray-700 text-white text-lg font-semibold px-6 py-3">Veneer & Cladding Types</h3>
+                            <div class="p-6 space-y-2 text-gray-700">
+                                <p class="font-medium flex items-center"><i data-lucide="layers-3" class="w-4 h-4 text-blue-500 mr-2"></i>Flexible Stone Veneers (Ultra-thin)</p>
+                                <p class="font-medium flex items-center"><i data-lucide="layers-3" class="w-4 h-4 text-blue-500 mr-2"></i>Ledge Stone Panels (Interlocking)</p>
+                                <p class="font-medium flex items-center"><i data-lucide="layers-3" class="w-4 h-4 text-blue-500 mr-2"></i>Thin Stone Cladding (Adhesive Mount)</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Size & Installation -->
+                        <div class="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="bg-gray-800 p-0 rounded-lg overflow-hidden shadow-lg">
+                                <h3 class="bg-gray-700 text-white text-lg font-semibold px-6 py-3">Standard Cladding Sizes</h3>
+                                <div class="p-6 space-y-4 text-gray-200 text-sm">
+                                    <div class="flex justify-between border-b border-gray-600 pb-2">
+                                        <span class="font-medium">Panel Dimensions</span>
+                                        <span class="font-light">60 x 15 cm / 120 x 60 cm</span>
+                                    </div>
+                                    <div class="flex justify-between border-b border-gray-600 pb-2">
+                                        <span class="font-medium">Veneer Thickness</span>
+                                        <span class="font-light">1.5 mm ~ 5 mm (Flexible)</span>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <span class="font-medium">Weight</span>
+                                        <span class="font-light">Approx. 1.5 kg/sqm (Flexible)</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bg-gray-800 p-0 rounded-lg overflow-hidden shadow-lg">
+                                <h3 class="bg-gray-700 text-white text-lg font-semibold px-6 py-3">Key Installation Features</h3>
+                                <div class="p-6 text-gray-200 text-sm h-full flex items-center">
+                                    <ul class="space-y-2">
+                                        <li class="flex items-center"><i data-lucide="wind" class="w-4 h-4 mr-2 text-blue-400"></i> UV & Weather Resistant for Outdoors</li>
+                                        <li class="flex items-center"><i data-lucide="scissors" class="w-4 h-4 mr-2 text-yellow-400"></i> Easily Cut with Standard Tools</li>
+                                        <li class="flex items-center"><i data-lucide="grip" class="w-4 h-4 mr-2 text-gray-300"></i> Suitable for Curved Surfaces</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product Gallery (24 Cladding Styles) -->
+                    <div class="mt-8 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+
+                        <!-- Row 1: Slate and Quartzite Looks -->
+                        <div class="aspect-square bg-slate-900 rounded-lg shadow-md overflow-hidden color-card relative">
+                            <img src="./Images/s1.webp" alt=""><div class="color-card-text">Black Slate Veneer</div>
+                        </div>
+                        <div class="aspect-square bg-red-700 rounded-lg shadow-md overflow-hidden color-card relative">
+                          <img src="./Images/s2.webp" alt="">  <div class="color-card-text">Autumn Rust Ledge</div>
+                        </div>
+                        <div class="aspect-square bg-gray-500 rounded-lg shadow-md overflow-hidden color-card relative">
+                            <img src="./Images/s3.webp" alt=""><div class="color-card-text">Silver Grey Quartzite</div>
+                        </div>
+                        <div class="aspect-square bg-yellow-900 rounded-lg shadow-md overflow-hidden color-card relative">
+                            <img src="./Images/s4.webp" alt=""><div class="color-card-text">Golden Sandstone Panel</div>
+                        </div>
+                        
+                        <!-- Row 2: Textured and Rough Finishes -->
+                        <div class="aspect-square bg-stone-700 rounded-lg shadow-md overflow-hidden color-card relative">
+                           <img src="./Images/s5.webp" alt=""> <div class="color-card-text">Multi-Color Ledge</div>
+                        </div>
+                        <div class="aspect-square bg-gray-300 rounded-lg shadow-md overflow-hidden color-card relative">
+                            <img src="./Images/s6.webp" alt=""><div class="color-card-text">Himalayan White Split</div>
+                        </div>
+                        <div class="aspect-square bg-green-900 rounded-lg shadow-md overflow-hidden color-card relative">
+                            <img src="./Images/s7.webp" alt=""><div class="color-card-text">Jungle Green Slate</div>
+                        </div>
+                        <div class="aspect-square bg-blue-900 rounded-lg shadow-md overflow-hidden color-card relative">
+                           <img src="./Images/s8.webp" alt=""> <div class="color-card-text">Ocean Blue Quartzite</div>
+                        </div>
+
+                        <!-- Row 3: Limestone and Marble Veneers -->
+                        <div class="aspect-square bg-stone-200 rounded-lg shadow-md overflow-hidden color-card relative">
+                          <img src="./Images/s9.webp" alt="">  <div class="color-card-text">Beige Limestone Cladding</div>
+                        </div>
+                        <div class="aspect-square bg-white border border-gray-400 rounded-lg shadow-md overflow-hidden color-card relative">
+                           <img src="./Images/s10.webp" alt=""> <div class="color-card-text">White Marble Sheet</div>
+                        </div>
+                        <div class="aspect-square bg-yellow-500 rounded-lg shadow-md overflow-hidden color-card relative">
+                          <img src="./Images/s11.webp" alt="">  <div class="color-card-text">Desert Gold Veneer</div>
+                        </div>
+                        <div class="aspect-square bg-gray-600 rounded-lg shadow-md overflow-hidden color-card relative">
+                            <img src="./Images/s12.webp" alt=""><div class="color-card-text">Charcoal Grey Panel</div>
+                        </div>
+
+                        <!-- Row 4: Flexible Veneers (Simulated Colors) -->
+                        <div class="aspect-square bg-red-950 rounded-lg shadow-md overflow-hidden color-card relative">
+                           <img src="./Images/s13.webp" alt=""> <div class="color-card-text">Indian Red Flexible</div>
+                        </div>
+                        <div class="aspect-square bg-slate-400 rounded-lg shadow-md overflow-hidden color-card relative">
+                           <img src="./Images/s14.webp" alt=""> <div class="color-card-text">Rustic Slate Sheet</div>
+                        </div>
+                        <div class="aspect-square bg-lime-800 rounded-lg shadow-md overflow-hidden color-card relative">
+                           <img src="./Images/s15.webp" alt=""> <div class="color-card-text">Kuppam Green Veneer</div>
+                        </div>
+                        <div class="aspect-square bg-gray-100 rounded-lg shadow-md overflow-hidden color-card relative">
+                           <img src="./Images/s16.webp" alt=""> <div class="color-card-text">Translucent White</div>
+                        </div>
+                        
+                        <!-- Row 5: Contemporary Styles -->
+                        <!-- <div class="aspect-square bg-zinc-700 rounded-lg shadow-md overflow-hidden color-card relative">
+                            <div class="color-card-text">Cement Look Cladding</div>
+                        </div>
+                        <div class="aspect-square bg-stone-500 rounded-lg shadow-md overflow-hidden color-card relative">
+                            <div class="color-card-text">Tuscan Blend Stacked</div>
+                        </div>
+                        <div class="aspect-square bg-teal-800 rounded-lg shadow-md overflow-hidden color-card relative">
+                            <div class="color-card-text">Emerald Green Slate</div>
+                        </div>
+                        <div class="aspect-square bg-purple-900 rounded-lg shadow-md overflow-hidden color-card relative">
+                            <div class="color-card-text">Violet Quartzite Veneer</div>
+                        </div> -->
+
+                        <!-- Row 6: Premium Finishes -->
+                        <!-- <div class="aspect-square bg-amber-950 rounded-lg shadow-md overflow-hidden color-card relative">
+                            <div class="color-card-text">Copper Stacked Stone</div>
+                        </div>
+                        <div class="aspect-square bg-yellow-300 rounded-lg shadow-md overflow-hidden color-card relative">
+                            <div class="color-card-text">Ochre Yellow Panel</div>
+                        </div>
+                        <div class="aspect-square bg-black border border-gray-800 rounded-lg shadow-md overflow-hidden color-card relative">
+                            <div class="color-card-text">Absolute Black Veener</div>
+                        </div>
+                        <div class="aspect-square bg-blue-300 rounded-lg shadow-md overflow-hidden color-card relative">
+                            <div class="color-card-text">Sky Blue Slate</div>
+                        </div> -->
+
+                    </div>
+                </div>
+
+                <!-- 4. Landscaping Tab Content -->
+                 <div id="landscaping" class="tab-content hidden">
+                    <h4 class="text-2xl font-bold mb-6 text-gray-800 border-b pb-2">Landscaping Stone: Paving, Edging, and Hardscape</h4>
+                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                        
+                        <!-- Product Categories (Col 1) -->
+                        <div class="lg:col-span-1 bg-gray-100 p-0 rounded-lg overflow-hidden shadow-inner">
+                            <h3 class="bg-gray-700 text-white text-lg font-semibold px-6 py-3">Hardscape Products</h3>
+                            <div class="p-6 space-y-2 text-gray-700">
+                                <p class="font-medium flex items-center"><i data-lucide="square-stack" class="w-4 h-4 text-blue-500 mr-2"></i>Paving Slabs & Tiles</p>
+                                <p class="font-medium flex items-center"><i data-lucide="layout-grid" class="w-4 h-4 text-blue-500 mr-2"></i>Cobblestones & Setts</p>
+                                <p class="font-medium flex items-center"><i data-lucide="box-select" class="w-4 h-4 text-blue-500 mr-2"></i>Coping & Edging</p>
+                                <p class="font-medium flex items-center"><i data-lucide="mountain" class="w-4 h-4 text-blue-500 mr-2"></i>Decorative Aggregates</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Paving Sizes (Col 2) -->
+                        <div class="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="bg-gray-800 p-0 rounded-lg overflow-hidden shadow-lg">
+                                <h3 class="bg-gray-700 text-white text-lg font-semibold px-6 py-3">Common Paving Specs</h3>
+                                <div class="p-6 space-y-4 text-gray-200 text-sm">
+                                    <div class="flex justify-between border-b border-gray-600 pb-2">
+                                        <span class="font-medium">Standard Sizes</span>
+                                        <span class="font-light">60x60, 60x30, 90x60 cm</span>
+                                    </div>
+                                    <div class="flex justify-between border-b border-gray-600 pb-2">
+                                        <span class="font-medium">Thickness Range</span>
+                                        <span class="font-light">20 mm, 30 mm, 50 mm</span>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <span class="font-medium">Typical Material</span>
+                                        <span class="font-light">Sandstone, Limestone, Basalt</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Key Features (Col 3) -->
+                            <div class="bg-gray-800 p-0 rounded-lg overflow-hidden shadow-lg">
+                                <h3 class="bg-gray-700 text-white text-lg font-semibold px-6 py-3">Key Features & Finishes</h3>
+                                <div class="p-6 text-gray-200 text-sm h-full flex items-center">
+                                    <ul class="space-y-2">
+                                        <li class="flex items-center"><i data-lucide="thermometer-snowflake" class="w-4 h-4 mr-2 text-blue-300"></i> High Frost Resistance</li>
+                                        <li class="flex items-center"><i data-lucide="droplet-off" class="w-4 h-4 mr-2 text-red-300"></i> Excellent Slip Resistance</li>
+                                        <li class="flex items-center"><i data-lucide="palette" class="w-4 h-4 mr-2 text-yellow-300"></i> Available in Flamed, Tumbled, and Natural Cleft Finishes</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product Gallery (24 Landscaping Colors/Types) -->
+                    <div class="mt-8 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+
+                        <!-- Row 1: Sandstones -->
+                        <div class="aspect-square bg-purple-900 rounded-lg shadow-md overflow-hidden color-card relative">
+                           <img src="./Images/ANTIQUE-BROWN-scaled.jpg" alt=""> <div class="color-card-text">ANTIQUE-BROWN-scaled</div>
+                        </div>
+                        <div class="aspect-square bg-gray-600 rounded-lg shadow-md overflow-hidden color-card relative">
+                           <img src="./Images/AZUL-BAHIA-scaled.jpg" alt=""> <div class="color-card-text">AZUL-BAHIA-scaled</div>
+                        </div>
+                        <div class="aspect-square bg-gray-700 rounded-lg shadow-md overflow-hidden color-card relative">
+                           <img src="./Images/AZUL-MACAUBAS-scaled.jpg" alt=""> <div class="color-card-text">AZUL-MACAUBAS-scaled</div>
+                        </div>
+                        <div class="aspect-square bg-amber-800 rounded-lg shadow-md overflow-hidden color-card relative">
+                            <img src="./Images/VOLGA-BLUE-scaled.jpg" alt=""><div class="color-card-text">COPACABANA-scaled</div>
+                        </div>
+                        
+                        
+                        <!-- Row 2: Limestones & Quartzite -->
+                         <div class="aspect-square bg-gray-200 rounded-lg shadow-md overflow-hidden color-card relative">
+                        <img src="./Images/BROWN-SILK-scaled.jpg" alt=""><div class="color-card-text">BROWN-SILK-scaled</div>
+                    </div>
+                    <div class="aspect-square bg-white border border-gray-300 rounded-lg shadow-md overflow-hidden color-card relative">
+                       <img src="./Images/BLUE-PEARL-HQ-scaled.jpg" alt=""> <div class="color-card-text">BLUE-PEARL-HQ-scaled</div>
+                    </div>
+                    <div class="aspect-square bg-gray-500 rounded-lg shadow-md overflow-hidden color-card relative">
+                       <img src="./Images/BLUE-ANTIQUE-LABRADOR-scaled.jpg" alt=""> <div class="color-card-text">BLUE-ANTIQUE-LABRADOR</div>
+                    </div>
+                    <div class="aspect-square bg-slate-800 rounded-lg shadow-md overflow-hidden color-card relative">
+                       <img src="./Images/ROYAL-BLUE-CLASSIC-scaled.jpg" alt=""> <div class="color-card-text">COPACABANA-scaled</div>
+                    </div>
+
+                    <!-- Row 3: Basalt & Granite Setts -->
+                  <div class="aspect-square bg-blue-900 rounded-lg shadow-md overflow-hidden color-card relative">
+                       <img src="./Images/BLUE-ROMA-scaled.jpg" alt=""> <div class="color-card-text">BLUE-ROMA-scaled</div>
+                    </div>
+                    <div class="aspect-square bg-slate-700 rounded-lg shadow-md overflow-hidden color-card relative">
+                        <img src="./Images/BROWN-SILK-scaled.jpg" alt=""><div class="color-card-text">BROWN-SILK-scaled</div>
+                    </div>
+                    <div class="aspect-square bg-yellow-100 rounded-lg shadow-md overflow-hidden color-card relative">
+                       <img src="./Images/TITANIUM-GOLD-scaled.jpg" alt=""> <div class="color-card-text">TITANIUM-GOLD-scaled</div>
+                    </div>
+                    <div class="aspect-square bg-gray-100 rounded-lg shadow-md overflow-hidden color-card relative">
+                       <img src="./Images/COPACABANA-scaled.jpg" alt=""> <div class="color-card-text">COPACABANA-scaled</div>
+                    </div>
+
+                    <!-- Row 4: Slates & Contemporary -->
+                    <div class="aspect-square bg-teal-800 rounded-lg shadow-md overflow-hidden color-card relative">
+                      <img src="./Images/w1.jpg" alt="">  <div class="color-card-text">Brazilian Green Slate</div>
+                    </div>
+                    <div class="aspect-square bg-red-700 rounded-lg shadow-md overflow-hidden color-card relative">
+                       <img src="./Images/w2.jpg" alt=""> <div class="color-card-text">Copper Slate Tile</div>
+                    </div>
+                    <div class="aspect-square bg-blue-700 rounded-lg shadow-md overflow-hidden color-card relative">
+                      <img src="./Images/w3.jpg" alt="">  <div class="color-card-text">Blue Limestone</div>
+                    </div>
+                    <div class="aspect-square bg-zinc-800 rounded-lg shadow-md overflow-hidden color-card relative">
+                      <img src="./Images/w4.jpg" alt="">  <div class="color-card-text">Charcoal Vitrified</div>
+                    </div>
+                    
+                    <!-- Row 5: Gravel & Aggregates -->
+                    <!-- <div class="aspect-square bg-yellow-100 rounded-lg shadow-md overflow-hidden color-card relative">
+                        <div class="color-card-text">Gold Coast Gravel</div>
+                    </div>
+                    <div class="aspect-square bg-red-400 rounded-lg shadow-md overflow-hidden color-card relative">
+                        <div class="color-card-text">Red Granite Chips</div>
+                    </div>
+                    <div class="aspect-square bg-white border border-gray-200 rounded-lg shadow-md overflow-hidden color-card relative">
+                        <div class="color-card-text">White Marble Pebbles</div>
+                    </div>
+                    <div class="aspect-square bg-green-900 rounded-lg shadow-md overflow-hidden color-card relative">
+                        <div class="color-card-text">Green Basalt Chippings</div>
+                    </div> -->
+
+                    <!-- Row 6: Mixed and Veneer Styles -->
+                    <!-- <div class="aspect-square bg-amber-500 rounded-lg shadow-md overflow-hidden color-card relative">
+                        <div class="color-card-text">Yellow Sandstone Steps</div>
+                    </div>
+                    <div class="aspect-square bg-gray-700 rounded-lg shadow-md overflow-hidden color-card relative">
+                        <div class="color-card-text">Grey Cobble Setts</div>
+                    </div>
+                    <div class="aspect-square bg-stone-500 rounded-lg shadow-md overflow-hidden color-card relative">
+                        <div class="color-card-text">Mixed Slate Paving</div>
+                    </div>
+                    <div class="aspect-square bg-indigo-900 rounded-lg shadow-md overflow-hidden color-card relative">
+                        <div class="color-card-text">Deoli Green Slate</div>
+                    </div> -->
+
+                </div>
+            </div>
+            <!-- 5. Engineering wood Cabinets Tab Content (New Tab) -->
+            <div id="cabinets" class="tab-content hidden">
+                <h4 class="text-2xl font-bold mb-4 text-gray-800 border-b pb-2">Engineering Wood Cabinets and Joinery</h4>
+                <p class="text-gray-600 mb-6">High-quality modular solutions for kitchens, wardrobes, and custom interior spaces.</p>
+                <div class="bg-yellow-50 p-6 rounded-lg shadow-md border-l-4 border-yellow-500">
+                    <ul class="space-y-3 text-gray-700">
+                        <li class="font-medium flex items-center"><i data-lucide="kitchen-knife" class="w-5 h-5 text-yellow-600 mr-3"></i>Kitchen Flatpack cabinets: Ready-to-assemble units for fast installation.</li>
+                        <li class="font-medium flex items-center"><i data-lucide="ruler" class="w-5 h-5 text-yellow-600 mr-3"></i>Customized design: Tailored solutions for unique spatial and functional needs.</li>
+                        <li class="font-medium flex items-center"><i data-lucide="grip" class="w-5 h-5 text-yellow-600 mr-3"></i>Grades: MR/BWR/BMP plywoods: Options for Moisture Resistant, Boiling Water Resistant, and marine applications.</li>
+                        <li class="font-medium flex items-center"><i data-lucide="layer-square" class="w-5 h-5 text-yellow-600 mr-3"></i>Material: MDF/plywood/laminated board: Range of base materials to suit durability and finish requirements.</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <!-- END: Tabbed Product Content Section -->
+</main>
+
+<!-- FOOTER (Same as other pages) -->
+<footer class="footer-cont">
+    <div class="footer-container">
+        <!-- Map Section -->
+        <div class="footer-map-section">
+            <div class="map-container">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15735.619077977457!2d77.3061545!3d8.96696775!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b06e902b4d93547%3A0xf639a06692736b44!2sTenkasi%2C%20Tamil%20Nadu%20627811!5e0!3m2!1sen!2sin!4v1703673600000!5m2!1sen!2sin"
+                    width="100%"
+                    height="100%"
+                    style="border:0;"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
+
+        <!-- Contact Info Section -->
+        <div class="footer-contact-info">
+            <div class="contact-item">
+                <i class="fas fa-phone-alt"></i>
+                <div class="contact-text">
+                    <a href="tel:+919886715088" class="phone">+91 9886715088</a>
+                </div>
+            </div>
+
+            <div class="contact-item">
+                <i class="fas fa-envelope"></i>
+                <div class="contact-text">
+                    <a href="mailto:info@atulainternational.com">info@atulainternational.com</a>
+                </div>
+            </div>
+
+            <div class="contact-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <div class="contact-text">
+                    <p>Tenkasi, Tamil Nadu 627811. India</p>
+                </div>
+            </div>
+
+            <div class="contact-item">
+                <i class="fas fa-building-circle-arrow-right"></i>
+                <div class="contact-text">
+                    <p>Export Office: Chennai, India</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+        <div class="social-icons-footer">
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        </div>
+        <div class="copyright">
+            © 2025 Atula International — All Rights Reserved.
+        </div>
+        <a href="#top" class="scroll-to-top" aria-label="Scroll to top"><i class="fas fa-arrow-up"></i></a>
+    </div>
+</footer>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    // Initialize Lucide Icons
+    lucide.createIcons();
+
+    // Initialize AOS
+    AOS.init({
+        duration: 800,
+        easing: 'ease-in-out',
+        once: true,
+        offset: 100
+    });
+
+    // Tab switching functionality
+    document.addEventListener('DOMContentLoaded', () => {
+        const tabButtons = document.querySelectorAll('.tab-button');
+        const tabContents = document.querySelectorAll('.tab-content');
+
+        function showTab(targetId) {
+            tabContents.forEach(content => {
+                content.classList.add('hidden');
+            });
+            tabButtons.forEach(button => {
+                button.classList.remove('active');
+            });
+
+            const targetContent = document.getElementById(targetId);
+            if (targetContent) {
+                targetContent.classList.remove('hidden');
+            }
+
+            const activeButton = document.querySelector(`[data-tab-target="${targetId}"]`);
+            if (activeButton) {
+                activeButton.classList.add('active');
+            }
+        }
+
+        tabButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const targetId = button.getAttribute('data-tab-target');
+                showTab(targetId);
+            });
+        });
+
+        showTab('granite');
+    });
+</script>
+
+</body>
+</html>

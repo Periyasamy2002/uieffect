@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products | Atula International</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="assets/product.css">
+    <link rel="stylesheet" href="assets/index.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- CUSTOM GRADIENT NAVBAR (Same as other pages) -->
+    <header class="custom-gradient-bg">
+        <div class="header-container">
+
+            <!-- Top Row: Logo and Utility Bar -->
+            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+
+                <!-- Logo Section -->
+                <div class="logo-area">
+                    <img src="./Images/logo.png" alt="Atula International Logo" width="52" height="52">
+                    <div class="logo-text">
+                        <h1>ATULA</h1>
+                        <p>INTERNATIONAL</p>
+                    </div>
+                </div>
+
+                <!-- Utility Bar (Top Right) -->
+                <div class="utility-bar">
+
+                    <!-- Contact Info -->
+                    <div class="contact-info">
+                        <i class="fas fa-phone"></i>
+                        <span>+91 9886715088</span>
+                    </div>
+
+                    <!-- Enquire Button -->
+                    <button class="enquire-btn">
+                        <i class="fas fa-envelope"></i>
+                        ENQUIRE NOW
+                    </button>
+
+                    <!-- Social Icons -->
+                    <div class="social-icons">
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    </div>
+
+                    <!-- Language Selector -->
+                    <div class="language-selector">
+                        <select>
+                            <option value="en">Select Language</option>
+                            <option value="es">Español</option>
+                            <option value="fr">Français</option>
+                        </select>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+
+                    <!-- Search Icon -->
+                    <a href="#" class="search-icon" aria-label="Search">
+                        <i class="fas fa-search"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Main Navigation Links (Bottom) -->
+            <nav style="width: 100%;">
+                <ul class="nav-links-container">
+                    <li><a href="index.html" class="nav-link active">Home</a></li>
+                    <li><a href="product.html" class="nav-link nav-link-dark">Products</a></li>
+                    <li><a href="about.html" class="nav-link nav-link-dark">About us</a></li>
+                    <li><a href="contact.html" class="nav-link nav-link-dark">Contact</a></li>
+                </ul>
+            </nav>
+
+        </div>
+    </header>
+
+    <main>
+        <section class="bg-gray-800 text-white py-12">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-4xl font-extrabold tracking-tight">HOME</h2>
+            </div>
+        </section>
+
+       <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+    </script>
+    <div class="cont_tiles"></div>
+    <div class="website-section-container">
+
+        <div class="hero-carousel-container">
+            <div class="carousel-slide current-slide">
+                <div class="carousel-overlay">
+                    <h1 class="carousel-text">
+                        Largest Exporter of Processed Granite across the Globe
+                    </h1>
+                    <button class="slider-arrow prev-arrow"> &lt; </button>
+                    <button class="slider-arrow next-arrow"> &gt; </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="promo-features-container">
+
+            <div class="promo-box box-1">
+                <p class="promo-title">GRANITE is as Natural</p>
+                <div class="promo-overlay">
+                    <p class="overlay-content">Our granite mirrors nature's purity, as fresh and genuine as morning dew.</p>
+                </div>
+            </div>
+            <div class="promo-box box-2">
+                <p class="promo-title">GRANITE is as Natural</p>
+                <div class="promo-overlay">
+                    <p class="overlay-content">Explore our exquisite collection of timeless monuments, crafted with precision and enduring beauty.</p>
+                </div>
+            </div>
+
+           
+
+            <div class="promo-box box-3">
+                <p class="promo-title-bottom">The Finest Natural Stones</p>
+                <div class="promo-overlay">
+                    <p class="overlay-content">Discover a curated selection of the finest natural stones, handpicked for unparalleled quality and elegance.</p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    
+
+    <script>
+       // --- Complete Working Carousel/Slider Logic ---
+
+const carouselSlide = document.querySelector('.carousel-slide');
+const carouselText = document.querySelector('.carousel-text');
+const prevBtn = document.querySelector('.prev-arrow');
+const nextBtn = document.querySelector('.next-arrow');
+
+// 1. Define the slides (Background URL and Text)
+const slides = [
+    {
+        url: 'images/im1.jpeg',
+        text: 'Largest Exporter of Processed Granite across the Globe'
+    },
+    {
+        url: 'images/im2.jpeg',
+        text: 'Advanced Technology for Precision Stone Processing'
+    },
+    {
+        url: 'images/im6.jpeg',
+        text: 'Trusted Global Supplier of Premium Natural Stone'
+    }
+];
+
+let currentSlideIndex = 0;
+
+// Function to update the carousel's content and appearance
+function updateCarousel() {
+    const currentSlide = slides[currentSlideIndex];
+    
+    // Change the background image (CSS transition can be added to the background-image property)
+    carouselSlide.style.backgroundImage = `url('${currentSlide.url}')`;
+    
+    // Update the text
+    carouselText.textContent = currentSlide.text;
+    
+    // Optional: Add a simple fade effect by toggling a class
+    carouselText.classList.add('fade-in');
+    setTimeout(() => {
+        carouselText.classList.remove('fade-in');
+    }, 500); // Match this duration to your CSS transition (if any)
+}
+
+// 2. Event Listener Logic (Next Button)
+nextBtn.addEventListener('click', () => {
+    // Increment index, looping back to 0 if it exceeds the array length
+    currentSlideIndex = (currentSlideIndex + 1) % slides.length;
+    updateCarousel();
+});
+
+// 3. Event Listener Logic (Previous Button)
+prevBtn.addEventListener('click', () => {
+    // Decrement index, looping back to the end if it goes below 0
+    currentSlideIndex = (currentSlideIndex - 1 + slides.length) % slides.length;
+    updateCarousel();
+});
+
+// Initialize the carousel on page load
+updateCarousel();
+
+// 4. Automatic slide transition (Optional: Uncomment to enable auto-play)
+/*
+setInterval(() => {
+    currentSlideIndex = (currentSlideIndex + 1) % slides.length;
+    updateCarousel();
+}, 5000); // Changes slide every 5 seconds
+*/
+    </script>
+
+    <div class="container_abt">
+        <div class="text-content">
+            <h1>About Atula International</h1>
+            <p>Atula International is a premier global trading house, recognized as a pioneer in the import and export of high-quality industrial minerals, precision-engineered stones, and luxury natural products. With decades of operational excellence, we have bridged the gap between raw potential and refined beauty.</p>
+            
+            <p>Our foundation is built on unshakeable pillars of integrity, global connectivity, and customer-centric innovation. Headquartered in a strategic trade hub, Atula International leverages state-of-the-art logistics and a vast supplier network to ensure that every product delivered meets the highest standards of durability and finesse.</p>
+            
+            <a href="#" class="btn-read-more">Read More</a>
+        </div>
+
+        <div class="image-content">
+            <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Atula International Headquarters">
+        </div>
+    </div>
+
+
+    <section class="products-section">
+    <div class="section-header">
+        <h2 class="section-title">
+            OUR PRODUCTS
+            <span class="separator"></span>
+            <span class="section-subtitle">New generation technology and state-of-the-art machinery.</span>
+        </h2>
+    </div>
+    <p class="intro-text">
+        A promising future under dynamic and professional leaders lies ahead for us, through meeting the growing demand in international markets. We have acquired new generation technology and state-of-the-art machinery for processing the Granite Slabs and Tiles with a combination of able & efficient management and technical staff to enable on-time deliveries of international quality standard products with specialized finishing's.
+    </p>
+
+    <div class="product-grid">
+        <div class="product-card">
+            <img src="images/t1.jpeg" alt="Granite 1">
+            <div class="product-overlay">
+                <h3 class="overlay-title">Black Galaxy</h3>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="images/t2.jpeg" alt="Granite 2">
+            <div class="product-overlay">
+                <h3 class="overlay-title">Absolute Black</h3>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="images/t3.jpeg" alt="Granite 3">
+            <div class="product-overlay">
+                <h3 class="overlay-title">Steel Grey</h3>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="images/t4.jpeg" alt="Granite 4">
+            <div class="product-overlay">
+                <h3 class="overlay-title">Cosmic Black</h3>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="images/t5.jpeg" alt="Granite 5">
+            <div class="product-overlay">
+                <h3 class="overlay-title">Tan Brown</h3>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="images/t6.jpeg" alt="Granite 6">
+            <div class="product-overlay">
+                <h3 class="overlay-title">Viscon White</h3>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="images/t7.jpeg" alt="Granite 7">
+            <div class="product-overlay">
+                <h3 class="overlay-title">Coffee Brown</h3>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="images/t8.jpeg" alt="Granite 8">
+            <div class="product-overlay">
+                <h3 class="overlay-title">Black Forest</h3>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="images/t9.jpeg" alt="Granite 9">
+            <div class="product-overlay">
+                <h3 class="overlay-title">White Galaxy</h3>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="images/t10.jpeg" alt="Granite 10">
+            <div class="product-overlay">
+                <h3 class="overlay-title">Impala Black</h3>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="images/t11.jpeg" alt="Granite 11">
+            <div class="product-overlay">
+                <h3 class="overlay-title">Red Multicolor</h3>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="images/t12.jpeg" alt="Granite 12">
+            <div class="product-overlay">
+                <h3 class="overlay-title">Paradiso</h3>
+            </div>
+        </div>
+    </div>
+
+    <div class="view-all-container">
+        <button class="view-all-btn"> <a href="./product.html">View All</a></button>
+    </div>
+</section>
+
+    <div class="pro_cont">
+        <div class="header-section">
+            <h1 class="projects-title">PROJECTS</h1>
+            <div class="red-line"></div>
+            <p class="header-subtitle">Below are the names of a few successfully accomplished projects</p>
+        </div>
+
+        <p class="content-paragraph">
+            Futura Stones in collaboration with HJS Granites has successfully accomplished delivering volumes of slabs, cut-to-size materials, in different thicknesses and colours of
+            Granite, Marble, ONYX, Quartz, and other natural products across the Globe. Below are the names of a few projects successfully accomplished while partnered through our
+            contractors and suppliers of those regions.
+        </p>
+    </div>
+
+    <div class="futura_con">
+        <div class="header-section">
+            <h1 class="main-title">FUTURA STONES</h1>
+            <div class="red-line"></div>
+            <p class="header-description">50 year old industrial conglomerate established in 1953</p>
+        </div>
+
+        <div class="content-grid">
+            <div class="grid-item">
+                <i class="fas fa-home"></i>
+                <h3>Five+ Decades of Experience</h3>
+                <p>From our humble beginnings in the export industry to over five decades of experience in the stone processing industry, we provide the best quality products of international standards.</p>
+            </div>
+
+            <div class="grid-item">
+                <i class="fas fa-tree"></i>
+                <h3>Sustainability</h3>
+                <p>Sustainability is our responsibility. We are in relentless pursuit of reducing our adverse impact on environment.</p>
+            </div>
+
+            <div class="grid-item">
+                <ul class="feature-list">
+                    <li><i class="fas fa-check"></i> New-age technology</li>
+                    <li><i class="fas fa-check"></i> State-of-the-art machinery</li>
+                    <li><i class="fas fa-check"></i> Pioneer in mining for over five decades</li>
+                    <li><i class="fas fa-check"></i> International quality standards and certification</li>
+                    <li><i class="fas fa-check"></i> Live logistics schedules shared with customers</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+       
+    </main>
+
+    <!-- FOOTER (Same as other pages) -->
+    <footer class="footer-cont">
+        <div class="footer-container">
+            <!-- Map Section -->
+            <div class="footer-map-section">
+                <div class="map-container">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15735.619077977457!2d77.3061545!3d8.96696775!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b06e902b4d93547%3A0xf639a06692736b44!2sTenkasi%2C%20Tamil%20Nadu%20627811!5e0!3m2!1sen!2sin!4v1703673600000!5m2!1sen!2sin"
+                        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+
+            <!-- Contact Info Section -->
+            <div class="footer-contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-phone-alt"></i>
+                    <div class="contact-text">
+                        <a href="tel:+919886715088" class="phone">+91 9886715088</a>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <div class="contact-text">
+                        <a href="mailto:info@atulainternational.com">info@atulainternational.com</a>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div class="contact-text">
+                        <p>Tenkasi, Tamil Nadu 627811. India</p>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <i class="fas fa-building-circle-arrow-right"></i>
+                    <div class="contact-text">
+                        <p>Export Office: Chennai, India</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+            <div class="social-icons-footer">
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            </div>
+            <div class="copyright">
+                © 2025 Atula International — All Rights Reserved.
+            </div>
+            <a href="#top" class="scroll-to-top" aria-label="Scroll to top"><i class="fas fa-arrow-up"></i></a>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true,
+            offset: 100
+        });
+
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Tab switching functionality
+        document.addEventListener('DOMContentLoaded', () => {
+            const tabButtons = document.querySelectorAll('.tab-button');
+            const tabContents = document.querySelectorAll('.tab-content');
+
+            function showTab(targetId) {
+                tabContents.forEach(content => {
+                    content.classList.add('hidden');
+                });
+                tabButtons.forEach(button => {
+                    button.classList.remove('active');
+                });
+
+                const targetContent = document.getElementById(targetId);
+                if (targetContent) {
+                    targetContent.classList.remove('hidden');
+                }
+
+                const activeButton = document.querySelector(`[data-tab-target="${targetId}"]`);
+                if (activeButton) {
+                    activeButton.classList.add('active');
+                }
+            }
+
+            tabButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const targetId = button.getAttribute('data-tab-target');
+                    showTab(targetId);
+                });
+            });
+
+            showTab('granite');
+        });
+    </script>
+
+</body>
+
+</html>

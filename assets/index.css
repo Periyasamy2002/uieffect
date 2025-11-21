@@ -1,0 +1,793 @@
+/* Custom gradient class for the Navbar */
+        .custom-gradient-bg {
+            /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            background: linear-gradient(to right, #26a0da, #314755);
+        }
+        
+        /* Define colors for the dark nav bar elements */
+        :root {
+            --primary-accent-blue: #26a0da; /* Accent color for buttons/active links in the dark nav */
+            --text-dark: #333333; /* Dark text for the light body background */
+            --text-light: #F0F0F0; /* Light text for the dark nav background */
+        }
+
+        /* Set Inter font globally */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* Utility links styling (Default for white background) */
+        .utility-link {
+            color: var(--text-dark);
+            transition: color 0.2s;
+        }
+        .utility-link:hover {
+            color: var(--primary-accent-blue);
+        }
+
+        /* Nav Link styling inside the DARK header */
+        .nav-link-dark {
+             color: var(--text-light); /* Light text for the dark background */
+             transition: color 0.2s;
+        }
+        .nav-link-dark:hover {
+            color: var(--primary-accent-blue);
+        }
+
+        /* Main Nav link styling for the active state */
+        .nav-link.active {
+            color: var(--text-light); /* Active text remains light/white */
+            border-bottom: 2px solid var(--primary-accent-blue); /* Underline uses the bright blue accent */
+            padding-bottom: 4px;
+            font-weight: 500;
+        }
+        
+        /* Ensure the main nav links are centered relative to the bottom of the container on desktop */
+        .nav-links-container {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 1.5rem;
+        }
+
+        /* Basic Reset and Global Styles */
+.cont_tiles {
+    font-family: Arial, sans-serif; /* Replace with the actual font used */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.website-section-container {
+    max-width: 1400px; /* Adjust max-width as needed */
+    margin: 0 auto;
+}
+
+/* --- 1. Hero/Carousel Styling (No Change) --- */
+.hero-carousel-container {
+    position: relative;
+    width: 100%;
+    height: 60vh; /* Aspect ratio height, adjust as needed */
+    overflow: hidden;
+    color: white;
+}
+
+.carousel-slide {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-image: url('https://via.placeholder.com/1400x600/333333/FFFFFF?text=Largest+Exporter+of+Granite'); /* Placeholder */
+    background-color: #333; /* Fallback */
+}
+
+.carousel-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carousel-text {
+    font-size: 3.5vw; /* Responsive font size */
+    font-weight: 500;
+    text-align: center;
+    max-width: 80%;
+    z-index: 10;
+    transition: opacity 0.5s ease-in-out; 
+    opacity: 1;
+}
+.carousel-text.fade-in {
+    opacity: 0.2; /* Briefly dim the text before the transition completes */
+}
+
+/* changed code: homepage-specific reveal polish */
+
+/* Hero text reveal */
+.carousel-text.reveal { opacity: 0; transform: translateY(18px); transition: opacity .8s ease, transform .8s cubic-bezier(.2,.9,.25,1); }
+.carousel-text.reveal.visible { opacity: 1; transform: none; }
+
+.slider-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: white;
+    font-size: 3rem;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 20;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+}
+
+.slider-arrow:hover {
+    opacity: 1;
+}
+
+.prev-arrow {
+    left: 20px;
+}
+
+.next-arrow {
+    right: 20px;
+}
+
+/* --- 2. Feature/Promo Boxes Styling (MODIFIED) --- */
+.promo-features-container {
+    display: flex;
+    width: 100%;
+    margin: 3px;
+}
+
+.promo-box {
+    flex: 1;
+    height: 40vh;
+    position: relative; /* Crucial for positioning the overlay */
+    color: rgb(246, 246, 247);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column; /* Allow content and overlay to stack */
+    justify-content: flex-end; /* Align initial content to bottom */
+    padding: 20px;
+    box-sizing: border-box;
+    overflow: hidden; /* Crucial to hide the part of the overlay that is outside */
+    margin: 3px;
+    
+}
+
+/* Individual Box Styles (Backgrounds) */
+.box-1 {
+    background-image: url('images/im7.jpeg'); /* Placeholder */
+    background-color: #555;
+}
+
+.box-2 {
+    background-image: url('images/im4.jpeg'); /* Placeholder */
+    background-color: #666;
+}
+
+.box-3 {
+    background-image: url('images/im5.jpeg'); /* Placeholder */
+    background-color: #444;
+}
+
+/* Initial text within boxes (visible by default) */
+.promo-title, .promo-title-bottom {
+    font-size: 1.2rem;
+    font-weight: bold;
+    z-index: 1; /* Keep it above the background but below the overlay if it slides up */
+    position: relative; /* Ensure z-index works */
+    margin-bottom: 10px; /* Space from the bottom */
+}
+
+/* --- Hover Overlay Styling --- */
+.promo-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; /* Make overlay cover the whole box */
+    background-color: rgba(0, 0, 0, 0.8); /* Darker overlay */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+    
+    /* Initially hide the overlay by moving it completely down */
+    transform: translateY(100%); 
+    transition: transform 0.4s ease-out; /* Smooth slide-up transition */
+    z-index: 5; /* Ensure it covers the initial text */
+}
+
+.promo-box:hover .promo-overlay {
+    transform: translateY(0); /* Slide the overlay up to be fully visible */
+}
+
+.overlay-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.overlay-content {
+    font-size: 1rem;
+    line-height: 1.5;
+    max-width: 90%;
+    margin: 0;
+}
+
+.container_abt {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.5;
+            width: 90%;
+            max-width: 1200px;
+            margin: 80px auto;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 50px;
+        }
+
+        /* --- Text Section Styling --- */
+        .text-content {
+            flex: 1 1 55%;
+        }
+
+        .text-content h1 {
+            font-size: 2.0em;
+            font-weight: 700;
+            color: #222;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            
+            /* Animation Settings */
+            opacity: 0; /* Start hidden */
+            animation: fadeInUp 1s ease-out forwards;
+            animation-delay: 0.2s;
+        }
+
+        .text-content p {
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 20px;
+            
+            /* Animation Settings */
+            opacity: 0;
+            animation: fadeInUp 1s ease-out forwards;
+        }
+
+        .text-content p:nth-of-type(1) { animation-delay: 0.4s; }
+        .text-content p:nth-of-type(2) { animation-delay: 0.6s; }
+
+        .btn-read-more {
+            display: inline-block;
+            padding: 10px 25px;
+            background-color: #d91e18;
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            text-transform: uppercase;
+            border-radius: 4px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            
+            /* Animation Settings */
+            opacity: 0;
+            animation: fadeInUp 1s ease-out forwards;
+            animation-delay: 0.8s;
+        }
+
+        .btn-read-more:hover {
+            background-color: #b81a15;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+        }
+
+        /* --- Image Section Styling & Animation --- */
+        .image-content {
+            flex: 1 1 45%;
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+            
+            /* Entry Animation */
+            opacity: 0;
+            animation: slideInRight 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards; /* Smooth entry */
+            animation-delay: 0.4s;
+        }
+
+        .image-content img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.8s ease;
+        }
+
+        /* Continuous floating animation for the image container */
+        .image-content {
+            animation: slideInRight 1.2s forwards, floatImage 6s ease-in-out infinite 1.5s;
+        }
+
+        /* Hover Effect: Zoom image */
+        .image-content:hover img {
+            transform: scale(1.1);
+        }
+
+        /* --- Keyframe Animations --- */
+        
+        /* Fade Up Animation for text */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Slide In From Right for Image */
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(100px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* Floating Animation for extra movement */
+        @keyframes floatImage {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0); }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                margin-top: 40px;
+            }
+            .text-content {
+                padding-right: 0;
+                order: 2; /* Puts text below image on mobile */
+            }
+            .image-content {
+                order: 1;
+                width: 100%;
+                margin-bottom: 30px;
+            }
+        }
+
+        /* Section Container */
+    .products-section {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        max-width: 1200px;
+        margin: 60px auto;
+        padding: 40px;
+        background-color: #fff;
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        text-align: center;
+    }
+
+    /* Headings */
+    .section-title {
+        font-size: 2.5em;
+        font-weight: 700;
+        margin-bottom: 15px;
+        color: #2c3e50;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .section-subtitle {
+        font-size: 0.6em; /* Adjusted relative to title */
+        font-weight: 400;
+        color: #e74c3c;
+    }
+
+    .separator {
+        display: inline-block;
+        width: 2px;
+        height: 30px;
+        background-color: #e74c3c;
+    }
+
+    /* Introduction Text */
+    .intro-text {
+        font-size: 1em;
+        line-height: 1.6;
+        color: #666;
+        margin-bottom: 50px;
+        max-width: 900px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* Product Grid */
+    .product-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 25px;
+        margin-bottom: 50px;
+    }
+
+    /* Product Card */
+    .product-card {
+        position: relative;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        aspect-ratio: 4/3;
+        cursor: pointer;
+        transition: box-shadow 0.3s ease; /* Added transition for subtle shadow */
+    }
+
+    .product-card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+        display: block;
+    }
+
+    /* Card Overlay - Content Display */
+    .product-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        opacity: 0; /* Hidden by default */
+        transition: opacity 0.3s ease; /* Smooth transition */
+        background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 50%); /* Gradient for better text readability at bottom */
+        pointer-events: none; /* Allows click-through to underlying image if needed */
+    }
+
+    .overlay-title {
+        color: #fff;
+        font-size: 1.4em;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin: 0;
+        transform: translateY(20px); /* Initial position below visible area */
+        transition: transform 0.3s ease, opacity 0.3s ease;
+        text-shadow: 0 2px 5px rgba(0,0,0,0.5); /* Add text shadow for better contrast */
+        opacity: 0; /* Hidden by default */
+    }
+
+    /* Hover Effects */
+    .product-card:hover {
+        box-shadow: 0 8px 20px rgba(0,0,0,0.15); /* Slightly more pronounced shadow on hover */
+    }
+
+    .product-card:hover .product-overlay {
+        opacity: 1; /* Overlay becomes visible (gradient) */
+    }
+
+    .product-card:hover img {
+        transform: scale(1.05); /* Subtle zoom effect */
+    }
+
+    .product-card:hover .overlay-title {
+        transform: translateY(0); /* Title slides up into view */
+        opacity: 1; /* Title becomes visible */
+    }
+
+    /* View All Button */
+    .view-all-container {
+        margin-top: 40px;
+    }
+
+    .view-all-btn {
+        padding: 12px 35px;
+        background-color: #e74c3c;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        font-size: 1em;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background-color 0.3s, transform 0.3s;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .view-all-btn:hover {
+        background-color: #c0392b;
+        transform: translateY(-3px);
+    }
+
+     .pro_cont{
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 50px;
+            background-color: #ffffff;
+            color: #333;
+
+        }
+        .header-section {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .projects-title {
+            font-size: 3em;
+            font-weight: 500;
+            color: #333;
+            margin-right: 80px;
+            letter-spacing: -1px;
+        }
+
+        .red-line {
+            width: 4px;
+            height: 40px; /* Adjust height to match title if needed */
+            background-color: #cc0000;
+            margin-right: 15px;
+        }
+
+        .header-subtitle {
+            font-size: 1.2em;
+            font-weight: 400;
+            color: #555;
+        }
+
+        .content-paragraph {
+            font-size: 1em;
+            line-height: 1.6;
+            color: #555;
+            max-width: 1250px; /* Adjust as needed */
+        }
+
+        .futura_con{
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 40px;
+            background-color: #ffffff;
+            color: #333;
+
+        }
+        .header-section {
+            display: flex;
+            align-items: center;
+            margin-bottom: 50px;
+        }
+
+        .main-title {
+            font-size: 2.5em;
+            font-weight: 500;
+            color: #333;
+            margin-right: 80px;
+            letter-spacing: -0.5px;
+        }
+
+        .red-line {
+            width: 4px;
+            height: 35px; /* Adjust height to match title if needed */
+            background-color: #cc0000;
+            margin-right: 15px;
+        }
+
+        .header-description {
+            font-size: 1.1em;
+            font-weight: 400;
+            color: #555;
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            max-width: 1200px; /* Adjust as needed */
+            margin: 0 auto;
+        }
+
+        .grid-item {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .grid-item i {
+            font-size: 1.8em;
+            color: #cc0000;
+            margin-bottom: 5px;
+        }
+
+        .grid-item h3 {
+            font-size: 1.2em;
+            font-weight: 500;
+            color: #333;
+            margin: 0;
+        }
+
+        .grid-item p {
+            font-size: 0.95em;
+            line-height: 1.6;
+            color: #555;
+            margin: 0;
+        }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .feature-list li {
+            font-size: 0.95em;
+            color: #555;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .feature-list li i {
+            color: #cc0000;
+            font-size: 1em;
+            margin-right: 10px;
+            margin-top: 3px; /* Align checkmark vertically */
+        }
+        /* footer */
+         .footer_cont{
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #1a1a1a; /* Dark background for the whole page */
+            color: #f0f0f0;
+
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 50px 20px;
+            gap: 40px;
+        }
+
+        .map-section {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            min-width: 300px;
+            max-width: 500px; /* Adjust max-width for a single map */
+        }
+
+        .map-container {
+            width: 100%;
+            height: 400px; /* Standard map height */
+            background-color: #333; /* Placeholder background */
+            border-radius: 8px;
+            overflow: hidden; /* Ensures map content stays within bounds */
+        }
+
+        .contact-info-section {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            padding-left: 40px;
+            border-left: 1px solid #444; /* Separator line */
+            max-width: 400px; /* Max width for contact info block */
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            color: #f0f0f0;
+            font-size: 1em;
+            line-height: 1.5;
+        }
+
+        .contact-item i {
+            color: #cc0000; /* Red icon color */
+            font-size: 1.2em;
+            margin-top: 3px; /* Adjust icon alignment */
+        }
+
+        .contact-item a {
+            color: #f0f0f0;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-item a:hover {
+            color: #cc0000;
+        }
+
+        .contact-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .contact-text .phone {
+            font-size: 1.1em;
+            font-weight: 500;
+        }
+
+        .footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            background-color: #111;
+            border-top: 1px solid #333;
+            margin-top: 50px;
+        }
+
+        .social-icons a {
+            color: #f0f0f0;
+            font-size: 1.2em;
+            margin-right: 15px;
+            transition: color 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            color: #cc0000;
+        }
+
+        .copyright {
+            font-size: 0.9em;
+            color: #aaa;
+        }
+
+        .scroll-to-top {
+            background-color: #cc0000;
+            color: #fff;
+            padding: 10px 12px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 1.1em;
+            transition: background-color 0.3s ease;
+        }
+
+        .scroll-to-top:hover {
+            background-color: #ff3333;
+        }
+
+        /* changed code: homepage-specific reveal polish */
+
+/* Hero text reveal */
+.carousel-text.reveal { opacity: 0; transform: translateY(18px); transition: opacity .8s ease, transform .8s cubic-bezier(.2,.9,.25,1); }
+.carousel-text.reveal.visible { opacity: 1; transform: none; }
+
+/* Promo boxes reveal with slight scale */
+.promo-box.reveal { opacity: 0; transform: translateY(18px) scale(.996); transition: all .7s cubic-bezier(.2,.9,.25,1); }
+.promo-box.reveal.visible { opacity: 1; transform: none; }
+
+/* Product cards will enter with small stagger - product.css provides base behavior */
+.product-card.reveal { opacity: 0; transform: translateY(20px); }
+.product-card.reveal.visible { opacity: 1; transform: none; }
+
+/* small focus: improved shadow after reveal */
+.product-card.reveal.visible:hover {
+    box-shadow: 0 18px 40px rgba(0,0,0,0.12);
+}

@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>10 Slider Effects</title>
+<style>
+body{
+    font-family: Arial;
+    margin:0;
+    padding:0;
+    background:#f5f5f5;
+}
+h2{
+    text-align:center;
+    margin:20px 0;
+}
+
+/* COMMON SLIDER STYLE */
+.slider{
+    width:100%;
+    overflow:hidden;
+    position:relative;
+    height:300px;
+    margin-bottom:120px;
+}
+.slider img{
+    width:100%;
+    height:300px;
+    object-fit:cover;
+}
+
+/* ============ EFFECT 1 – BASIC SLIDE LEFT ============ */
+.s1 .slides{
+    display:flex;
+    animation:slide1 10s linear infinite;
+}
+@keyframes slide1{
+    0%{transform:translateX(0);}
+    100%{transform:translateX(-300%);}
+}
+
+/* ============ EFFECT 2 – FADE IN/OUT ============ */
+.s2 .slides img{
+    position:absolute;
+    opacity:0;
+    animation:fade2 12s infinite;
+}
+.s2 img:nth-child(1){animation-delay:0s;}
+.s2 img:nth-child(2){animation-delay:4s;}
+.s2 img:nth-child(3){animation-delay:8s;}
+
+@keyframes fade2{
+    0%{opacity:0;}
+    10%{opacity:1;}
+    30%{opacity:1;}
+    40%{opacity:0;}
+    100%{opacity:0;}
+}
+
+/* ============ EFFECT 3 – ZOOM + SLIDE ============ */
+.s3 .slides{
+    display:flex;
+    animation:slide3 12s ease-in-out infinite;
+}
+.s3 img{
+    animation:zoom3 4s ease-in-out infinite;
+}
+@keyframes slide3{
+    0%{transform:translateX(0);}
+    100%{transform:translateX(-300%);}
+}
+@keyframes zoom3{
+    0%{transform:scale(1);}
+    50%{transform:scale(1.1);}
+    100%{transform:scale(1);}
+}
+
+/* ============ EFFECT 4 – PARALLAX SLIDE ============ */
+.s4{
+    overflow:hidden;
+}
+.s4 .slides{
+    display:flex;
+}
+.s4 img{
+    animation:parallax4 12s linear infinite;
+}
+@keyframes parallax4{
+    0%{transform:translateX(0);}
+    100%{transform:translateX(-50%);}
+}
+
+/* ============ EFFECT 5 – ROTATE SLIDE ============ */
+.s5 .slides{
+    display:flex;
+    animation:rot5 12s linear infinite;
+}
+.s5 img{
+    animation:spin5 4s linear infinite;
+}
+@keyframes rot5{
+    0%{transform:translateX(0);}
+    100%{transform:translateX(-300%);}
+}
+@keyframes spin5{
+    0%{transform:rotate(0);}
+    100%{transform:rotate(360deg);}
+}
+
+/* ============ EFFECT 6 – BLUR TRANSITION ============ */
+.s6 .slides img{
+    position:absolute;
+    opacity:0;
+    filter:blur(10px);
+    animation:blur6 12s infinite;
+}
+.s6 img:nth-child(1){animation-delay:0s;}
+.s6 img:nth-child(2){animation-delay:4s;}
+.s6 img:nth-child(3){animation-delay:8s;}
+
+@keyframes blur6{
+    0%{opacity:0;filter:blur(10px);}
+    10%{opacity:1;filter:blur(0);}
+    30%{opacity:1;filter:blur(0);}
+    40%{opacity:0;filter:blur(10px);}
+    100%{opacity:0;filter:blur(10px);}
+}
+
+/* ============ EFFECT 7 – JUMP SLIDE ============ */
+.s7 .slides{
+    display:flex;
+    animation:jump7 12s ease-in-out infinite;
+}
+@keyframes jump7{
+    0%{transform:translateX(0);}
+    33%{transform:translateX(-100%) translateY(-20px);}
+    66%{transform:translateX(-200%) translateY(20px);}
+    100%{transform:translateX(0);}
+}
+
+/* ============ EFFECT 8 – WAVE SLIDE (UP/DOWN) ============ */
+.s8 .slides{
+    display:flex;
+    animation:wave8 14s ease-in-out infinite;
+}
+@keyframes wave8{
+    0%{transform:translateX(0) skewY(0deg);}
+    33%{transform:translateX(-100%) skewY(5deg);}
+    66%{transform:translateX(-200%) skewY(-5deg);}
+    100%{transform:translateX(0) skewY(0deg);}
+}
+
+/* ============ EFFECT 9 – FLIP ============ */
+.s9 .slides img{
+    position:absolute;
+    opacity:0;
+    animation:flip9 12s infinite;
+}
+.s9 img:nth-child(1){animation-delay:0s;}
+.s9 img:nth-child(2){animation-delay:4s;}
+.s9 img:nth-child(3){animation-delay:8s;}
+
+@keyframes flip9{
+    0%{opacity:0;transform:rotateY(90deg);}
+    10%{opacity:1;transform:rotateY(0);}
+    30%{opacity:1;}
+    40%{opacity:0;transform:rotateY(90deg);}
+    100%{opacity:0;}
+}
+
+/* ============ EFFECT 10 – MULTI-LAYER PARALLAX (BEST) ============ */
+.s10{
+    position:relative;
+}
+.s10 .layer1,
+.s10 .layer2{
+    position:absolute;
+    width:200%;
+    height:100%;
+    top:0;
+    display:flex;
+}
+.s10 .layer1 img{opacity:0.4;} /* BACKGROUND */
+.s10 .layer2 img{opacity:1;}   /* FRONT */
+
+.s10 .layer1{
+    animation:para10_1 30s linear infinite;
+}
+.s10 .layer2{
+    animation:para10_2 15s linear infinite;
+}
+
+@keyframes para10_1{
+    0%{transform:translateX(0);}
+    100%{transform:translateX(-50%);}
+}
+@keyframes para10_2{
+    0%{transform:translateX(0);}
+    100%{transform:translateX(-100%);}
+}
+</style>
+</head>
+<body>
+
+<!-- ===== EFFECT 1 ===== -->
+<h2>1. Basic Slide</h2>
+<div class="slider s1">
+    <div class="slides">
+        <img src="./assets/image/pexels-cottonbro-4604566.jpg">
+        <img src="./assets/image/pexels-edward-jenner-4249589.jpg">
+        <img src="./assets/image/pexels-mikhail-nilov-7814959.jpg">
+        <img src="./assets/image/pexels-cottonbro-4604566.jpg"> <!-- repeated for loop -->
+    </div>
+</div>
+
+<!-- ===== EFFECT 2 ===== -->
+<h2>2. Fade Effect</h2>
+<div class="slider s2">
+    <div class="slides">
+        <img src="./assets/image/pexels-cottonbro-4604566.jpg">
+        <img src="./assets/image/pexels-edward-jenner-4249589.jpg">
+        <img src="./assets/image/pexels-mikhail-nilov-7814959.jpg">
+    </div>
+</div>
+
+<!-- ===== EFFECT 3 ===== -->
+<h2>3. Zoom Slide</h2>
+<div class="slider s3">
+    <div class="slides">
+        <img src="./assets/image/pexels-cottonbro-4604566.jpg">
+        <img src="./assets/image/pexels-edward-jenner-4249589.jpg">
+        <img src="./assets/image/pexels-mikhail-nilov-7814959.jpg">
+        <img src="./assets/image/pexels-cottonbro-4604566.jpg">
+    </div>
+</div>
+
+<!-- ===== EFFECT 4 ===== -->
+<h2>4. Parallax Slide</h2>
+<div class="slider s4">
+    <div class="slides">
+        <img src="./assets/image/pexels-cottonbro-4604566.jpg">
+        <img src="./assets/image/pexels-edward-jenner-4249589.jpg">
+        <img src="./assets/image/pexels-mikhail-nilov-7814959.jpg">
+        <img src="./assets/image/pexels-cottonbro-4604566.jpg">
+    </div>
+</div>
+
+<!-- ===== EFFECT 5 ===== -->
+<h2>5. Rotate Slide</h2>
+<div class="slider s5">
+    <div class="slides">
+        <img src="./assets/image/pexels-cottonbro-4604566.jpg">
+        <img src="./assets/image/pexels-edward-jenner-4249589.jpg">
+        <img src="./assets/image/pexels-mikhail-nilov-7814959.jpg">
+        <img src="./assets/image/pexels-cottonbro-4604566.jpg">
+    </div>
+</div>
+
+<!-- ===== EFFECT 6 ===== -->
+<h2>6. Blur Transition</h2>
+<div class="slider s6">
+    <div class="slides">
+        <img src="./assets/image/pexels-cottonbro-4604566.jpg">
+        <img src="./assets/image/pexels-edward-jenner-4249589.jpg">
+        <img src="./assets/image/pexels-mikhail-nilov-7814959.jpg">
+    </div>
+</div>
+
+<!-- ===== EFFECT 7 ===== -->
+<h2>7. Jump Slide</h2>
+<div class="slider s7">
+    <div class="slides">
+        <img src="./assets/image/pexels-cottonbro-4604566.jpg">
+        <img src="./assets/image/pexels-edward-jenner-4249589.jpg">
+        <img src="./assets/image/pexels-mikhail-nilov-7814959.jpg">
+        <img src="./assets/image/pexels-cottonbro-4604566.jpg">
+    </div>
+</div>
+
+<!-- ===== EFFECT 8 ===== -->
+<h2>8. Wave Slide</h2>
+<div class="slider s8">
+    <div class="slides">
+        <img src="./assets/image/pexels-cottonbro-4604566.jpg">
+        <img src="./assets/image/pexels-edward-jenner-4249589.jpg">
+        <img src="./assets/image/pexels-mikhail-nilov-7814959.jpg">
+        <img src="./assets/image/pexels-cottonbro-4604566.jpg">
+    </div>
+</div>
+
+<!-- ===== EFFECT 9 ===== -->
+<h2>9. Flip Effect</h2>
+<div class="slider s9">
+    <div class="slides">
+        <img src="./assets/image/pexels-cottonbro-4604566.jpg">
+        <img src="./assets/image/pexels-edward-jenner-4249589.jpg">
+        <img src="./assets/image/pexels-mikhail-nilov-7814959.jpg">
+    </div>
+</div>
+
+<!-- ===== EFFECT 10 ===== -->
+<h2>10. Multi-Layer Parallax (Best Effect)</h2>
+<div class="slider s10">
+    <div class="layer1">
+        <img src="./assets/image/pexels-cottonbro-4604566.jpg">
+        <img src="./assets/image/pexels-edward-jenner-4249589.jpg">
+        <img src="./assets/image/pexels-mikhail-nilov-7814959.jpg">
+        <img src="./assets/image/pexels-cottonbro-4604566.jpg">
+    </div>
+    <div class="layer2">
+        <img src="./assets/image/pexels-cottonbro-4604566.jpg">
+        <img src="./assets/image/pexels-edward-jenner-4249589.jpg">
+        <img src="./assets/image/pexels-mikhail-nilov-7814959.jpg">
+        <img src="./assets/image/pexels-cottonbro-4604566.jpg">
+    </div>
+</div>
+
+</body>
+</html>
