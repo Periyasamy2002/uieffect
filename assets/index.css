@@ -165,17 +165,17 @@
 
 /* Individual Box Styles (Backgrounds) */
 .box-1 {
-    background-image: url('images/im7.jpeg'); /* Placeholder */
+    background-image: url('./image/pexels-mikhail-nilov-7814959.jpg'); /* Placeholder */
     background-color: #555;
 }
 
 .box-2 {
-    background-image: url('images/im4.jpeg'); /* Placeholder */
+    background-image: url('./image/pexels-edward-jenner-4252170.jpg'); /* Placeholder */
     background-color: #666;
 }
 
 .box-3 {
-    background-image: url('images/im5.jpeg'); /* Placeholder */
+    background-image: url('./image/pexels-edward-jenner-4249589.jpg'); /* Placeholder */
     background-color: #444;
 }
 

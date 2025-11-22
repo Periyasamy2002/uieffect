@@ -501,3 +501,60 @@
             </div>
           </div>
         </section>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Scroll Reveal Preview</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  section {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s ease-out;
+  }
+  section.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  section:nth-child(odd) {
+    background-color: #f5f5f5;
+  }
+  section:nth-child(even) {
+    background-color: #ddd;
+  }
+</style>
+</head>
+<body>
+
+<section>Section 1</section>
+<section>Section 2</section>
+<section>Section 3</section>
+<section>Section 4</section>
+
+<script>
+  const sections = document.querySelectorAll("section");
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+      }
+    });
+  }, { threshold: 0.1 });
+
+  sections.forEach(section => observer.observe(section));
+</script>
+
+</body>
+</html>
