@@ -1,205 +1,503 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Futura Stones – About Us</title>
-
-    <!-- AOS Scroll Animation -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-        }
-
-        /* Hero Section */
-        .hero {
-            background: url('banner.jpg') center/cover no-repeat;
-            height: 70vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: white;
-            text-shadow: 0px 4px 10px black;
-            text-align: center;
-        }
-
-        .hero h1 {
-            font-size: 42px;
-        }
-
-        /* Section default */
-        section {
-            padding: 70px 5%;
-        }
-
-        .grid-2 {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-        }
-
-        .timeline {
-            border-left: 4px solid #333;
-            padding-left: 30px;
-        }
-
-        .timeline-item {
-            margin-bottom: 40px;
-        }
-
-        .timeline-item h3 {
-            margin: 0;
-        }
-
-        /* Testimonials */
-        .testimonials {
-            background: #f5f5f5;
-            padding: 70px 5%;
-        }
-
-        .testimonial-box {
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-
-        /* CTA */
-        .cta {
-            text-align: center;
-            padding: 70px 5%;
-            background: #333;
-            color: white;
-        }
-
-        .cta a {
-            background: white;
-            padding: 12px 30px;
-            display: inline-block;
-            text-decoration: none;
-            color: #333;
-            font-weight: bold;
-            border-radius: 8px;
-        }
-
-        /* Mobile */
-        @media(max-width: 768px) {
-            .grid-2 {
-                grid-template-columns: 1fr;
-            }
-            .hero h1 {
-                font-size: 30px;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Mini Cards Preview</title>
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    
+  </style>
 </head>
+<body class="bg-gray-100 py-10">
 
-<body>
-
-    <!-- HERO -->
-    <div class="hero" data-aos="fade-up">
-        <h1>About Futura Stones</h1>
-    </div>
-
-    <!-- SECTION 1 – COMPANY ABOUT -->
-    <section>
-        <div class="grid-2">
-            <div data-aos="fade-right">
-                <img src="stone1.jpg" width="100%" style="border-radius: 10px;">
-            </div>
-
-            <div data-aos="fade-left">
-                <h2>Who We Are</h2>
-                <p>
-                    Futura Stones in collaboration with HJS Granite is one of the country’s renowned pioneers 
-                    in mining, processing, and export of Granite, Marble, ONYX, Quartz, and other natural stones.
-                </p>
-                <p>
-                    With 50+ years of global leadership, Futura Stones stands on the foundation of commitment, 
-                    quality, integrity, and advanced manufacturing technology.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- SECTION 2 – TIMELINE -->
-    <section>
-        <h2 data-aos="fade-up">Our Journey</h2>
-
-        <div class="timeline">
-
-            <div class="timeline-item" data-aos="fade-up">
-                <h3>1970</h3>
-                <p>Foundation of Futura Stones with small-scale mining.</p>
-            </div>
-
-            <div class="timeline-item" data-aos="fade-up">
-                <h3>1995</h3>
-                <p>Expansion into global exports with high-quality stone products.</p>
-            </div>
-
-            <div class="timeline-item" data-aos="fade-up">
-                <h3>2010</h3>
-                <p>Adoption of new generation machinery and automation.</p>
-            </div>
-
-            <div class="timeline-item" data-aos="fade-up">
-                <h3>2024</h3>
-                <p>Global distribution with facilities in India and Dubai.</p>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- SECTION 3 – INFRASTRUCTURE -->
-    <section>
-        <h2 data-aos="fade-up">Infrastructure</h2>
-        <div class="grid-2">
-
-            <div data-aos="zoom-in">
-                <img src="factory.jpg" width="100%" style="border-radius: 10px;">
-            </div>
-
-            <div data-aos="fade-left">
-                <h3>Advanced Technology</h3>
-                <ul>
-                    <li>Gangsaw Machines</li>
-                    <li>CNC Machines</li>
-                    <li>High-precision cutting tools</li>
-                    <li>Automated polishing lines</li>
-                    <li>Professional logistic team</li>
-                </ul>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- SECTION 4 – TESTIMONIALS -->
-    <div class="testimonials">
-        <h2 data-aos="fade-up">What Our Clients Say</h2>
-
-        <div class="testimonial-box" data-aos="fade-up">
-            <p>“Futura Stones provides world-class quality and timely delivery. Highly recommended!”</p>
-            <strong>- Global Importer, UAE</strong>
-        </div>
-    </div>
-
-    <!-- SECTION 5 – CTA -->
-    <div class="cta" data-aos="zoom-in">
-        <h2>Work With Us</h2>
-        <p>Need high-quality Granite, Marble, or Quartz for your next project?</p>
-        <a href="contact.html">Contact Us</a>
-    </div>
-
-    <!-- AOS Script -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init();
-    </script>
 
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Form Preview</title>
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* GLASS & NEON CARD */
+    .glass-card {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    .neon {
+      box-shadow: 0 0 10px rgba(0, 255, 255, 0.3), 0 0 20px rgba(255, 0, 255, 0.2);
+    }
+
+    /* FLOATING LABELS */
+    .form-group {
+      position: relative;
+    }
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 1rem 0.75rem 0.25rem 0.75rem;
+      border: 1px solid #ccc;
+      border-radius: 0.5rem;
+      background: transparent;
+      outline: none;
+      transition: border 0.2s, box-shadow 0.2s;
+    }
+    .form-group label {
+      position: absolute;
+      top: 1rem;
+      left: 0.75rem;
+      color: #888;
+      font-size: 0.95rem;
+      pointer-events: none;
+      transition: 0.2s all;
+      background: transparent;
+    }
+
+    /* Focus & Filled States */
+    .form-group input:focus + label,
+    .form-group input:not(:placeholder-shown) + label,
+    .form-group textarea:focus + label,
+    .form-group textarea:not(:placeholder-shown) + label {
+      top: -0.5rem;
+      left: 0.5rem;
+      font-size: 0.75rem;
+      color: #3b82f6; /* Tailwind blue-500 */
+      background: rgba(255,255,255,0.1);
+      padding: 0 0.25rem;
+    }
+
+    /* Input Focus Glow */
+    .form-group input:focus,
+    .form-group textarea:focus {
+      border-color: #3b82f6;
+      box-shadow: 0 0 5px rgba(59, 130, 246, 0.5);
+    }
+
+    /* BUTTON */
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      background-color: #3b82f6;
+      color: white;
+      font-weight: 600;
+      padding: 0.75rem 1rem;
+      border-radius: 0.5rem;
+      border: none;
+      cursor: pointer;
+      transition: 0.3s all;
+    }
+    .btn-primary:hover {
+      background-color: #2563eb;
+      box-shadow: 0 0 10px rgba(59, 130, 246, 0.5), 0 0 20px rgba(59, 130, 246, 0.3);
+    }
+
+    /* TEXTAREA RESIZE */
+    textarea {
+      resize: none;
+    }
+  </style>
+</head>
+<body class="bg-gray-100 py-16">
+
+  <section class="max-w-6xl mx-auto px-4 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+    
+    <!-- LEFT BIG TEXT -->
+    <div class="section-reveal">
+      <h2 class="text-5xl font-extrabold mb-4">Get in Touch</h2>
+      <p class="text-lg text-gray-700">We’d love to hear from you! Fill out the form and we will get back to you as soon as possible.</p>
+    </div>
+    
+    <!-- RIGHT FORM -->
+    <div class="form-box glass-card neon p-8 shadow-lg rounded-xl section-reveal">
+      <h3 class="text-2xl font-semibold mb-6"><i class="fa-solid fa-comment-dots"></i> Send Us a Message</h3>
+      <form class="space-y-4">
+        <!-- First Name & Last Name -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div class="form-group">
+            <input type="text" id="first-name" placeholder=" " required>
+            <label for="first-name">First Name</label>
+          </div>
+          <div class="form-group">
+            <input type="text" id="last-name" placeholder=" " required>
+            <label for="last-name">Last Name</label>
+          </div>
+        </div>
+
+        <!-- Mobile & Email -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div class="form-group">
+            <input type="tel" id="mobile" placeholder=" " required>
+            <label for="mobile">Mobile</label>
+          </div>
+          <div class="form-group">
+            <input type="email" id="email" placeholder=" " required>
+            <label for="email">Email</label>
+          </div>
+        </div>
+
+        <!-- Message Textarea -->
+        <div class="form-group">
+          <textarea id="message" rows="5" placeholder=" " required></textarea>
+          <label for="message">Message</label>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" class="btn-primary w-full py-3 mt-4 flex items-center justify-center gap-2">
+          <i class="fa-solid fa-paper-plane"></i> Send Message
+        </button>
+      </form>
+    </div>
+
+  </section>
+
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Company About & Team</title>
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* GLASS & NEON CARD */
+    .glass-card {
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 1rem;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .neon {
+      box-shadow: 0 0 8px rgba(38,160,218,0.4), 0 0 15px rgba(49,71,85,0.2);
+    }
+    .tilt:hover {
+      transform: translateY(-5px) scale(1.02);
+      box-shadow: 0 0 20px rgba(38,160,218,0.5), 0 0 25px rgba(49,71,85,0.2);
+    }
+
+    /* HERO PARALLAX */
+    .hero-parallax {
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+    }
+    .hero-bg-parallax {
+      position: absolute;
+      top:0;
+      left:0;
+      width:100%;
+      height:100%;
+      background-size: cover;
+      background-position: center;
+      filter: brightness(0.6);
+      z-index: -1;
+      transform: translateZ(0);
+    }
+    .hero-content {
+      z-index: 10;
+      padding: 2rem;
+    }
+    .hero-title {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+    .hero-subtext {
+      font-size: 1.25rem;
+    }
+
+    /* TIMELINE */
+    .timeline-container {
+      position: relative;
+      padding-left: 2rem;
+    }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      top:0;
+      left:15px;
+      width:4px;
+      height:100%;
+      background: linear-gradient(180deg, #26a0da, #314755);
+      border-radius:2px;
+    }
+    .timeline-item {
+      position: relative;
+      margin-bottom: 3rem;
+    }
+    .timeline-dot {
+      position: absolute;
+      left:7px;
+      top:0;
+      width:16px;
+      height:16px;
+      background: #26a0da;
+      border-radius:50%;
+      border:3px solid white;
+    }
+    .timeline-content {
+      margin-left:3rem;
+      padding:1rem 1.5rem;
+    }
+
+    /* TEAM CARDS */
+    .feature-cards-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap:2rem;
+      justify-content:center;
+    }
+    .feature-card {
+      width:200px;
+      padding:1.5rem;
+      text-align:center;
+    }
+  </style>
+</head>
+<body class="bg-gray-100">
+
+  <!-- ================================ STATEMENT ================================ -->
+  <section class="u4-statement py-12 text-center">
+    <h2 class="text-3xl font-bold mb-4">Statement</h2>
+    <p class="text-gray-700 text-lg max-w-3xl mx-auto">Delivering the finest natural stones with precision and world-class service across the globe.</p>
+  </section>
+
+  <!-- STORY / MISSION SECTION with Parallax BG -->
+  <section class="hero-parallax" style="min-height:60vh;">
+    <div class="hero-bg-parallax" style="background-image:url('https://images.pexels.com/photos/4249585/pexels-photo-4249585.jpeg?auto=compress&cs=tinysrgb&w=1600');"></div>
+    <div class="hero-content">
+      <h1 class="hero-title">Our Story & Mission</h1>
+      <div class="hero-subtext">Delivering the finest natural stones with precision and world-class service across the globe.</div>
+    </div>
+  </section>
+
+  <!-- Animated Timeline Section -->
+  <section class="py-16">
+    <div class="timeline-container max-w-3xl mx-auto">
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content glass-card neon p-4">
+            <h3 class="text-xl font-semibold">1953</h3>
+            <p>Futura Stones founded, pioneering the Indian stone export industry.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content glass-card neon p-4">
+            <h3 class="text-xl font-semibold">1980s</h3>
+            <p>Expansion into global markets, establishing a reputation for quality.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content glass-card neon p-4">
+            <h3 class="text-xl font-semibold">2000s</h3>
+            <p>Adoption of advanced technology and sustainable practices.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content glass-card neon p-4">
+            <h3 class="text-xl font-semibold">Today</h3>
+            <p>Global leader in natural stone, serving 100+ countries with excellence.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Divider -->
+  <div class="h-1 w-3/4 mx-auto my-12 rounded bg-gradient-to-r from-blue-500 to-gray-700"></div>
+
+  <!-- TEAM MEMBERS Section -->
+  <section class="py-16">
+    <h2 class="text-3xl font-bold text-center mb-12">Meet Our Team</h2>
+    <div class="feature-cards-row">
+      <div class="feature-card glass-card neon tilt">
+        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="CEO" class="w-24 h-24 rounded-full mb-4 shadow-lg mx-auto">
+        <h3 class="font-semibold">Rajesh Kumar</h3>
+        <p class="text-gray-600">CEO & Founder</p>
+      </div>
+      <div class="feature-card glass-card neon tilt">
+        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="COO" class="w-24 h-24 rounded-full mb-4 shadow-lg mx-auto">
+        <h3 class="font-semibold">Anita Sharma</h3>
+        <p class="text-gray-600">Chief Operations Officer</p>
+      </div>
+      <div class="feature-card glass-card neon tilt">
+        <img src="https://randomuser.me/api/portraits/men/65.jpg" alt="Head of Exports" class="w-24 h-24 rounded-full mb-4 shadow-lg mx-auto">
+        <h3 class="font-semibold">Vikram Singh</h3>
+        <p class="text-gray-600">Head of Exports</p>
+      </div>
+      <div class="feature-card glass-card neon tilt">
+        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Sustainability Lead" class="w-24 h-24 rounded-full mb-4 shadow-lg mx-auto">
+        <h3 class="font-semibold">Priya Menon</h3>
+        <p class="text-gray-600">Sustainability Lead</p>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Team Section</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <style>
+    .team-img {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      cursor: pointer;
+      border: 3px solid transparent;
+      transition: transform 0.3s, border-color 0.3s;
+    }
+    .team-img:hover, .team-img.active {
+      transform: scale(1.05);
+      border-color: #3b82f6; /* Tailwind blue */
+    }
+  </style>
+</head>
+<body class="bg-gray-100 py-16">
+
+<section class="max-w-5xl mx-auto px-4" x-data="teamSection()">
+  <h2 class="text-3xl font-bold text-center mb-12">Meet Our Team</h2>
+
+  <!-- TEAM IMAGES -->
+  <div class="flex justify-center gap-6 mb-8 flex-wrap">
+    <template x-for="(member,index) in members" :key="index">
+      <img :src="member.image" :alt="member.name"
+           :class="{'active': activeIndex===index}" 
+           @click="activeIndex = index"
+           class="team-img shadow-lg">
+    </template>
+  </div>
+
+  <!-- TEAM MESSAGE / DETAILS -->
+  <div class="glass-card neon p-8 rounded-xl shadow-lg transition-all duration-500">
+    <template x-for="(member,index) in members" :key="index">
+      <div x-show="activeIndex === index" x-transition:enter="transition ease-out duration-500"
+           x-transition:enter-start="opacity-0 translate-y-4"
+           x-transition:enter-end="opacity-100 translate-y-0"
+           x-transition:leave="transition ease-in duration-300"
+           x-transition:leave-start="opacity-100 translate-y-0"
+           x-transition:leave-end="opacity-0 translate-y-4">
+        <h3 class="text-xl font-semibold mb-2" x-text="member.name"></h3>
+        <p class="text-gray-700" x-text="member.message"></p>
+      </div>
+    </template>
+  </div>
+</section>
+
+<script>
+  function teamSection() {
+    return {
+      activeIndex: 0,
+      members: [
+        { name: 'Rajesh Kumar', image: 'https://randomuser.me/api/portraits/men/32.jpg', message: 'CEO & Founder. Leading the vision of our company globally.' },
+        { name: 'Anita Sharma', image: 'https://randomuser.me/api/portraits/women/44.jpg', message: 'Chief Operations Officer. Ensuring smooth operations worldwide.' },
+        { name: 'Vikram Singh', image: 'https://randomuser.me/api/portraits/men/65.jpg', message: 'Head of Exports. Delivering excellence to over 100 countries.' },
+        { name: 'Priya Menon', image: 'https://randomuser.me/api/portraits/women/68.jpg', message: 'Sustainability Lead. Innovating green and sustainable practices.' }
+      ]
+    }
+  }
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+<!-- ADD features section after hero -->
+        <section id="features" class="features-section">
+          <div style="display:flex;justify-content:space-between;align-items:center;gap:20px;max-width:1200px;margin:0 auto 18px;">
+            <h3 style="font-size:1.4rem;margin:0;">Features</h3>
+            <p style="margin:0;color:#667">Tools & services that make export and logistics effortless.</p>
+          </div>
+          <div class="features-grid">
+            <article class="feature-card" data-reveal>
+              <div class="icon"><i class="fas fa-industry"></i></div>
+              <div class="feature-title">State‑of‑the‑art Plant</div>
+              <p class="feature-desc">Gangsaws, CNC, polishing lines — strict QC at every step.</p>
+            </article>
+            <article class="feature-card" data-reveal>
+              <div class="icon"><i class="fas fa-shipping-fast"></i></div>
+              <div class="feature-title">Global Logistics</div>
+              <p class="feature-desc">Reliable shipping partners and export documentation support.</p>
+            </article>
+            <article class="feature-card" data-reveal>
+              <div class="icon"><i class="fas fa-seedling"></i></div>
+              <div class="feature-title">Sustainability</div>
+              <p class="feature-desc">Reduced water usage, waste recycling and responsible mining.</p>
+            </article>
+            <article class="feature-card" data-reveal>
+              <div class="icon"><i class="fas fa-award"></i></div>
+              <div class="feature-title">Quality Assured</div>
+              <p class="feature-desc">100% inspection and customer acceptance process.</p>
+            </article>
+          </div>
+        </section>
+
+        <!-- ADD Why Choose Us -->
+        <section class="why-choose" id="why">
+          <div class="why-grid">
+            <div class="why-left">
+              <h2 style="font-size:1.6rem;margin:0 0 8px;">Why Choose Atula / Futura</h2>
+              <p style="color:#445;margin:0 0 12px;">Decades of expertise, modern processing and trusted global partnerships.</p>
+              <a href="about.html" class="hero-cta" style="margin-top:12px;display:inline-block;">Learn More</a>
+            </div>
+            <div class="why-right">
+              <div class="why-item" data-reveal>
+                <div class="wicon"><i class="fas fa-users"></i></div>
+                <div>
+                  <strong>Experienced Team</strong>
+                  <div style="color:#556">Seasoned professionals in sourcing, production & logistics.</div>
+                </div>
+              </div>
+              <div class="why-item" data-reveal>
+                <div class="wicon"><i class="fas fa-cog"></i></div>
+                <div>
+                  <strong>Advanced Machinery</strong>
+                  <div style="color:#556">Precision cutting, finishing and packing systems.</div>
+                </div>
+              </div>
+              <div class="why-item" data-reveal>
+                <div class="wicon"><i class="fas fa-globe"></i></div>
+                <div>
+                  <strong>Global Reach</strong>
+                  <div style="color:#556">Exporting to 100+ countries via trusted carriers.</div>
+                </div>
+              </div>
+              <div class="why-item" data-reveal>
+                <div class="wicon"><i class="fas fa-handshake"></i></div>
+                <div>
+                  <strong>Customer First</strong>
+                  <div style="color:#556">Transparent communication & after‑sales support.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>

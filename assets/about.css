@@ -1,4 +1,4 @@
-  /* ================================
+/* ================================
            GLOBAL RESET
         ================================= */
         * {
@@ -151,7 +151,7 @@
             display: flex;
             justify-content: center;
             gap: 30px;
-            margin-top: -60px;
+            margin-top: -200px;
         }
 
         .u3-box {
@@ -215,6 +215,90 @@
         }
 
 
+        /* --- Timeline Styles --- */
+        .timeline-container {
+            position: relative;
+            padding: 0 0 0 0;
+        }
+        .timeline {
+            position: relative;
+            margin: 0 auto;
+            padding: 0 0 0 0;
+        }
+        .timeline-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 38px;
+            position: relative;
+        }
+        .timeline-dot {
+            width: 18px;
+            height: 18px;
+            background: linear-gradient(135deg,#26a0da,#314755);
+            border-radius: 50%;
+            margin-right: 24px;
+            box-shadow: 0 0 12px #26a0da88;
+            margin-top: 8px;
+        }
+        .timeline-content {
+            flex: 1;
+            padding: 18px 24px;
+            min-width: 180px;
+        }
+        @media (max-width: 600px) {
+            .timeline-item { flex-direction: column; align-items: flex-start; }
+            .timeline-dot { margin-bottom: 10px; }
+        }
+
+        /* --- Section Divider Animation --- */
+        .section-divider {
+            opacity: 0;
+            transform: scaleX(0.7);
+            transition: opacity .7s, transform .7s cubic-bezier(.2,.9,.25,1);
+        }
+        .section-divider.visible {
+            opacity: 1;
+            transform: none;
+        }
+
+        /* --- Glassmorphism & Neon for Cards --- */
+        .glass-card {
+            background: rgba(30, 41, 59, 0.45);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.18);
+            backdrop-filter: blur(12px);
+            border-radius: 18px;
+            border: 1.5px solid rgba(255,255,255,0.13);
+            transition: box-shadow 0.4s, transform 0.3s;
+        }
+        .glass-card.neon {
+            box-shadow: 0 0 18px 2px #26a0da, 0 2px 32px 0 rgba(38,160,218,0.18);
+        }
+        .glass-card:hover {
+            box-shadow: 0 0 32px 4px #26a0da, 0 2px 32px 0 rgba(38,160,218,0.22);
+            transform: scale(1.035) rotateZ(-1deg);
+        }
+
+        /* --- Tilt Effect --- */
+        .tilt {
+            will-change: transform;
+            transition: transform 0.18s cubic-bezier(.2,.9,.25,1);
+        }
+        .tilt:hover {
+            /* JS will set transform */
+        }
+
+        /* --- Section Reveal Animation --- */
+        .section-reveal {
+            opacity: 0;
+            transform: translateY(40px) scale(.98);
+            transition: opacity .8s cubic-bezier(.2,.9,.25,1), transform .8s cubic-bezier(.2,.9,.25,1);
+            will-change: transform, opacity;
+        }
+        .section-reveal.visible {
+            opacity: 1;
+            transform: none;
+        }
+
         /* RESPONSIVE */
         @media(max-width: 900px) {
             .u2-container {
@@ -227,3 +311,175 @@
                 flex-direction: column;
             }
         }
+         /* GLASS & NEON CARD */
+    .glass-card {
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 1rem;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .neon {
+      box-shadow: 0 0 8px rgba(38,160,218,0.4), 0 0 15px rgba(49,71,85,0.2);
+    }
+    .tilt:hover {
+      transform: translateY(-5px) scale(1.02);
+      box-shadow: 0 0 20px rgba(38,160,218,0.5), 0 0 25px rgba(49,71,85,0.2);
+    }
+
+    /* HERO PARALLAX */
+    .hero-parallax {
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+    }
+    .hero-bg-parallax {
+      position: absolute;
+      top:0;
+      left:0;
+      width:100%;
+      height:100%;
+      background-size: cover;
+      background-position: center;
+      filter: brightness(0.6);
+      z-index: -1;
+      transform: translateZ(0);
+    }
+    .hero-content {
+      z-index: 10;
+      padding: 2rem;
+    }
+    .hero-title {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+    .hero-subtext {
+      font-size: 1.25rem;
+    }
+
+    /* TIMELINE */
+    .timeline-container {
+      position: relative;
+      padding-left: 2rem;
+    }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      top:0;
+      left:15px;
+      width:4px;
+      height:100%;
+      background: linear-gradient(180deg, #26a0da, #314755);
+      border-radius:2px;
+    }
+    .timeline-item {
+      position: relative;
+      margin-bottom: 3rem;
+    }
+    .timeline-dot {
+      position: absolute;
+      left:7px;
+      top:0;
+      width:16px;
+      height:16px;
+      background: #26a0da;
+      border-radius:50%;
+      border:3px solid white;
+    }
+    .timeline-content {
+      margin-left:3rem;
+      padding:1rem 1.5rem;
+    }
+
+    /* TEAM CARDS */
+    .feature-cards-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap:2rem;
+      justify-content:center;
+    }
+    .feature-card {
+      width:200px;
+      padding:1.5rem;
+      text-align:center;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /* HERO PARALLAX SECTION */
+.hero-parallax {
+  position: relative;
+  width: 100%;
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+  color: white;
+}
+
+/* Background image */
+.hero-parallax img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1; /* Behind content */
+  transform: translateZ(0);
+  filter: brightness(0.6); /* Dark overlay for text readability */
+}
+
+/* HERO CONTENT */
+.hero-content {
+  position: relative;
+  z-index: 10;
+  padding: 2rem;
+}
+
+/* TITLE */
+.hero-title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+/* SUBTEXT */
+.hero-subtext {
+  font-size: 1.25rem;
+  max-width: 700px;
+  margin: 0 auto;
+  color: #f3f4f6; /* light gray for readability */
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+  .hero-subtext {
+    font-size: 1rem;
+  }
+}

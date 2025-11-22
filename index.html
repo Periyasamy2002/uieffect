@@ -4,96 +4,1237 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Products | Atula International</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Granite Exporter Layout</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <link rel="stylesheet" href="assets/product.css">
     <link rel="stylesheet" href="assets/index.css">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Load Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        /* Custom gradient class for the Navbar */
+        .custom-gradient-bg {
+            /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            background: linear-gradient(to right, #26a0da, #314755);
+        }
+
+        /* Define colors for the dark nav bar elements */
+        :root {
+            --primary-accent-blue: #26a0da;
+            /* Accent color for buttons/active links in the dark nav */
+            --text-dark: #333333;
+            /* Dark text for the light body background */
+            --text-light: #F0F0F0;
+            /* Light text for the dark nav background */
+            --header-h: 88px;
+            /* Height of the header */
+        }
+
+        /* Set Inter font globally */
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Utility links styling (Default for white background) */
+        .utility-link {
+            color: var(--text-dark);
+            transition: color 0.2s;
+        }
+
+        .utility-link:hover {
+            color: var(--primary-accent-blue);
+        }
+
+        /* Nav Link styling inside the DARK header */
+        .nav-link-dark {
+            color: var(--text-light);
+            /* Light text for the dark background */
+            transition: color 0.2s;
+        }
+
+        .nav-link-dark:hover {
+            color: var(--primary-accent-blue);
+        }
+
+        /* Main Nav link styling for the active state */
+        .nav-link.active {
+            color: var(--text-light);
+            /* Active text remains light/white */
+            border-bottom: 2px solid var(--primary-accent-blue);
+            /* Underline uses the bright blue accent */
+            padding-bottom: 4px;
+            font-weight: 500;
+        }
+
+        /* Ensure the main nav links are centered relative to the bottom of the container on desktop */
+        .nav-links-container {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 1.5rem;
+        }
+
+        /* Basic Reset and Global Styles */
+        .cont_tiles {
+            font-family: Arial, sans-serif;
+            /* Replace with the actual font used */
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .website-section-container {
+            max-width: 1400px;
+            /* Adjust max-width as needed */
+            margin: 0 auto;
+        }
+
+        /* --- 1. Hero/Carousel Styling (No Change) --- */
+        .hero-carousel-container {
+            position: relative;
+            width: 100%;
+            height: 60vh;
+            /* Aspect ratio height, adjust as needed */
+            overflow: hidden;
+            color: white;
+        }
+
+        .carousel-slide {
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            /* background-image: url('https://via.placeholder.com/1400x600/333333/FFFFFF?text=Largest+Exporter+of+Granite'); */
+            /* background-color: #333;  */
+        }
+
+        .carousel-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.4);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .carousel-text {
+            font-size: 3.5vw;
+            /* Responsive font size */
+            font-weight: 500;
+            text-align: center;
+            max-width: 80%;
+            z-index: 10;
+            transition: opacity 0.5s ease-in-out;
+            opacity: 1;
+        }
+
+        .carousel-text.fade-in {
+            opacity: 0.2;
+            /* Briefly dim the text before the transition completes */
+        }
+
+        .slider-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            color: rgb(187, 181, 181);
+            font-size: 2rem;
+            cursor: pointer;
+            padding: 10px;
+            z-index: 20;
+            opacity: 0.7;
+            transition: opacity 0.2s;
+        }
+
+        .slider-arrow:hover {
+            opacity: 1;
+        }
+
+        .prev-arrow {
+            left: 20px;
+        }
+
+        .next-arrow {
+            right: 20px;
+        }
+
+        /* --- 2. Feature/Promo Boxes Styling (MODIFIED) --- */
+        .promo-features-container {
+            display: flex;
+            width: 100%;
+            margin: 3px;
+        }
+
+        .promo-box {
+            flex: 1;
+            height: 40vh;
+            position: relative;
+            /* Crucial for positioning the overlay */
+            color: rgb(247, 246, 246);
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            /* Allow content and overlay to stack */
+            justify-content: flex-end;
+            /* Align initial content to bottom */
+            padding: 20px;
+            box-sizing: border-box;
+            overflow: hidden;
+            /* Crucial to hide the part of the overlay that is outside */
+            margin: 3px;
+
+        }
+
+        /* Individual Box Styles (Backgrounds) */
+        .box-1 {
+            background-image: url('images/im7.jpeg');
+            /* Placeholder */
+
+        }
+
+        .box-2 {
+            background-image: url('images/im4.jpeg');
+            /* Placeholder */
+
+        }
+
+        .box-3 {
+            background-image: url('images/im5.jpeg');
+            /* Placeholder */
+
+        }
+
+        /* Initial text within boxes (visible by default) */
+        .promo-title,
+        .promo-title-bottom {
+            font-size: 1.2rem;
+            font-weight: bold;
+            z-index: 1;
+            /* Keep it above the background but below the overlay if it slides up */
+            position: relative;
+            /* Ensure z-index works */
+            margin-bottom: 10px;
+            /* Space from the bottom */
+        }
+
+        /* --- Hover Overlay Styling --- */
+        .promo-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            /* Make overlay cover the whole box */
+            background-color: rgba(97, 94, 94, 0.8);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+            box-sizing: border-box;
+
+            /* Initially hide the overlay by moving it completely down */
+            transform: translateY(100%);
+            transition: transform 0.4s ease-out;
+            /* Smooth slide-up transition */
+            z-index: 5;
+            /* Ensure it covers the initial text */
+        }
+
+        .promo-box:hover .promo-overlay {
+            transform: translateY(0);
+            /* Slide the overlay up to be fully visible */
+        }
+
+        .overlay-title {
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .overlay-content {
+            font-size: 1rem;
+            line-height: 1.5;
+            max-width: 90%;
+            margin: 0;
+        }
+
+        .container_abt {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.5;
+            width: 90%;
+            max-width: 1200px;
+            margin: 80px auto;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 50px;
+        }
+
+        /* --- Text Section Styling (Desktop) --- */
+        .text-content {
+            /* MODIFIED: Increased flex-basis to 70% to accommodate smaller image */
+            flex: 1 1 70%;
+        }
+
+        .text-content h1 {
+            font-size: 2.0em;
+            font-weight: 700;
+            color: #222;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+
+            /* Animation Settings */
+            opacity: 0;
+            animation: fadeInUp 1s ease-out forwards;
+            animation-delay: 0.2s;
+        }
+
+        .text-content p {
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 20px;
+
+            /* Animation Settings */
+            opacity: 0;
+            animation: fadeInUp 1s ease-out forwards;
+        }
+
+        .text-content p:nth-of-type(1) {
+            animation-delay: 0.4s;
+        }
+
+        .text-content p:nth-of-type(2) {
+            animation-delay: 0.6s;
+        }
+
+        .btn-read-more {
+            display: inline-block;
+            padding: 10px 25px;
+            background-color: #26a0da;
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            text-transform: uppercase;
+            border-radius: 4px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+
+            /* Animation Settings */
+            opacity: 0;
+            animation: fadeInUp 1s ease-out forwards;
+            animation-delay: 0.8s;
+        }
+
+        .btn-read-more:hover {
+            background-color: #314755;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        /* --- Image Section Styling (Desktop) --- */
+        .image-content {
+            /* MODIFIED: Reduced flex-basis to 30% for a smaller image */
+            flex: 1 1 35%;
+            position: relative;
+            /* border-radius: 30px; */
+            border-bottom-left-radius: 50px;
+            border-top-right-radius: 50px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+
+            /* Entry Animation */
+            opacity: 0;
+            animation: slideInRight 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+            animation-delay: 0.4s;
+        }
+
+        .image-content img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.8s ease;
+        }
+
+        /* Continuous floating animation for the image container */
+        .image-content {
+            animation: slideInRight 1.2s forwards, floatImage 6s ease-in-out infinite 1.5s;
+        }
+
+        /* Hover Effect: Zoom image */
+        .image-content:hover img {
+            transform: scale(1.1);
+        }
+
+        /* --- Keyframe Animations --- */
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(100px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes floatImage {
+            0% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        /* ==================================== */
+        /* --- MOBILE RESPONSIVE DESIGN --- */
+        /* ==================================== */
+        @media (max-width: 768px) {
+            .container_abt {
+                flex-direction: column;
+                margin-top: 40px;
+                gap: 20px;
+            }
+
+            /* Mobile Image Size (kept at 70% as per previous request) */
+            .image-content {
+                order: 1;
+                flex: 0 0 70%;
+                width: 70%;
+                margin: 0 auto 30px auto;
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+            }
+
+            .text-content {
+                order: 2;
+                flex: 1 1 auto;
+                padding: 0 10px;
+            }
+
+            .text-content h1 {
+                font-size: 1.8em;
+            }
+        }
+
+        /* Section Container */
+        .products-section {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 40px;
+            background-color: #fff;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            text-align: center;
+        }
+
+        /* Headings */
+        .section-title {
+            font-size: 2.5em;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #2c3e50;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .section-subtitle {
+            font-size: 0.6em;
+            /* Adjusted relative to title */
+            font-weight: 400;
+            color: #26a0da;
+        }
+
+        .separator {
+            display: inline-block;
+            width: 4px;
+            height: 30px;
+            background-color: #f0371f;
+            margin-left: 20px;
+        }
+
+        /* Introduction Text */
+        .intro-text {
+            font-size: 1em;
+            line-height: 1.6;
+            color: #666;
+            margin-bottom: 50px;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Product Grid */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-bottom: 50px;
+        }
+
+        /* Product Card */
+        .product-card {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            aspect-ratio: 4/3;
+            cursor: pointer;
+            transition: box-shadow 0.3s ease;
+            /* Added transition for subtle shadow */
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+            display: block;
+        }
+
+        /* Card Overlay - Content Display */
+        .product-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            /* Hidden by default */
+            transition: opacity 0.3s ease;
+            /* Smooth transition */
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 50%);
+            /* Gradient for better text readability at bottom */
+            pointer-events: none;
+            /* Allows click-through to underlying image if needed */
+        }
+
+        .overlay-title {
+            color: #fff;
+            font-size: 1.4em;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin: 0;
+            transform: translateY(20px);
+            /* Initial position below visible area */
+            transition: transform 0.3s ease, opacity 0.3s ease;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+            /* Add text shadow for better contrast */
+            opacity: 0;
+            /* Hidden by default */
+        }
+
+        /* Hover Effects */
+        .product-card:hover {
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            /* Slightly more pronounced shadow on hover */
+        }
+
+        .product-card:hover .product-overlay {
+            opacity: 1;
+            /* Overlay becomes visible (gradient) */
+        }
+
+        .product-card:hover img {
+            transform: scale(1.05);
+            /* Subtle zoom effect */
+        }
+
+        .product-card:hover .overlay-title {
+            transform: translateY(0);
+            /* Title slides up into view */
+            opacity: 1;
+            /* Title becomes visible */
+        }
+
+        /* View All Button */
+        .view-all-container {
+            margin-top: 40px;
+        }
+
+        .view-all-btn {
+            padding: 12px 35px;
+            background-color: #26a0da;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .view-all-btn:hover {
+            background-color: #314755;
+            transform: translateY(-3px);
+        }
+
+        .pro_cont {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 50px;
+            background-color: #ffffff;
+            color: #333;
+
+        }
+
+        .header-section {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .projects-title {
+            font-size: 3em;
+            font-weight: 500;
+            color: #333;
+            margin-right: 80px;
+            letter-spacing: -1px;
+        }
+
+        .red-line {
+            width: 4px;
+            height: 40px;
+            /* Adjust height to match title if needed */
+            background-color: #f0371f;
+            margin-right: 15px;
+        }
+
+        .header-subtitle {
+            font-size: 1.2em;
+            font-weight: 400;
+            color: #26a0da;
+        }
+
+        .content-paragraph {
+            font-size: 1em;
+            line-height: 1.6;
+            color: #555;
+            max-width: 1250px;
+            /* Adjust as needed */
+        }
+
+        .futura_con {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 40px;
+            background-color: #ffffff;
+            color: #333;
+
+        }
+
+        .header-section {
+            display: flex;
+            align-items: center;
+            margin-bottom: 50px;
+        }
+
+        .main-title {
+            font-size: 2.5em;
+            font-weight: 500;
+            color: #333;
+            margin-right: 80px;
+            letter-spacing: -0.5px;
+        }
+
+        .red-line {
+            width: 4px;
+            height: 35px;
+            /* Adjust height to match title if needed */
+            background-color: #f0371f;
+            margin-right: 15px;
+        }
+
+        .header-description {
+            font-size: 1.1em;
+            font-weight: 400;
+            color: #26a0da;
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            max-width: 1200px;
+            /* Adjust as needed */
+            margin: 0 auto;
+        }
+
+        .grid-item {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .grid-item i {
+            font-size: 1.8em;
+            color: #26a0da;
+            margin-bottom: 5px;
+        }
+
+        .grid-item h3 {
+            font-size: 1.2em;
+            font-weight: 500;
+            color: #333;
+            margin: 0;
+        }
+
+        .grid-item p {
+            font-size: 0.95em;
+            line-height: 1.6;
+            color: #555;
+            margin: 0;
+        }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .feature-list li {
+            font-size: 0.95em;
+            color: #555;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .feature-list li i {
+            color: #26a0da;
+            font-size: 1em;
+            margin-right: 10px;
+            margin-top: 3px;
+            /* Align checkmark vertically */
+        }
+
+        /* footer */
+        .footer_cont {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #1a1a1a;
+            /* Dark background for the whole page */
+            color: #f0f0f0;
+
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 50px 20px;
+            gap: 40px;
+        }
+
+        .map-section {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            min-width: 300px;
+            max-width: 500px;
+            /* Adjust max-width for a single map */
+        }
+
+        .map-container {
+            width: 100%;
+            height: 400px;
+            /* Standard map height */
+            background-color: #333;
+            /* Placeholder background */
+            border-radius: 8px;
+            overflow: hidden;
+            /* Ensures map content stays within bounds */
+        }
+
+        .contact-info-section {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            padding-left: 40px;
+            border-left: 1px solid #444;
+            /* Separator line */
+            max-width: 400px;
+            /* Max width for contact info block */
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            color: #f0f0f0;
+            font-size: 1em;
+            line-height: 1.5;
+        }
+
+        .contact-item i {
+            color: #26a0da;
+            /* Red icon color */
+            font-size: 1.2em;
+            margin-top: 3px;
+            /* Adjust icon alignment */
+        }
+
+        .contact-item a {
+            color: #f0f0f0;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-item a:hover {
+            color: #314755;
+        }
+
+        .contact-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .contact-text .phone {
+            font-size: 1.1em;
+            font-weight: 500;
+        }
+
+        .footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            background-color: #111;
+            border-top: 1px solid #333;
+            margin-top: 50px;
+        }
+
+        .social-icons a {
+            color: #f0f0f0;
+            font-size: 1.2em;
+            margin-right: 15px;
+            transition: color 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            color: #314755;
+        }
+
+        .copyright {
+            font-size: 0.9em;
+            color: #aaa;
+        }
+
+        .scroll-to-top {
+            background-color: #26a0da;
+            color: #fff;
+            padding: 10px 12px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 1.1em;
+            transition: background-color 0.3s ease;
+        }
+
+        .scroll-to-top:hover {
+            background-color: #314755;
+        }
+
+        /* --- MOBILE responsive tweak for PROJECTS / FUTURA_CON sections --- */
+        @media (max-width: 768px) {
+
+            /* Stack the project blocks vertically and make each grid-item occupy full width */
+            .pro_cont,
+            .futura_con {
+                padding: 20px 16px;
+            }
+
+            .pro_cont .header-section,
+            .futura_con .header-section {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+
+            .content-grid {
+                display: grid;
+                grid-template-columns: 1fr;
+                /* one item per row */
+                gap: 18px;
+            }
+
+            .grid-item {
+                background: #fff;
+                padding: 16px;
+                border-radius: 12px;
+                box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+            }
+
+            .grid-item i {
+                font-size: 1.4rem;
+                margin-bottom: 8px;
+            }
+        }
+
+        /* NAVBAR - mobile responsive styles (same as other pages) */
+        .navbar-toggle {
+            display: none;
+            background: transparent;
+            border: none;
+            font-size: 1.25rem;
+            color: inherit;
+            padding: 8px;
+            cursor: pointer;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .nav-links-container {
+            display: flex;
+            gap: 18px;
+            list-style: none;
+            align-items: center;
+        }
+
+        @media (max-width: 880px) {
+            .navbar-toggle {
+                display: inline-flex;
+                position: absolute;
+                top: 202px;
+                left: 0px;
+            }
+
+            .nav-links-container {
+                position: fixed;
+                top: 0;
+                right: 0;
+                height: 100vh;
+                width: 75%;
+                max-width: 320px;
+                background: rgba(255, 255, 255, 0.98);
+                flex-direction: column;
+                padding: 80px 18px;
+                gap: 18px;
+                transform: translateX(110%);
+                transition: transform .28s cubic-bezier(.2, .9, .25, 1);
+                box-shadow: -12px 0 30px rgba(0, 0, 0, 0.12);
+                z-index: 9998;
+                overflow-y: auto;
+            }
+
+            .nav-links-container.open {
+                transform: translateX(0);
+            }
+
+            .nav-links-container li {
+                width: 100%;
+            }
+
+            .nav-links-container a {
+                display: block;
+                padding: 12px 14px;
+                border-radius: 8px;
+                color: #111;
+                font-weight: 600;
+            }
+
+            body.menu-open {
+                overflow: hidden;
+            }
+
+            .navbar-toggle .bar {
+                display: block;
+                width: 20px;
+                height: 2px;
+                background: currentColor;
+                position: relative;
+                transition: .2s;
+            }
+
+            .navbar-toggle .bar::before,
+            .navbar-toggle .bar::after {
+                content: "";
+                position: absolute;
+                left: 0;
+                width: 20px;
+                height: 2px;
+                background: currentColor;
+                transition: .2s;
+            }
+
+            .navbar-toggle .bar::before {
+                top: -6px;
+            }
+
+            .navbar-toggle .bar::after {
+                bottom: -6px;
+            }
+
+            .navbar-toggle.open .bar {
+                background: transparent;
+            }
+
+            .navbar-toggle.open .bar::before {
+                transform: rotate(45deg);
+                top: 0;
+            }
+
+            .navbar-toggle.open .bar::after {
+                transform: rotate(-45deg);
+                bottom: 0;
+            }
+        }
+
+        /* SCROLL SNAP: promo features (mobile) */
+        @media (max-width: 880px) {
+            .promo-features-container {
+                display: flex;
+                gap: 12px;
+                overflow-x: auto;
+                scroll-snap-type: x mandatory;
+                -webkit-overflow-scrolling: touch;
+                padding: 12px;
+            }
+
+            .promo-features-container .promo-box {
+                flex: 0 0 85%;
+                scroll-snap-align: center;
+                min-width: 280px;
+                border-radius: 12px;
+            }
+        }
+
+        /* --- SMOOTH SCROLL & MICRO-INTERACTIONS (site-wide) --- */
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 88px;
+        }
+
+        /* Subtle micro-transitions for interactive properties */
+        :root {
+            --motion-duration: 180ms;
+            --motion-ease: cubic-bezier(.2, .9, .25, 1);
+        }
+
+        * {
+            transition: color var(--motion-duration) var(--motion-ease),
+                background-color var(--motion-duration) var(--motion-ease),
+                border-color var(--motion-duration) var(--motion-ease),
+                box-shadow var(--motion-duration) var(--motion-ease),
+                transform var(--motion-duration) var(--motion-ease);
+        }
+
+        /* Page fade hooks (JS already toggles .visible) */
+        body.page-fade {
+            opacity: 0;
+            transition: opacity 350ms var(--motion-ease);
+        }
+
+        body.page-fade.visible {
+            opacity: 1;
+        }
+
+        /* Respect user preference for reduced motion */
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
+            * {
+                transition: none !important;
+                animation-duration: 0.001ms !important;
+                animation-iteration-count: 1 !important;
+            }
+        }
+
+        /* Header (fixed) */
+        .custom-gradient-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: var(--header-h);
+            display: flex;
+            align-items: center;
+            z-index: 1000;
+            background: linear-gradient(90deg, #0f172a, #1e293b);
+            color: #fff;
+            transition: transform .28s cubic-bezier(.2, .9, .2, 1), box-shadow .2s;
+            box-shadow: 0 2px 8px rgba(2, 6, 23, 0.12);
+            will-change: transform;
+        }
+
+        /* When hidden (scroll down) translate header fully out of view */
+        .custom-gradient-bg.hide-up {
+            transform: translateY(-110%);
+            box-shadow: none;
+        }
+
+        /* keep content below header */
+        main {
+            padding-top: var(--header-h);
+        }
+
+        /* Basic page blocks for demo */
+        .hero {
+            height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            background: #0b1220;
+        }
+
+        .section {
+            padding: 48px 20px;
+            max-width: 1100px;
+            margin: 0 auto;
+            background: #fff;
+            box-shadow: 0 6px 18px rgba(2, 6, 23, 0.04);
+            margin-bottom: 24px;
+            border-radius: 8px;
+        }
+
+        .small {
+            height: 600px;
+            /* to create scrollable content for testing */
+        }
+    </style>
 </head>
+<!-- Body remains light gray -->
 
-<body>
+<body class="bg-gray-50 min-h-screen">
 
-    <!-- CUSTOM GRADIENT NAVBAR (Same as other pages) -->
-    <header class="custom-gradient-bg">
-        <div class="header-container">
+    <!-- Header uses the custom gradient and removes the shadow for a cleaner look against a dark background -->
+    <header class="custom-gradient-bg border-b border-gray-700" id="site-header" role="banner">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3" style="padding-bottom: 2.75rem;">
 
-            <!-- Top Row: Logo and Utility Bar -->
-            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+            <!-- Top Row: Logo, Utility Bar, and Main Nav -->
+            <div class="flex flex-col lg:flex-row lg:justify-between lg:items-center">
 
-                <!-- Logo Section -->
-                <div class="logo-area">
-                    <img src="./Images/logo.png" alt="Atula International Logo" width="52" height="52">
-                    <div class="logo-text">
-                        <h1>ATULA</h1>
-                        <p>INTERNATIONAL</p>
-                    </div>
-                </div>
-
-                <!-- Utility Bar (Top Right) -->
-                <div class="utility-bar">
-
-                    <!-- Contact Info -->
-                    <div class="contact-info">
-                        <i class="fas fa-phone"></i>
-                        <span>+91 9886715088</span>
-                    </div>
-
-                    <!-- Enquire Button -->
-                    <button class="enquire-btn">
-                        <i class="fas fa-envelope"></i>
-                        ENQUIRE NOW
-                    </button>
-
-                    <!-- Social Icons -->
-                    <div class="social-icons">
-                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                    </div>
-
-                    <!-- Language Selector -->
-                    <div class="language-selector">
-                        <select>
-                            <option value="en">Select Language</option>
-                            <option value="es">Español</option>
-                            <option value="fr">Français</option>
-                        </select>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-
-                    <!-- Search Icon -->
-                    <a href="#" class="search-icon" aria-label="Search">
-                        <i class="fas fa-search"></i>
+                <!-- Left: Logo Area -->
+                <div class="flex-shrink-0 mb-4 lg:mb-0">
+                    <a href="#" class="flex flex-col items-start leading-none group">
+                        <!-- Blue Diamond Icon -->
+                        <div class="text-xl text-blue-300 mb-1">
+                            <img src="./Images/logo.png" height="52px" width="52px" alt="">
+                        </div>
+                        <!-- Logo text is white -->
+                        <h1 class="text-3xl font-bold tracking-tight text-white">FUTURA</h1>
+                        <p class="text-lg font-semibold text-white -mt-1">STONES</p>
                     </a>
                 </div>
-            </div>
 
-            <!-- Main Navigation Links (Bottom) -->
-            <nav style="width: 100%;">
-                <ul class="nav-links-container">
-                    <li><a href="index.html" class="nav-link active">Home</a></li>
-                    <li><a href="product.html" class="nav-link nav-link-dark">Products</a></li>
-                    <li><a href="about.html" class="nav-link nav-link-dark">About us</a></li>
-                    <li><a href="contact.html" class="nav-link nav-link-dark">Contact</a></li>
-                </ul>
-            </nav>
+                <!-- Right Side Content -->
+                <div class="w-full lg:w-auto flex flex-col items-end">
+
+                    <!-- Utility Bar (Top Right) -->
+                    <div class="flex items-center space-x-4 mb-4">
+
+                        <!-- Contact Info (Light text for dark background) -->
+                        <div class="flex items-center space-x-2 text-sm font-medium text-gray-100">
+                            <i data-lucide="phone" class="w-4 h-4 text-gray-200"></i>
+                            <span>+91 9886715088</span>
+                        </div>
+
+                        <!-- Enquire Now Button (Uses the new blue accent color) -->
+                        <button
+                            class="flex items-center px-4 py-2 text-white text-sm font-semibold rounded-md shadow-lg transition duration-300 ease-in-out hover:bg-blue-600"
+                            style="background-color: var(--primary-accent-blue);">
+                            <i data-lucide="mail" class="w-4 h-4 mr-2"></i>
+                            ENQUIRE NOW
+                        </button>
+
+                        <!-- Social Icons (Light icons, hover blue) -->
+                        <div class="flex space-x-3 text-gray-200">
+                            <!-- Using nav-link-dark for light color and blue hover -->
+                            <a href="#" class="nav-link-dark"><i data-lucide="instagram" class="w-5 h-5"></i></a>
+                            <a href="#" class="nav-link-dark"><i data-lucide="facebook" class="w-5 h-5"></i></a>
+                        </div>
+
+                        <!-- Language Selector (Retains original dark text on white background) -->
+                        <div class="relative">
+                            <select
+                                class="appearance-none block w-full bg-white border border-gray-300 rounded-md py-2 pl-3 pr-10 text-sm focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500 shadow-sm transition duration-150 ease-in-out text-gray-800">
+                                <option value="en">Select Language</option>
+                                <option value="es">Español</option>
+                                <option value="fr">Français</option>
+                            </select>
+                            <i data-lucide="chevron-down"
+                                class="w-4 h-4 absolute right-3 top-1/2 transform -translate-y-1/2 pointer-events-none text-gray-500"></i>
+                        </div>
+
+                        <!-- Search Icon (Light icon, hover blue) -->
+                        <a href="#" class="nav-link-dark">
+                            <i data-lucide="search" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+
+                    <!-- Main Navigation Links (Bottom Right) -->
+                    <nav class="w-full lg:w-auto">
+                        <!-- mobile menu toggle -->
+                        <button class="navbar-toggle" aria-label="Open Menu">
+                            <span class="bar"></span>
+                        </button>
+                        <ul
+                            class="nav-links-container justify-center lg:justify-end text-sm font-normal overflow-x-auto whitespace-nowrap py-2">
+                            <!-- Link list uses light text with blue hover/active states -->
+                            <li class="inline-block"><a href="./Index.html" class="nav-link active">Home</a></li>
+                            <li class="inline-block"><a href="./product.html" class="nav-link nav-link-dark">Products</a></li>
+                            <li class="inline-block"><a href="./about.html" class="nav-link nav-link-dark">About us</a></li>
+                            <li class="inline-block"><a href="./contact.html" class="nav-link nav-link-dark">Contact</a></li>
+                        </ul>
+                    </nav>
+
+                </div>
+            </div>
 
         </div>
     </header>
 
-    <main>
-        <section class="bg-gray-800 text-white py-12">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 class="text-4xl font-extrabold tracking-tight">HOME</h2>
-            </div>
-        </section>
-
-       <script>
+    <script>
         // Initialize Lucide Icons
         lucide.createIcons();
     </script>
+
     <div class="cont_tiles"></div>
     <div class="website-section-container">
 
@@ -114,22 +1255,25 @@
             <div class="promo-box box-1">
                 <p class="promo-title">GRANITE is as Natural</p>
                 <div class="promo-overlay">
-                    <p class="overlay-content">Our granite mirrors nature's purity, as fresh and genuine as morning dew.</p>
+                    <p class="overlay-content">Our granite mirrors nature's purity, as fresh and genuine as morning dew.
+                    </p>
                 </div>
             </div>
             <div class="promo-box box-2">
-                <p class="promo-title">GRANITE is as Natural</p>
+                <p class="promo-title">Tiles is as Natural</p>
                 <div class="promo-overlay">
-                    <p class="overlay-content">Explore our exquisite collection of timeless monuments, crafted with precision and enduring beauty.</p>
+                    <p class="overlay-content">Explore our exquisite collection of timeless monuments, crafted with
+                        precision and enduring beauty.</p>
                 </div>
             </div>
 
-           
+
 
             <div class="promo-box box-3">
                 <p class="promo-title-bottom">The Finest Natural Stones</p>
                 <div class="promo-overlay">
-                    <p class="overlay-content">Discover a curated selection of the finest natural stones, handpicked for unparalleled quality and elegance.</p>
+                    <p class="overlay-content">Discover a curated selection of the finest natural stones, handpicked for
+                        unparalleled quality and elegance.</p>
                 </div>
             </div>
 
@@ -137,184 +1281,193 @@
 
     </div>
 
-    
+
 
     <script>
-       // --- Complete Working Carousel/Slider Logic ---
+        // --- Complete Working Carousel/Slider Logic ---
 
-const carouselSlide = document.querySelector('.carousel-slide');
-const carouselText = document.querySelector('.carousel-text');
-const prevBtn = document.querySelector('.prev-arrow');
-const nextBtn = document.querySelector('.next-arrow');
+        const carouselSlide = document.querySelector('.carousel-slide');
+        const carouselText = document.querySelector('.carousel-text');
+        const prevBtn = document.querySelector('.prev-arrow');
+        const nextBtn = document.querySelector('.next-arrow');
 
-// 1. Define the slides (Background URL and Text)
-const slides = [
-    {
-        url: './Images/im1.jpeg',
-        text: 'Largest Exporter of Processed Granite across the Globe'
-    },
-    {
-        url: './Images/im2.jpeg',
-        text: 'Advanced Technology for Precision Stone Processing'
-    },
-    {
-        url: './Images/im6.jpeg',
-        text: 'Trusted Global Supplier of Premium Natural Stone'
-    }
-];
+        // 1. Define the slides (Background URL and Text)
+        const slides = [
+            {
+                url: 'images/im1.jpeg',
+                text: 'Largest Exporter of Processed Granite across the Globe'
+            },
+            {
+                url: 'images/im2.jpeg',
+                text: 'Advanced Technology for Precision Stone Processing'
+            },
+            {
+                url: 'images/im6.jpeg',
+                text: 'Trusted Global Supplier of Premium Natural Stone'
+            }
+        ];
 
-let currentSlideIndex = 0;
+        let currentSlideIndex = 0;
 
-// Function to update the carousel's content and appearance
-function updateCarousel() {
-    const currentSlide = slides[currentSlideIndex];
-    
-    // Change the background image (CSS transition can be added to the background-image property)
-    carouselSlide.style.backgroundImage = `url('${currentSlide.url}')`;
-    
-    // Update the text
-    carouselText.textContent = currentSlide.text;
-    
-    // Optional: Add a simple fade effect by toggling a class
-    carouselText.classList.add('fade-in');
-    setTimeout(() => {
-        carouselText.classList.remove('fade-in');
-    }, 500); // Match this duration to your CSS transition (if any)
-}
+        // Function to update the carousel's content and appearance
+        function updateCarousel() {
+            const currentSlide = slides[currentSlideIndex];
 
-// 2. Event Listener Logic (Next Button)
-nextBtn.addEventListener('click', () => {
-    // Increment index, looping back to 0 if it exceeds the array length
-    currentSlideIndex = (currentSlideIndex + 1) % slides.length;
-    updateCarousel();
-});
+            // Change the background image (CSS transition can be added to the background-image property)
+            carouselSlide.style.backgroundImage = `url('${currentSlide.url}')`;
 
-// 3. Event Listener Logic (Previous Button)
-prevBtn.addEventListener('click', () => {
-    // Decrement index, looping back to the end if it goes below 0
-    currentSlideIndex = (currentSlideIndex - 1 + slides.length) % slides.length;
-    updateCarousel();
-});
+            // Update the text
+            carouselText.textContent = currentSlide.text;
 
-// Initialize the carousel on page load
-updateCarousel();
+            // Optional: Add a simple fade effect by toggling a class
+            carouselText.classList.add('fade-in');
+            setTimeout(() => {
+                carouselText.classList.remove('fade-in');
+            }, 500); // Match this duration to your CSS transition (if any)
+        }
 
-// 4. Automatic slide transition (Optional: Uncomment to enable auto-play)
-/*
-setInterval(() => {
-    currentSlideIndex = (currentSlideIndex + 1) % slides.length;
-    updateCarousel();
-}, 5000); // Changes slide every 5 seconds
-*/
+        // 2. Event Listener Logic (Next Button)
+        nextBtn.addEventListener('click', () => {
+            // Increment index, looping back to 0 if it exceeds the array length
+            currentSlideIndex = (currentSlideIndex + 1) % slides.length;
+            updateCarousel();
+        });
+
+        // 3. Event Listener Logic (Previous Button)
+        prevBtn.addEventListener('click', () => {
+            // Decrement index, looping back to the end if it goes below 0
+            currentSlideIndex = (currentSlideIndex - 1 + slides.length) % slides.length;
+            updateCarousel();
+        });
+
+        // Initialize the carousel on page load
+        updateCarousel();
+
+        // 4. Automatic slide transition (Optional: Uncomment to enable auto-play)
+
+        setInterval(() => {
+            currentSlideIndex = (currentSlideIndex + 1) % slides.length;
+            updateCarousel();
+        }, 5000); // Changes slide every 5 seconds
+
     </script>
 
     <div class="container_abt">
         <div class="text-content">
             <h1>About Atula International</h1>
-            <p>Atula International is a premier global trading house, recognized as a pioneer in the import and export of high-quality industrial minerals, precision-engineered stones, and luxury natural products. With decades of operational excellence, we have bridged the gap between raw potential and refined beauty.</p>
-            
-            <p>Our foundation is built on unshakeable pillars of integrity, global connectivity, and customer-centric innovation. Headquartered in a strategic trade hub, Atula International leverages state-of-the-art logistics and a vast supplier network to ensure that every product delivered meets the highest standards of durability and finesse.</p>
-            
+            <p>Atula International is a premier global trading house, recognized as a pioneer in the import and export
+                of high-quality industrial minerals, precision-engineered stones, and luxury natural products. With
+                decades of operational excellence, we have bridged the gap between raw potential and refined beauty.</p>
+
+            <p>Our foundation is built on unshakeable pillars of integrity, global connectivity, and customer-centric
+                innovation. Headquartered in a strategic trade hub, Atula International leverages state-of-the-art
+                logistics and a vast supplier network to ensure that every product delivered meets the highest standards
+                of durability and finesse.</p>
+
             <a href="#" class="btn-read-more">Read More</a>
         </div>
 
         <div class="image-content">
-            <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Atula International Headquarters">
+            <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+                alt="Atula International Headquarters">
         </div>
     </div>
 
 
     <section class="products-section">
-    <div class="section-header">
-        <h2 class="section-title">
-            OUR PRODUCTS
-            <span class="separator"></span>
-            <span class="section-subtitle">New generation technology and state-of-the-art machinery.</span>
-        </h2>
-    </div>
-    <p class="intro-text">
-        A promising future under dynamic and professional leaders lies ahead for us, through meeting the growing demand in international markets. We have acquired new generation technology and state-of-the-art machinery for processing the Granite Slabs and Tiles with a combination of able & efficient management and technical staff to enable on-time deliveries of international quality standard products with specialized finishing's.
-    </p>
+        <div class="section-header">
+            <h2 class="section-title">
+                OUR PRODUCTS
+                <span class="separator"></span>
+                <span class="section-subtitle">New generation technology and state-of-the-art machinery.</span>
+            </h2>
+        </div>
+        <p class="intro-text">
+            A promising future under dynamic and professional leaders lies ahead for us, through meeting the growing
+            demand in international markets. We have acquired new generation technology and state-of-the-art machinery
+            for processing the Granite Slabs and Tiles with a combination of able & efficient management and technical
+            staff to enable on-time deliveries of international quality standard products with specialized finishing's.
+        </p>
 
-    <div class="product-grid">
-        <div class="product-card">
-            <img src="./Images/t1.jpeg" alt="Granite 1">
-            <div class="product-overlay">
-                <h3 class="overlay-title">Black Galaxy</h3>
+        <div class="product-grid">
+            <div class="product-card">
+                <img src="images/t1.jpeg" alt="Granite 1">
+                <div class="product-overlay">
+                    <h3 class="overlay-title">Black Galaxy</h3>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="images/t2.jpeg" alt="Granite 2">
+                <div class="product-overlay">
+                    <h3 class="overlay-title">Absolute Black</h3>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="images/t3.jpeg" alt="Granite 3">
+                <div class="product-overlay">
+                    <h3 class="overlay-title">Steel Grey</h3>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="images/t4.jpeg" alt="Granite 4">
+                <div class="product-overlay">
+                    <h3 class="overlay-title">Cosmic Black</h3>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="images/t5.jpeg" alt="Granite 5">
+                <div class="product-overlay">
+                    <h3 class="overlay-title">Tan Brown</h3>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="images/t6.jpeg" alt="Granite 6">
+                <div class="product-overlay">
+                    <h3 class="overlay-title">Viscon White</h3>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="images/t7.jpeg" alt="Granite 7">
+                <div class="product-overlay">
+                    <h3 class="overlay-title">Coffee Brown</h3>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="images/t8.jpeg" alt="Granite 8">
+                <div class="product-overlay">
+                    <h3 class="overlay-title">Black Forest</h3>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="images/t9.jpeg" alt="Granite 9">
+                <div class="product-overlay">
+                    <h3 class="overlay-title">White Galaxy</h3>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="images/t10.jpeg" alt="Granite 10">
+                <div class="product-overlay">
+                    <h3 class="overlay-title">Impala Black</h3>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="images/t11.jpeg" alt="Granite 11">
+                <div class="product-overlay">
+                    <h3 class="overlay-title">Red Multicolor</h3>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="images/t12.jpeg" alt="Granite 12">
+                <div class="product-overlay">
+                    <h3 class="overlay-title">Paradiso</h3>
+                </div>
             </div>
         </div>
-        <div class="product-card">
-            <img src="./Images/t2.jpeg" alt="Granite 2">
-            <div class="product-overlay">
-                <h3 class="overlay-title">Absolute Black</h3>
-            </div>
-        </div>
-        <div class="product-card">
-            <img src="./Images/t3.jpeg" alt="Granite 3">
-            <div class="product-overlay">
-                <h3 class="overlay-title">Steel Grey</h3>
-            </div>
-        </div>
-        <div class="product-card">
-            <img src="./Images/t4.jpeg" alt="Granite 4">
-            <div class="product-overlay">
-                <h3 class="overlay-title">Cosmic Black</h3>
-            </div>
-        </div>
-        <div class="product-card">
-            <img src="./Images/t5.jpeg" alt="Granite 5">
-            <div class="product-overlay">
-                <h3 class="overlay-title">Tan Brown</h3>
-            </div>
-        </div>
-        <div class="product-card">
-            <img src="./Images/t6.jpeg" alt="Granite 6">
-            <div class="product-overlay">
-                <h3 class="overlay-title">Viscon White</h3>
-            </div>
-        </div>
-        <div class="product-card">
-            <img src="./Images/t7.jpeg" alt="Granite 7">
-            <div class="product-overlay">
-                <h3 class="overlay-title">Coffee Brown</h3>
-            </div>
-        </div>
-        <div class="product-card">
-            <img src="./Images/t8.jpeg" alt="Granite 8">
-            <div class="product-overlay">
-                <h3 class="overlay-title">Black Forest</h3>
-            </div>
-        </div>
-        <div class="product-card">
-            <img src="./Images/t9.jpeg" alt="Granite 9">
-            <div class="product-overlay">
-                <h3 class="overlay-title">White Galaxy</h3>
-            </div>
-        </div>
-        <div class="product-card">
-            <img src="./Images/t10.jpeg" alt="Granite 10">
-            <div class="product-overlay">
-                <h3 class="overlay-title">Impala Black</h3>
-            </div>
-        </div>
-        <div class="product-card">
-            <img src="./Images/t11.jpeg" alt="Granite 11">
-            <div class="product-overlay">
-                <h3 class="overlay-title">Red Multicolor</h3>
-            </div>
-        </div>
-        <div class="product-card">
-            <img src="./Images/t12.jpeg" alt="Granite 12">
-            <div class="product-overlay">
-                <h3 class="overlay-title">Paradiso</h3>
-            </div>
-        </div>
-    </div>
 
-    <div class="view-all-container">
-        <button class="view-all-btn"> <a href="./product.html">View All</a></button>
-    </div>
-</section>
+        <div class="view-all-container">
+            <button class="view-all-btn"><a href="./product.html">View All</a></button>
+        </div>
+    </section>
 
     <div class="pro_cont">
         <div class="header-section">
@@ -324,8 +1477,10 @@ setInterval(() => {
         </div>
 
         <p class="content-paragraph">
-            Futura Stones in collaboration with HJS Granites has successfully accomplished delivering volumes of slabs, cut-to-size materials, in different thicknesses and colours of
-            Granite, Marble, ONYX, Quartz, and other natural products across the Globe. Below are the names of a few projects successfully accomplished while partnered through our
+            Futura Stones in collaboration with HJS Granites has successfully accomplished delivering volumes of slabs,
+            cut-to-size materials, in different thicknesses and colours of
+            Granite, Marble, ONYX, Quartz, and other natural products across the Globe. Below are the names of a few
+            projects successfully accomplished while partnered through our
             contractors and suppliers of those regions.
         </p>
     </div>
@@ -341,13 +1496,15 @@ setInterval(() => {
             <div class="grid-item">
                 <i class="fas fa-home"></i>
                 <h3>Five+ Decades of Experience</h3>
-                <p>From our humble beginnings in the export industry to over five decades of experience in the stone processing industry, we provide the best quality products of international standards.</p>
+                <p>From our humble beginnings in the export industry to over five decades of experience in the stone
+                    processing industry, we provide the best quality products of international standards.</p>
             </div>
 
             <div class="grid-item">
                 <i class="fas fa-tree"></i>
                 <h3>Sustainability</h3>
-                <p>Sustainability is our responsibility. We are in relentless pursuit of reducing our adverse impact on environment.</p>
+                <p>Sustainability is our responsibility. We are in relentless pursuit of reducing our adverse impact on
+                    environment.</p>
             </div>
 
             <div class="grid-item">
@@ -361,16 +1518,12 @@ setInterval(() => {
             </div>
         </div>
     </div>
-       
-    </main>
 
-    <!-- FOOTER (Same as other pages) -->
-    <footer class="footer-cont">
-        <div class="footer-container">
-            <!-- Map Section -->
-            <div class="footer-map-section">
+    <div class="footer_cont">
+        <div class="container">
+            <div class="map-section">
                 <div class="map-container">
-                    <iframe
+                    <iframe {{-- The `src` attribute has been updated to center the map on Tenkasi, 627811 --}}
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15735.619077977457!2d77.3061545!3d8.96696775!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b06e902b4d93547%3A0xf639a06692736b44!2sTenkasi%2C%20Tamil%20Nadu%20627811!5e0!3m2!1sen!2sin!4v1703673600000!5m2!1sen!2sin"
                         width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
                         referrerpolicy="no-referrer-when-downgrade">
@@ -378,8 +1531,7 @@ setInterval(() => {
                 </div>
             </div>
 
-            <!-- Contact Info Section -->
-            <div class="footer-contact-info">
+            <div class="contact-info-section">
                 <div class="contact-item">
                     <i class="fas fa-phone-alt"></i>
                     <div class="contact-text">
@@ -390,87 +1542,84 @@ setInterval(() => {
                 <div class="contact-item">
                     <i class="fas fa-envelope"></i>
                     <div class="contact-text">
-                        <a href="mailto:info@atulainternational.com">info@atulainternational.com</a>
+                        <a href="mailto:info@futurastones.com">info@futurastones.com</a>
                     </div>
                 </div>
 
                 <div class="contact-item">
                     <i class="fas fa-map-marker-alt"></i>
                     <div class="contact-text">
-                        <p>Tenkasi, Tamil Nadu 627811. India</p>
+                        <p>No. 92, H.J.S. Chambers, 4th Floor, Richmond Road, Bangalore - 560025. India</p>
+                        <p>Phone : (91-80)-43510000</p>
                     </div>
                 </div>
 
                 <div class="contact-item">
-                    <i class="fas fa-building-circle-arrow-right"></i>
+                    <i class="fas fa-map-marker-alt"></i>
                     <div class="contact-text">
-                        <p>Export Office: Chennai, India</p>
+                        {{-- You may want to change the text address to match the new location --}}
+                        <p>Tenkasi, Tamil Nadu 627811</p>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Footer Bottom -->
-        <div class="footer-bottom">
-            <div class="social-icons-footer">
+        <div class="footer">
+            <div class="social-icons">
                 <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                 <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
             </div>
             <div class="copyright">
-                © 2025 Atula International — All Rights Reserved.
+                © Futura Stones - 2022. All rights reserved.
             </div>
             <a href="#top" class="scroll-to-top" aria-label="Scroll to top"><i class="fas fa-arrow-up"></i></a>
         </div>
-    </footer>
+    </div>
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Insert mobile nav toggle JS + optional small helper for scroll-snap (no extra JS needed for snap) -->
     <script>
-        // Initialize AOS
-        AOS.init({
-            duration: 800,
-            easing: 'ease-in-out',
-            once: true,
-            offset: 100
-        });
+        (function () {
+            const toggle = document.querySelector('.navbar-toggle');
+            const nav = document.querySelector('.nav-links-container');
+            if (!toggle || !nav) return;
+            toggle.addEventListener('click', () => {
+                const open = nav.classList.toggle('open');
+                toggle.classList.toggle('open', open);
+                document.body.classList.toggle('menu-open', open);
+            });
+            nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+                nav.classList.remove('open'); toggle.classList.remove('open'); document.body.classList.remove('menu-open');
+            }));
+        })();
 
-        // Initialize Lucide Icons
-        lucide.createIcons();
+        // Hide header on scroll down, show on scroll up
+        (function () {
+            const header = document.getElementById('site-header');
+            if (!header) return;
+            let lastScroll = window.pageYOffset || document.documentElement.scrollTop;
+            let ticking = false;
 
-        // Tab switching functionality
-        document.addEventListener('DOMContentLoaded', () => {
-            const tabButtons = document.querySelectorAll('.tab-button');
-            const tabContents = document.querySelectorAll('.tab-content');
-
-            function showTab(targetId) {
-                tabContents.forEach(content => {
-                    content.classList.add('hidden');
-                });
-                tabButtons.forEach(button => {
-                    button.classList.remove('active');
-                });
-
-                const targetContent = document.getElementById(targetId);
-                if (targetContent) {
-                    targetContent.classList.remove('hidden');
+            function onScroll() {
+                const current = window.pageYOffset || document.documentElement.scrollTop;
+                // if scrolled down and beyond threshold -> hide
+                if (current > lastScroll && current > 80) {
+                    header.classList.add('hide-up');
+                } else {
+                    // scrolled up -> show
+                    header.classList.remove('hide-up');
                 }
-
-                const activeButton = document.querySelector(`[data-tab-target="${targetId}"]`);
-                if (activeButton) {
-                    activeButton.classList.add('active');
-                }
+                lastScroll = Math.max(0, current);
+                ticking = false;
             }
 
-            tabButtons.forEach(button => {
-                button.addEventListener('click', () => {
-                    const targetId = button.getAttribute('data-tab-target');
-                    showTab(targetId);
-                });
-            });
-
-            showTab('granite');
-        });
+            window.addEventListener('scroll', () => {
+                if (!ticking) {
+                    window.requestAnimationFrame(onScroll);
+                    ticking = true;
+                }
+            }, { passive: true });
+        })();
     </script>
-
 </body>
 
 </html>

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Atula International - Interactive Layout</title>
+    <style>
+        /* --- General Reset & Base Styles --- */
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        /* --- Main Container Layout --- */
+        .container_abt {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.5;
+            width: 90%;
+            max-width: 1200px;
+            margin: 80px auto;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 50px;
+        }
+
+        /* --- Text Section Styling (Desktop) --- */
+        .text-content {
+            /* MODIFIED: Increased flex-basis to 70% to accommodate smaller image */
+            flex: 1 1 70%; 
+        }
+
+        .text-content h1 {
+            font-size: 2.0em;
+            font-weight: 700;
+            color: #222;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            
+            /* Animation Settings */
+            opacity: 0; 
+            animation: fadeInUp 1s ease-out forwards;
+            animation-delay: 0.2s;
+        }
+
+        .text-content p {
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 20px;
+            
+            /* Animation Settings */
+            opacity: 0;
+            animation: fadeInUp 1s ease-out forwards;
+        }
+
+        .text-content p:nth-of-type(1) { animation-delay: 0.4s; }
+        .text-content p:nth-of-type(2) { animation-delay: 0.6s; }
+
+        .btn-read-more {
+            display: inline-block;
+            padding: 10px 25px;
+            background-color: #d91e18;
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            text-transform: uppercase;
+            border-radius: 4px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            
+            /* Animation Settings */
+            opacity: 0;
+            animation: fadeInUp 1s ease-out forwards;
+            animation-delay: 0.8s;
+        }
+
+        .btn-read-more:hover {
+            background-color: #b81a15;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+        }
+
+        /* --- Image Section Styling (Desktop) --- */
+        .image-content {
+            /* MODIFIED: Reduced flex-basis to 30% for a smaller image */
+            flex: 1 1 35%; 
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+            
+            /* Entry Animation */
+            opacity: 0;
+            animation: slideInRight 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+            animation-delay: 0.4s;
+        }
+
+        .image-content img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.8s ease;
+        }
+
+        /* Continuous floating animation for the image container */
+        .image-content {
+            animation: slideInRight 1.2s forwards, floatImage 6s ease-in-out infinite 1.5s;
+        }
+
+        /* Hover Effect: Zoom image */
+        .image-content:hover img {
+            transform: scale(1.1);
+        }
+
+        /* --- Keyframe Animations --- */
+        
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes slideInRight {
+            from { opacity: 0; transform: translateX(100px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        @keyframes floatImage {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0); }
+        }
+
+        /* ==================================== */
+        /* --- MOBILE RESPONSIVE DESIGN --- */
+        /* ==================================== */
+        @media (max-width: 768px) {
+            .container_abt { 
+                flex-direction: column;
+                margin-top: 40px;
+                gap: 20px; 
+            }
+            
+            /* Mobile Image Size (kept at 70% as per previous request) */
+            .image-content {
+                order: 1; 
+                flex: 0 0 70%; 
+                width: 70%; 
+                margin: 0 auto 30px auto; 
+                box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+            }
+            
+            .text-content {
+                order: 2; 
+                flex: 1 1 auto;
+                padding: 0 10px; 
+            }
+            
+            .text-content h1 {
+                font-size: 1.8em; 
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container_abt">
+        <div class="text-content">
+            <h1>About Atula International</h1>
+            <p>Atula International is a premier global trading house, recognized as a pioneer in the import and export of high-quality industrial minerals, precision-engineered stones, and luxury natural products. With decades of operational excellence, we have bridged the gap between raw potential and refined beauty.</p>
+            
+            <p>Our foundation is built on unshakeable pillars of integrity, global connectivity, and customer-centric innovation. Headquartered in a strategic trade hub, Atula International leverages state-of-the-art logistics and a vast supplier network to ensure that every product delivered meets the highest standards of durability and finesse.</p>
+            
+            <a href="#" class="btn-read-more">Read More</a>
+        </div>
+
+        <div class="image-content">
+            <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Atula International Headquarters">
+        </div>
+    </div>
+
+</body>
+</html>

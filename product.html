@@ -10,8 +10,34 @@
     <script src="https://unpkg.com/lucide@latest"></script>
     <link rel="stylesheet" href="assets/product.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Mobile tweak for projects / futura_con -->
+    <style>
+      @media (max-width: 768px) {
+        .pro_cont,
+        .futura_con { padding: 20px 16px; }
+        .pro_cont .header-section,
+        .futura_con .header-section {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 10px;
+        }
+        .content-grid {
+          display: grid;
+          grid-template-columns: 1fr;
+          gap: 18px;
+        }
+        .grid-item {
+          background: #fff;
+          padding: 16px;
+          border-radius: 12px;
+          box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+        }
+        .grid-item i { font-size: 1.4rem; margin-bottom: 8px; }
+      }
+    </style>
 </head>
-<body>
+<body class="page-fade">
 
 <!-- CUSTOM GRADIENT NAVBAR (Same as other pages) -->
 <header class="custom-gradient-bg">
@@ -69,6 +95,10 @@
 
         <!-- Main Navigation Links (Bottom) -->
         <nav style="width: 100%;">
+            <!-- Add mobile menu toggle -->
+            <button class="navbar-toggle" aria-label="Open Menu">
+                <span class="bar"></span>
+            </button>
             <ul class="nav-links-container">
                 <li><a href="index.html" class="nav-link nav-link-dark">Home</a></li>
                 <li><a href="product.html" class="nav-link active">Products</a></li>
@@ -89,7 +119,7 @@
     </section>
 
     <!-- Description Text Block -->
-    <section class="py-8 bg-white">
+    <section class="py-8 bg-white section-reveal">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <p class="text-lg text-gray-700 leading-relaxed max-w-8xl">
                 Futura Stones' plant is equipped with state-of-the-art machinery from some of the world's leading manufacturers. A strict 100% inspection system is adopted during all stages of manufacturing process. Futura makes a wide range of popular finishes including Polished Finish, Flamed Finish, Honed Finish, Brushed Finish, Leather Finish and Caress Finish.
@@ -98,7 +128,7 @@
     </section>
 
     <!-- START: Tabbed Product Content Section -->
-    <section class="bg-white pb-12">
+    <section class="bg-white pb-12 section-reveal">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             
             <!-- Tab Buttons -->
@@ -161,59 +191,59 @@
                     <div class="mt-8 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
 
                         <!-- Row 1 -->
-                    <div class="aspect-square bg-purple-900 rounded-lg shadow-md overflow-hidden color-card relative">
-                           <img src="./Images/ANTIQUE-BROWN-scaled.jpg" alt=""> <div class="color-card-text">ANTIQUE-BROWN-scaled</div>
+                    <div class="aspect-square bg-purple-900 rounded-lg shadow-md overflow-hidden color-card relative tilt product-card">
+                           <img src="./Images/ANTIQUE-BROWN-scaled.jpg" alt="" loading="lazy"> <div class="color-card-text">ANTIQUE-BROWN-scaled</div>
                     </div>
-                    <div class="aspect-square bg-gray-600 rounded-lg shadow-md overflow-hidden color-card relative">
-                           <img src="./Images/AZUL-BAHIA-scaled.jpg" alt=""> <div class="color-card-text">AZUL-BAHIA-scaled</div>
+                    <div class="aspect-square bg-gray-600 rounded-lg shadow-md overflow-hidden color-card relative tilt product-card">
+                           <img src="./Images/AZUL-BAHIA-scaled.jpg" alt="" loading="lazy"> <div class="color-card-text">AZUL-BAHIA-scaled</div>
                     </div>
-                    <div class="aspect-square bg-gray-700 rounded-lg shadow-md overflow-hidden color-card relative">
-                           <img src="./Images/AZUL-MACAUBAS-scaled.jpg" alt=""> <div class="color-card-text">AZUL-MACAUBAS-scaled</div>
+                    <div class="aspect-square bg-gray-700 rounded-lg shadow-md overflow-hidden color-card relative tilt product-card">
+                           <img src="./Images/AZUL-MACAUBAS-scaled.jpg" alt="" loading="lazy"> <div class="color-card-text">AZUL-MACAUBAS-scaled</div>
                     </div>
-                    <div class="aspect-square bg-amber-800 rounded-lg shadow-md overflow-hidden color-card relative">
-                        <img src="./Images/COPACABANA-scaled.jpg" alt=""><div class="color-card-text">COPACABANA-scaled</div>
+                    <div class="aspect-square bg-amber-800 rounded-lg shadow-md overflow-hidden color-card relative tilt product-card">
+                        <img src="./Images/COPACABANA-scaled.jpg" alt="" loading="lazy"><div class="color-card-text">COPACABANA-scaled</div>
                     </div>
                                                         
                     <!-- Row 2 -->
-                    <div class="aspect-square bg-purple-900 rounded-lg shadow-md overflow-hidden color-card relative">
-                           <img src="./Images/BLUE-ANTIQUE-LABRADOR-scaled.jpg" alt=""> <div class="color-card-text">BLUE-ANTIQUE-LABRADOR-scaled</div>
+                    <div class="aspect-square bg-purple-900 rounded-lg shadow-md overflow-hidden color-card relative tilt product-card">
+                           <img src="./Images/BLUE-ANTIQUE-LABRADOR-scaled.jpg" alt="" loading="lazy"> <div class="color-card-text">BLUE-ANTIQUE-LABRADOR-scaled</div>
                     </div>
-                    <div class="aspect-square bg-gray-600 rounded-lg shadow-md overflow-hidden color-card relative">
-                           <img src="./Images/COSMIC-BLACK-scaled.jpg" alt=""> <div class="color-card-text">COSMIC-BLACK-scaled</div>
+                    <div class="aspect-square bg-gray-600 rounded-lg shadow-md overflow-hidden color-card relative tilt product-card">
+                           <img src="./Images/COSMIC-BLACK-scaled.jpg" alt="" loading="lazy"> <div class="color-card-text">COSMIC-BLACK-scaled</div>
                     </div>
-                    <div class="aspect-square bg-gray-700 rounded-lg shadow-md overflow-hidden color-card relative">
-                           <img src="./Images/BLUE-MARE-scaled.jpg" alt=""> <div class="color-card-text">BLUE-MARE-scaled</div>
+                    <div class="aspect-square bg-gray-700 rounded-lg shadow-md overflow-hidden color-card relative tilt product-card">
+                           <img src="./Images/BLUE-MARE-scaled.jpg" alt="" loading="lazy"> <div class="color-card-text">BLUE-MARE-scaled</div>
                     </div>
-                    <div class="aspect-square bg-amber-800 rounded-lg shadow-md overflow-hidden color-card relative">
-                        <img src="./Images/BLUE-PEARL-HQ-scaled.jpg" alt=""><div class="color-card-text">BLUE-PEARL-HQ-scaled</div>
+                    <div class="aspect-square bg-amber-800 rounded-lg shadow-md overflow-hidden color-card relative tilt product-card">
+                        <img src="./Images/BLUE-PEARL-HQ-scaled.jpg" alt="" loading="lazy"><div class="color-card-text">BLUE-PEARL-HQ-scaled</div>
                     </div>
 
                     <!-- Row 3 -->
-                    <div class="aspect-square bg-blue-900 rounded-lg shadow-md overflow-hidden color-card relative">
-                           <img src="./Images/BLUE-ROMA-scaled.jpg" alt=""> <div class="color-card-text">BLUE-ROMA-scaled</div>
+                    <div class="aspect-square bg-blue-900 rounded-lg shadow-md overflow-hidden color-card relative tilt product-card">
+                           <img src="./Images/BLUE-ROMA-scaled.jpg" alt="" loading="lazy"> <div class="color-card-text">BLUE-ROMA-scaled</div>
                     </div>
-                    <div class="aspect-square bg-slate-700 rounded-lg shadow-md overflow-hidden color-card relative">
-                        <img src="./Images/BROWN-SILK-scaled.jpg" alt=""><div class="color-card-text">BROWN-SILK-scaled</div>
+                    <div class="aspect-square bg-slate-700 rounded-lg shadow-md overflow-hidden color-card relative tilt product-card">
+                        <img src="./Images/BROWN-SILK-scaled.jpg" alt="" loading="lazy"><div class="color-card-text">BROWN-SILK-scaled</div>
                     </div>
-                    <div class="aspect-square bg-yellow-100 rounded-lg shadow-md overflow-hidden color-card relative">
-                           <img src="./Images/TITANIUM-GOLD-scaled.jpg" alt=""> <div class="color-card-text">TITANIUM-GOLD-scaled</div>
+                    <div class="aspect-square bg-yellow-100 rounded-lg shadow-md overflow-hidden color-card relative tilt product-card">
+                           <img src="./Images/TITANIUM-GOLD-scaled.jpg" alt="" loading="lazy"> <div class="color-card-text">TITANIUM-GOLD-scaled</div>
                     </div>
-                    <div class="aspect-square bg-gray-100 rounded-lg shadow-md overflow-hidden color-card relative">
-                           <img src="./Images/COPACABANA-scaled.jpg" alt=""> <div class="color-card-text">COPACABANA-scaled</div>
+                    <div class="aspect-square bg-gray-100 rounded-lg shadow-md overflow-hidden color-card relative tilt product-card">
+                           <img src="./Images/COPACABANA-scaled.jpg" alt="" loading="lazy"> <div class="color-card-text">COPACABANA-scaled</div>
                     </div>
 
                     <!-- Row 4 -->
-                    <div class="aspect-square bg-pink-900 rounded-lg shadow-md overflow-hidden color-card relative">
-                        <img src="./Images/COSMIC-BLACK-scaled.jpg" alt=""><div class="color-card-text">COSMIC-BLACK-scaled</div>
+                    <div class="aspect-square bg-pink-900 rounded-lg shadow-md overflow-hidden color-card relative tilt product-card">
+                        <img src="./Images/COSMIC-BLACK-scaled.jpg" alt="" loading="lazy"><div class="color-card-text">COSMIC-BLACK-scaled</div>
                     </div>
-                    <div class="aspect-square bg-green-700 rounded-lg shadow-md overflow-hidden color-card relative">
-                           <img src="./Images/VERDE-FUSION-scaled.jpg" alt=""> <div class="color-card-text">VERDE-FUSION-scaled</div>
+                    <div class="aspect-square bg-green-700 rounded-lg shadow-md overflow-hidden color-card relative tilt product-card">
+                           <img src="./Images/VERDE-FUSION-scaled.jpg" alt="" loading="lazy"> <div class="color-card-text">VERDE-FUSION-scaled</div>
                     </div>
-                    <div class="aspect-square bg-lime-800 rounded-lg shadow-md overflow-hidden color-card relative">
-                        <img src="./Images/EMERALD-PEARL-BLUE-scaled.jpg" alt=""><div class="color-card-text">EMERALD-PEARL-BLUE-scaled</div>
+                    <div class="aspect-square bg-lime-800 rounded-lg shadow-md overflow-hidden color-card relative tilt product-card">
+                        <img src="./Images/EMERALD-PEARL-BLUE-scaled.jpg" alt="" loading="lazy"><div class="color-card-text">EMERALD-PEARL-BLUE-scaled</div>
                     </div>
-                    <div class="aspect-square bg-gray-300 rounded-lg shadow-md overflow-hidden color-card relative">
-                        <img src="./Images/VOLGA-BLUE-scaled.jpg" alt=""><div class="color-card-text">VOLGA-BLUE-scaled</div>
+                    <div class="aspect-square bg-gray-300 rounded-lg shadow-md overflow-hidden color-card relative tilt product-card">
+                        <img src="./Images/VOLGA-BLUE-scaled.jpg" alt="" loading="lazy"><div class="color-card-text">VOLGA-BLUE-scaled</div>
                     </div>
                     
                     <!-- Row 5
@@ -298,59 +328,59 @@
                 <div class="mt-8 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
 
                     <!-- Row 1: Whites and Greys (Quartz/Marble look) -->
-                    <div class="aspect-square bg-gray-200 rounded-lg shadow-md overflow-hidden color-card relative">
-                        <img src="./Images/BROWN-SILK-scaled.jpg" alt=""><div class="color-card-text">BROWN-SILK-scaled</div>
+                    <div class="aspect-square bg-gray-200 rounded-lg shadow-md overflow-hidden color-card relative tilt product-card">
+                        <img src="./Images/BROWN-SILK-scaled.jpg" alt="" loading="lazy"><div class="color-card-text">BROWN-SILK-scaled</div>
                     </div>
-                    <div class="aspect-square bg-white border border-gray-300 rounded-lg shadow-md overflow-hidden color-card relative">
-                       <img src="./Images/BLUE-PEARL-HQ-scaled.jpg" alt=""> <div class="color-card-text">BLUE-PEARL-HQ-scaled</div>
+                    <div class="aspect-square bg-white border border-gray-300 rounded-lg shadow-md overflow-hidden color-card relative tilt product-card">
+                       <img src="./Images/BLUE-PEARL-HQ-scaled.jpg" alt="" loading="lazy"> <div class="color-card-text">BLUE-PEARL-HQ-scaled</div>
                     </div>
-                    <div class="aspect-square bg-gray-500 rounded-lg shadow-md overflow-hidden color-card relative">
-                       <img src="./Images/BLUE-ANTIQUE-LABRADOR-scaled.jpg" alt=""> <div class="color-card-text">BLUE-ANTIQUE-LABRADOR</div>
+                    <div class="aspect-square bg-gray-500 rounded-lg shadow-md overflow-hidden color-card relative tilt product-card">
+                       <img src="./Images/BLUE-ANTIQUE-LABRADOR-scaled.jpg" alt="" loading="lazy"> <div class="color-card-text">BLUE-ANTIQUE-LABRADOR</div>
                     </div>
-                    <div class="aspect-square bg-slate-800 rounded-lg shadow-md overflow-hidden color-card relative">
-                       <img src="./Images/COPACABANA-scaled.jpg" alt=""> <div class="color-card-text">COPACABANA-scaled</div>
+                    <div class="aspect-square bg-slate-800 rounded-lg shadow-md overflow-hidden color-card relative tilt product-card">
+                       <img src="./Images/COPACABANA-scaled.jpg" alt="" loading="lazy"> <div class="color-card-text">COPACABANA-scaled</div>
                     </div>
                     
                     <!-- Row 2: Beige and Browns (Granite/Quartzite look) -->
-                    <div class="aspect-square bg-pink-900 rounded-lg shadow-md overflow-hidden color-card relative">
-                        <img src="./Images/COSMIC-BLACK-scaled.jpg" alt=""><div class="color-card-text">COSMIC-BLACK-scaled</div>
+                    <div class="aspect-square bg-pink-900 rounded-lg shadow-md overflow-hidden color-card relative tilt product-card">
+                        <img src="./Images/COSMIC-BLACK-scaled.jpg" alt="" loading="lazy"><div class="color-card-text">COSMIC-BLACK-scaled</div>
                     </div>
-                    <div class="aspect-square bg-green-700 rounded-lg shadow-md overflow-hidden color-card relative">
-                       <img src="./Images/VERDE-FUSION-scaled.jpg" alt=""> <div class="color-card-text">VERDE-FUSION-scaled</div>
+                    <div class="aspect-square bg-green-700 rounded-lg shadow-md overflow-hidden color-card relative tilt product-card">
+                       <img src="./Images/VERDE-FUSION-scaled.jpg" alt="" loading="lazy"> <div class="color-card-text">VERDE-FUSION-scaled</div>
                     </div>
-                    <div class="aspect-square bg-lime-800 rounded-lg shadow-md overflow-hidden color-card relative">
-                        <img src="./Images/EMERALD-PEARL-BLUE-scaled.jpg" alt=""><div class="color-card-text">EMERALD-PEARL-BLUE-scaled</div>
+                    <div class="aspect-square bg-lime-800 rounded-lg shadow-md overflow-hidden color-card relative tilt product-card">
+                        <img src="./Images/EMERALD-PEARL-BLUE-scaled.jpg" alt="" loading="lazy"><div class="color-card-text">EMERALD-PEARL-BLUE-scaled</div>
                     </div>
-                    <div class="aspect-square bg-gray-300 rounded-lg shadow-md overflow-hidden color-card relative">
-                        <img src="./Images/VOLGA-BLUE-scaled.jpg" alt=""><div class="color-card-text">VOLGA-BLUE-scaled</div>
+                    <div class="aspect-square bg-gray-300 rounded-lg shadow-md overflow-hidden color-card relative tilt product-card">
+                        <img src="./Images/VOLGA-BLUE-scaled.jpg" alt="" loading="lazy"><div class="color-card-text">VOLGA-BLUE-scaled</div>
                     </div>
 
                     <!-- Row 3: Dark and Exotic -->
-                     <div class="aspect-square bg-blue-900 rounded-lg shadow-md overflow-hidden color-card relative">
-                       <img src="./Images/BLUE-ROMA-scaled.jpg" alt=""> <div class="color-card-text">BLUE-ROMA-scaled</div>
+                     <div class="aspect-square bg-blue-900 rounded-lg shadow-md overflow-hidden color-card relative tilt product-card">
+                       <img src="./Images/BLUE-ROMA-scaled.jpg" alt="" loading="lazy"> <div class="color-card-text">BLUE-ROMA-scaled</div>
                     </div>
-                    <div class="aspect-square bg-slate-700 rounded-lg shadow-md overflow-hidden color-card relative">
-                        <img src="./Images/BROWN-SILK-scaled.jpg" alt=""><div class="color-card-text">BROWN-SILK-scaled</div>
+                    <div class="aspect-square bg-slate-700 rounded-lg shadow-md overflow-hidden color-card relative tilt product-card">
+                        <img src="./Images/BROWN-SILK-scaled.jpg" alt="" loading="lazy"><div class="color-card-text">BROWN-SILK-scaled</div>
                     </div>
-                    <div class="aspect-square bg-yellow-100 rounded-lg shadow-md overflow-hidden color-card relative">
-                       <img src="./Images/TITANIUM-GOLD-scaled.jpg" alt=""> <div class="color-card-text">TITANIUM-GOLD-scaled</div>
+                    <div class="aspect-square bg-yellow-100 rounded-lg shadow-md overflow-hidden color-card relative tilt product-card">
+                       <img src="./Images/TITANIUM-GOLD-scaled.jpg" alt="" loading="lazy"> <div class="color-card-text">TITANIUM-GOLD-scaled</div>
                     </div>
-                    <div class="aspect-square bg-gray-100 rounded-lg shadow-md overflow-hidden color-card relative">
-                       <img src="./Images/COPACABANA-scaled.jpg" alt=""> <div class="color-card-text">COPACABANA-scaled</div>
+                    <div class="aspect-square bg-gray-100 rounded-lg shadow-md overflow-hidden color-card relative tilt product-card">
+                       <img src="./Images/COPACABANA-scaled.jpg" alt="" loading="lazy"> <div class="color-card-text">COPACABANA-scaled</div>
                     </div>
                     <!-- Row 4: Modern Grey and Cement Look -->
                         <!-- Row 1 -->
-                <div class="aspect-square bg-purple-900 rounded-lg shadow-md overflow-hidden color-card relative">
-                       <img src="./Images/ANTIQUE-BROWN-scaled.jpg" alt=""> <div class="color-card-text">ANTIQUE-BROWN-scaled</div>
+                <div class="aspect-square bg-purple-900 rounded-lg shadow-md overflow-hidden color-card relative tilt product-card">
+                       <img src="./Images/ANTIQUE-BROWN-scaled.jpg" alt="" loading="lazy"> <div class="color-card-text">ANTIQUE-BROWN-scaled</div>
                 </div>
-                <div class="aspect-square bg-gray-600 rounded-lg shadow-md overflow-hidden color-card relative">
-                       <img src="./Images/AZUL-BAHIA-scaled.jpg" alt=""> <div class="color-card-text">AZUL-BAHIA-scaled</div>
+                <div class="aspect-square bg-gray-600 rounded-lg shadow-md overflow-hidden color-card relative tilt product-card">
+                       <img src="./Images/AZUL-BAHIA-scaled.jpg" alt="" loading="lazy"> <div class="color-card-text">AZUL-BAHIA-scaled</div>
                 </div>
-                <div class="aspect-square bg-gray-700 rounded-lg shadow-md overflow-hidden color-card relative">
-                       <img src="./Images/AZUL-MACAUBAS-scaled.jpg" alt=""> <div class="color-card-text">AZUL-MACAUBAS-scaled</div>
+                <div class="aspect-square bg-gray-700 rounded-lg shadow-md overflow-hidden color-card relative tilt product-card">
+                       <img src="./Images/AZUL-MACAUBAS-scaled.jpg" alt="" loading="lazy"> <div class="color-card-text">AZUL-MACAUBAS-scaled</div>
                 </div>
-                <div class="aspect-square bg-amber-800 rounded-lg shadow-md overflow-hidden color-card relative">
-                    <img src="./Images/COPACABANA-scaled.jpg" alt=""><div class="color-card-text">COPACABANA-scaled</div>
+                <div class="aspect-square bg-amber-800 rounded-lg shadow-md overflow-hidden color-card relative tilt product-card">
+                    <img src="./Images/COPACABANA-scaled.jpg" alt="" loading="lazy"><div class="color-card-text">COPACABANA-scaled</div>
                 </div>
                 
                 <!-- Row 5: Unique Colors and Patterns -->
@@ -435,59 +465,59 @@
                     <div class="mt-8 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
 
                         <!-- Row 1: Slate and Quartzite Looks -->
-                        <div class="aspect-square bg-slate-900 rounded-lg shadow-md overflow-hidden color-card relative">
-                            <img src="./Images/s1.webp" alt=""><div class="color-card-text">Black Slate Veneer</div>
+                        <div class="aspect-square bg-slate-900 rounded-lg shadow-md overflow-hidden color-card relative tilt product-card">
+                            <img src="./Images/s1.webp" alt="" loading="lazy"><div class="color-card-text">Black Slate Veneer</div>
                         </div>
-                        <div class="aspect-square bg-red-700 rounded-lg shadow-md overflow-hidden color-card relative">
-                          <img src="./Images/s2.webp" alt="">  <div class="color-card-text">Autumn Rust Ledge</div>
+                        <div class="aspect-square bg-red-700 rounded-lg shadow-md overflow-hidden color-card relative tilt product-card">
+                          <img src="./Images/s2.webp" alt="" loading="lazy">  <div class="color-card-text">Autumn Rust Ledge</div>
                         </div>
-                        <div class="aspect-square bg-gray-500 rounded-lg shadow-md overflow-hidden color-card relative">
-                            <img src="./Images/s3.webp" alt=""><div class="color-card-text">Silver Grey Quartzite</div>
+                        <div class="aspect-square bg-gray-500 rounded-lg shadow-md overflow-hidden color-card relative tilt product-card">
+                            <img src="./Images/s3.webp" alt="" loading="lazy"><div class="color-card-text">Silver Grey Quartzite</div>
                         </div>
-                        <div class="aspect-square bg-yellow-900 rounded-lg shadow-md overflow-hidden color-card relative">
-                            <img src="./Images/s4.webp" alt=""><div class="color-card-text">Golden Sandstone Panel</div>
+                        <div class="aspect-square bg-yellow-900 rounded-lg shadow-md overflow-hidden color-card relative tilt product-card">
+                            <img src="./Images/s4.webp" alt="" loading="lazy"><div class="color-card-text">Golden Sandstone Panel</div>
                         </div>
                         
                         <!-- Row 2: Textured and Rough Finishes -->
-                        <div class="aspect-square bg-stone-700 rounded-lg shadow-md overflow-hidden color-card relative">
-                           <img src="./Images/s5.webp" alt=""> <div class="color-card-text">Multi-Color Ledge</div>
+                        <div class="aspect-square bg-stone-700 rounded-lg shadow-md overflow-hidden color-card relative tilt product-card">
+                           <img src="./Images/s5.webp" alt="" loading="lazy"> <div class="color-card-text">Multi-Color Ledge</div>
                         </div>
-                        <div class="aspect-square bg-gray-300 rounded-lg shadow-md overflow-hidden color-card relative">
-                            <img src="./Images/s6.webp" alt=""><div class="color-card-text">Himalayan White Split</div>
+                        <div class="aspect-square bg-gray-300 rounded-lg shadow-md overflow-hidden color-card relative tilt product-card">
+                            <img src="./Images/s6.webp" alt="" loading="lazy"><div class="color-card-text">Himalayan White Split</div>
                         </div>
-                        <div class="aspect-square bg-green-900 rounded-lg shadow-md overflow-hidden color-card relative">
-                            <img src="./Images/s7.webp" alt=""><div class="color-card-text">Jungle Green Slate</div>
+                        <div class="aspect-square bg-green-900 rounded-lg shadow-md overflow-hidden color-card relative tilt product-card">
+                            <img src="./Images/s7.webp" alt="" loading="lazy"><div class="color-card-text">Jungle Green Slate</div>
                         </div>
-                        <div class="aspect-square bg-blue-900 rounded-lg shadow-md overflow-hidden color-card relative">
-                           <img src="./Images/s8.webp" alt=""> <div class="color-card-text">Ocean Blue Quartzite</div>
+                        <div class="aspect-square bg-blue-900 rounded-lg shadow-md overflow-hidden color-card relative tilt product-card">
+                           <img src="./Images/s8.webp" alt="" loading="lazy"> <div class="color-card-text">Ocean Blue Quartzite</div>
                         </div>
 
                         <!-- Row 3: Limestone and Marble Veneers -->
-                        <div class="aspect-square bg-stone-200 rounded-lg shadow-md overflow-hidden color-card relative">
-                          <img src="./Images/s9.webp" alt="">  <div class="color-card-text">Beige Limestone Cladding</div>
+                        <div class="aspect-square bg-stone-200 rounded-lg shadow-md overflow-hidden color-card relative tilt product-card">
+                          <img src="./Images/s9.webp" alt="" loading="lazy">  <div class="color-card-text">Beige Limestone Cladding</div>
                         </div>
-                        <div class="aspect-square bg-white border border-gray-400 rounded-lg shadow-md overflow-hidden color-card relative">
-                           <img src="./Images/s10.webp" alt=""> <div class="color-card-text">White Marble Sheet</div>
+                        <div class="aspect-square bg-white border border-gray-400 rounded-lg shadow-md overflow-hidden color-card relative tilt product-card">
+                           <img src="./Images/s10.webp" alt="" loading="lazy"> <div class="color-card-text">White Marble Sheet</div>
                         </div>
-                        <div class="aspect-square bg-yellow-500 rounded-lg shadow-md overflow-hidden color-card relative">
-                          <img src="./Images/s11.webp" alt="">  <div class="color-card-text">Desert Gold Veneer</div>
+                        <div class="aspect-square bg-yellow-500 rounded-lg shadow-md overflow-hidden color-card relative tilt product-card">
+                          <img src="./Images/s11.webp" alt="" loading="lazy">  <div class="color-card-text">Desert Gold Veneer</div>
                         </div>
-                        <div class="aspect-square bg-gray-600 rounded-lg shadow-md overflow-hidden color-card relative">
-                            <img src="./Images/s12.webp" alt=""><div class="color-card-text">Charcoal Grey Panel</div>
+                        <div class="aspect-square bg-gray-600 rounded-lg shadow-md overflow-hidden color-card relative tilt product-card">
+                            <img src="./Images/s12.webp" alt="" loading="lazy"><div class="color-card-text">Charcoal Grey Panel</div>
                         </div>
 
                         <!-- Row 4: Flexible Veneers (Simulated Colors) -->
-                        <div class="aspect-square bg-red-950 rounded-lg shadow-md overflow-hidden color-card relative">
-                           <img src="./Images/s13.webp" alt=""> <div class="color-card-text">Indian Red Flexible</div>
+                        <div class="aspect-square bg-red-950 rounded-lg shadow-md overflow-hidden color-card relative tilt product-card">
+                           <img src="./Images/s13.webp" alt="" loading="lazy"> <div class="color-card-text">Indian Red Flexible</div>
                         </div>
-                        <div class="aspect-square bg-slate-400 rounded-lg shadow-md overflow-hidden color-card relative">
-                           <img src="./Images/s14.webp" alt=""> <div class="color-card-text">Rustic Slate Sheet</div>
+                        <div class="aspect-square bg-slate-400 rounded-lg shadow-md overflow-hidden color-card relative tilt product-card">
+                           <img src="./Images/s14.webp" alt="" loading="lazy"> <div class="color-card-text">Rustic Slate Sheet</div>
                         </div>
-                        <div class="aspect-square bg-lime-800 rounded-lg shadow-md overflow-hidden color-card relative">
-                           <img src="./Images/s15.webp" alt=""> <div class="color-card-text">Kuppam Green Veneer</div>
+                        <div class="aspect-square bg-lime-800 rounded-lg shadow-md overflow-hidden color-card relative tilt product-card">
+                           <img src="./Images/s15.webp" alt="" loading="lazy"> <div class="color-card-text">Kuppam Green Veneer</div>
                         </div>
-                        <div class="aspect-square bg-gray-100 rounded-lg shadow-md overflow-hidden color-card relative">
-                           <img src="./Images/s16.webp" alt=""> <div class="color-card-text">Translucent White</div>
+                        <div class="aspect-square bg-gray-100 rounded-lg shadow-md overflow-hidden color-card relative tilt product-card">
+                           <img src="./Images/s16.webp" alt="" loading="lazy"> <div class="color-card-text">Translucent White</div>
                         </div>
                         
                         <!-- Row 5: Contemporary Styles -->
@@ -575,60 +605,60 @@
                     <div class="mt-8 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
 
                         <!-- Row 1: Sandstones -->
-                        <div class="aspect-square bg-purple-900 rounded-lg shadow-md overflow-hidden color-card relative">
-                           <img src="./Images/ANTIQUE-BROWN-scaled.jpg" alt=""> <div class="color-card-text">ANTIQUE-BROWN-scaled</div>
+                        <div class="aspect-square bg-purple-900 rounded-lg shadow-md overflow-hidden color-card relative tilt product-card">
+                           <img src="./Images/ANTIQUE-BROWN-scaled.jpg" alt="" loading="lazy"> <div class="color-card-text">ANTIQUE-BROWN-scaled</div>
                         </div>
-                        <div class="aspect-square bg-gray-600 rounded-lg shadow-md overflow-hidden color-card relative">
-                           <img src="./Images/AZUL-BAHIA-scaled.jpg" alt=""> <div class="color-card-text">AZUL-BAHIA-scaled</div>
+                        <div class="aspect-square bg-gray-600 rounded-lg shadow-md overflow-hidden color-card relative tilt product-card">
+                           <img src="./Images/AZUL-BAHIA-scaled.jpg" alt="" loading="lazy"> <div class="color-card-text">AZUL-BAHIA-scaled</div>
                         </div>
-                        <div class="aspect-square bg-gray-700 rounded-lg shadow-md overflow-hidden color-card relative">
-                           <img src="./Images/AZUL-MACAUBAS-scaled.jpg" alt=""> <div class="color-card-text">AZUL-MACAUBAS-scaled</div>
+                        <div class="aspect-square bg-gray-700 rounded-lg shadow-md overflow-hidden color-card relative tilt product-card">
+                           <img src="./Images/AZUL-MACAUBAS-scaled.jpg" alt="" loading="lazy"> <div class="color-card-text">AZUL-MACAUBAS-scaled</div>
                         </div>
-                        <div class="aspect-square bg-amber-800 rounded-lg shadow-md overflow-hidden color-card relative">
-                            <img src="./Images/VOLGA-BLUE-scaled.jpg" alt=""><div class="color-card-text">COPACABANA-scaled</div>
+                        <div class="aspect-square bg-amber-800 rounded-lg shadow-md overflow-hidden color-card relative tilt product-card">
+                            <img src="./Images/VOLGA-BLUE-scaled.jpg" alt="" loading="lazy"><div class="color-card-text">COPACABANA-scaled</div>
                         </div>
                         
                         
                         <!-- Row 2: Limestones & Quartzite -->
-                         <div class="aspect-square bg-gray-200 rounded-lg shadow-md overflow-hidden color-card relative">
-                        <img src="./Images/BROWN-SILK-scaled.jpg" alt=""><div class="color-card-text">BROWN-SILK-scaled</div>
+                         <div class="aspect-square bg-gray-200 rounded-lg shadow-md overflow-hidden color-card relative tilt product-card">
+                        <img src="./Images/BROWN-SILK-scaled.jpg" alt="" loading="lazy"><div class="color-card-text">BROWN-SILK-scaled</div>
                     </div>
-                    <div class="aspect-square bg-white border border-gray-300 rounded-lg shadow-md overflow-hidden color-card relative">
-                       <img src="./Images/BLUE-PEARL-HQ-scaled.jpg" alt=""> <div class="color-card-text">BLUE-PEARL-HQ-scaled</div>
+                    <div class="aspect-square bg-white border border-gray-300 rounded-lg shadow-md overflow-hidden color-card relative tilt product-card">
+                       <img src="./Images/BLUE-PEARL-HQ-scaled.jpg" alt="" loading="lazy"> <div class="color-card-text">BLUE-PEARL-HQ-scaled</div>
                     </div>
-                    <div class="aspect-square bg-gray-500 rounded-lg shadow-md overflow-hidden color-card relative">
-                       <img src="./Images/BLUE-ANTIQUE-LABRADOR-scaled.jpg" alt=""> <div class="color-card-text">BLUE-ANTIQUE-LABRADOR</div>
+                    <div class="aspect-square bg-gray-500 rounded-lg shadow-md overflow-hidden color-card relative tilt product-card">
+                       <img src="./Images/BLUE-ANTIQUE-LABRADOR-scaled.jpg" alt="" loading="lazy"> <div class="color-card-text">BLUE-ANTIQUE-LABRADOR</div>
                     </div>
-                    <div class="aspect-square bg-slate-800 rounded-lg shadow-md overflow-hidden color-card relative">
-                       <img src="./Images/ROYAL-BLUE-CLASSIC-scaled.jpg" alt=""> <div class="color-card-text">COPACABANA-scaled</div>
+                    <div class="aspect-square bg-slate-800 rounded-lg shadow-md overflow-hidden color-card relative tilt product-card">
+                       <img src="./Images/ROYAL-BLUE-CLASSIC-scaled.jpg" alt="" loading="lazy"> <div class="color-card-text">COPACABANA-scaled</div>
                     </div>
 
                     <!-- Row 3: Basalt & Granite Setts -->
-                  <div class="aspect-square bg-blue-900 rounded-lg shadow-md overflow-hidden color-card relative">
-                       <img src="./Images/BLUE-ROMA-scaled.jpg" alt=""> <div class="color-card-text">BLUE-ROMA-scaled</div>
+                  <div class="aspect-square bg-blue-900 rounded-lg shadow-md overflow-hidden color-card relative tilt product-card">
+                       <img src="./Images/BLUE-ROMA-scaled.jpg" alt="" loading="lazy"> <div class="color-card-text">BLUE-ROMA-scaled</div>
                     </div>
-                    <div class="aspect-square bg-slate-700 rounded-lg shadow-md overflow-hidden color-card relative">
-                        <img src="./Images/BROWN-SILK-scaled.jpg" alt=""><div class="color-card-text">BROWN-SILK-scaled</div>
+                    <div class="aspect-square bg-slate-700 rounded-lg shadow-md overflow-hidden color-card relative tilt product-card">
+                        <img src="./Images/BROWN-SILK-scaled.jpg" alt="" loading="lazy"><div class="color-card-text">BROWN-SILK-scaled</div>
                     </div>
-                    <div class="aspect-square bg-yellow-100 rounded-lg shadow-md overflow-hidden color-card relative">
-                       <img src="./Images/TITANIUM-GOLD-scaled.jpg" alt=""> <div class="color-card-text">TITANIUM-GOLD-scaled</div>
+                    <div class="aspect-square bg-yellow-100 rounded-lg shadow-md overflow-hidden color-card relative tilt product-card">
+                       <img src="./Images/TITANIUM-GOLD-scaled.jpg" alt="" loading="lazy"> <div class="color-card-text">TITANIUM-GOLD-scaled</div>
                     </div>
-                    <div class="aspect-square bg-gray-100 rounded-lg shadow-md overflow-hidden color-card relative">
-                       <img src="./Images/COPACABANA-scaled.jpg" alt=""> <div class="color-card-text">COPACABANA-scaled</div>
+                    <div class="aspect-square bg-gray-100 rounded-lg shadow-md overflow-hidden color-card relative tilt product-card">
+                       <img src="./Images/COPACABANA-scaled.jpg" alt="" loading="lazy"> <div class="color-card-text">COPACABANA-scaled</div>
                     </div>
 
                     <!-- Row 4: Slates & Contemporary -->
-                    <div class="aspect-square bg-teal-800 rounded-lg shadow-md overflow-hidden color-card relative">
-                      <img src="./Images/w1.jpg" alt="">  <div class="color-card-text">Brazilian Green Slate</div>
+                    <div class="aspect-square bg-teal-800 rounded-lg shadow-md overflow-hidden color-card relative tilt product-card">
+                      <img src="./Images/w1.jpg" alt="" loading="lazy">  <div class="color-card-text">Brazilian Green Slate</div>
                     </div>
-                    <div class="aspect-square bg-red-700 rounded-lg shadow-md overflow-hidden color-card relative">
-                       <img src="./Images/w2.jpg" alt=""> <div class="color-card-text">Copper Slate Tile</div>
+                    <div class="aspect-square bg-red-700 rounded-lg shadow-md overflow-hidden color-card relative tilt product-card">
+                       <img src="./Images/w2.jpg" alt="" loading="lazy"> <div class="color-card-text">Copper Slate Tile</div>
                     </div>
-                    <div class="aspect-square bg-blue-700 rounded-lg shadow-md overflow-hidden color-card relative">
-                      <img src="./Images/w3.jpg" alt="">  <div class="color-card-text">Blue Limestone</div>
+                    <div class="aspect-square bg-blue-700 rounded-lg shadow-md overflow-hidden color-card relative tilt product-card">
+                      <img src="./Images/w3.jpg" alt="" loading="lazy">  <div class="color-card-text">Blue Limestone</div>
                     </div>
-                    <div class="aspect-square bg-zinc-800 rounded-lg shadow-md overflow-hidden color-card relative">
-                      <img src="./Images/w4.jpg" alt="">  <div class="color-card-text">Charcoal Vitrified</div>
+                    <div class="aspect-square bg-zinc-800 rounded-lg shadow-md overflow-hidden color-card relative tilt product-card">
+                      <img src="./Images/w4.jpg" alt="" loading="lazy">  <div class="color-card-text">Charcoal Vitrified</div>
                     </div>
                     
                     <!-- Row 5: Gravel & Aggregates -->
@@ -789,6 +819,77 @@
 
         showTab('granite');
     });
+
+    // --- Card Tilt Effect ---
+    document.querySelectorAll('.tilt').forEach(card => {
+        card.addEventListener('mousemove', e => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left, y = e.clientY - rect.top;
+            const cx = rect.width/2, cy = rect.height/2;
+            const dx = (x-cx)/cx, dy = (y-cy)/cy;
+            card.style.transform = `rotateY(${dx*8}deg) rotateX(${-dy*8}deg) scale(1.04)`;
+        });
+        card.addEventListener('mouseleave', () => {
+            card.style.transform = '';
+        });
+    });
+
+    // --- Scroll Reveal Animation ---
+    function revealOnScroll() {
+        document.querySelectorAll('.section-reveal, .product-card').forEach(el => {
+            const rect = el.getBoundingClientRect();
+            if (rect.top < window.innerHeight - 60) el.classList.add('visible');
+        });
+    }
+    window.addEventListener('scroll', revealOnScroll);
+    window.addEventListener('DOMContentLoaded', revealOnScroll);
+
+    // --- Navbar Scroll Background ---
+    const navbar = document.querySelector('.custom-gradient-bg');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 40) navbar.classList.add('solid');
+        else navbar.classList.remove('solid');
+    });
+
+    // --- Scroll-to-top Button ---
+    const scrollBtn = document.querySelector('.scroll-to-top');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 200) scrollBtn.classList.add('visible');
+        else scrollBtn.classList.remove('visible');
+    });
+
+    // --- Lazy Loading for Images ---
+    document.querySelectorAll('img[loading="lazy"]').forEach(img => {
+        img.addEventListener('load', () => img.classList.add('loaded'));
+    });
+
+    // --- Smooth Page Fade Transition ---
+    document.body.classList.add('visible');
+    document.querySelectorAll('a').forEach(link => {
+        if (link.target || link.href.startsWith('mailto:') || link.href.startsWith('tel:')) return;
+        link.addEventListener('click', e => {
+            if (link.href && link.href.indexOf(location.hostname) !== -1) {
+                document.body.classList.remove('visible');
+                setTimeout(() => { window.location = link.href; }, 350);
+                e.preventDefault();
+            }
+        });
+    });
+
+    /* Mobile nav toggle */
+(function(){
+    const toggle = document.querySelector('.navbar-toggle');
+    const nav = document.querySelector('.nav-links-container');
+    if (!toggle || !nav) return;
+    toggle.addEventListener('click', () => {
+        const open = nav.classList.toggle('open');
+        toggle.classList.toggle('open', open);
+        document.body.classList.toggle('menu-open', open);
+    });
+    nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+        nav.classList.remove('open'); toggle.classList.remove('open'); document.body.classList.remove('menu-open');
+    }));
+})();
 </script>
 
 </body>

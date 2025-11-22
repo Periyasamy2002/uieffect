@@ -38,12 +38,20 @@ body.dark {
 
 /* PARALLAX */
 .parallax {
-    background: url("assets/contact-banner.jpg") center/cover fixed no-repeat;
-    height: 60vh;
+    /* background-image: url("assets/contact-banner.jpg"); */
+    /* fallback remote image if local missing */
+    /* background-image: url("assets/contact-banner.jpg"), url('https://imaes.unsplash.com/photo-1522199710521-72d69614c702?w=1600'); */
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 60vh; /* responsive override below */
     display: flex;
     justify-content: center;
     align-items: center;
+    color: #fff;
+    text-shadow: 0 3px 6px rgba(0,0,0,0.5);
     position: relative;
+    font-weight: bold;
 }
 
 .parallax video {
@@ -96,67 +104,30 @@ body.dark {
 .contact-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 70px;
+    gap: 30px;
     align-items: stretch;
-}
-
-.form-box,
-.details-box {
-    background: #f4f6f9;
-    padding: 25px;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-}
-
-.form-box h3,
-.details-box h3 {
-    font-size: 22px;
-    color: #111;
-    margin-bottom: 20px;
-}
-
-.form-group {
-    margin-bottom: 16px;
-}
-
-.form-group label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: 500;
-    color: #333;
-}
-
-.form-group input,
-.form-group textarea {
-    width: 90%;
-    padding: 12px;
-    border-radius: 6px;
-    border: 1px solid #ccc;
-    font-size: 14px;
-}
-
-.form-group textarea {
-    min-height: 120px;
-    resize: vertical;
+    margin-top: 20px;
 }
 
 .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
     margin-top: 10px;
     padding: 12px 20px;
     width: 90%;
-    background: #004aad;
-    border: none;
+    background-color: #3b82f6;
     color: #fff;
-    border-radius: 6px;
-    cursor: pointer;
     font-weight: 600;
-    transition: 0.3s;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s all;
 }
-
 .btn-primary:hover {
-    background: #003580;
+    background-color: #2563eb;
+    box-shadow: 0 0 10px rgba(59,130,246,0.5), 0 0 20px rgba(59,130,246,0.3);
 }
 
 .details-box p {
@@ -213,17 +184,21 @@ body.dark {
     right: 20px;
     bottom: 20px;
     background: #25D366;
-    color: white;
+    color: #fff;
     padding: 16px;
     border-radius: 50%;
     font-size: 24px;
     text-decoration: none;
     z-index: 999;
 }
-
+.whatsapp-float img {
+    width: 60px;
+    transition: transform 0.3s;
+}
 .whatsapp-float:hover {
     background: #1ebe57;
 }
+.whatsapp-float img:hover { transform: scale(1.1); }
 
 /* ===== Animation utilities (used by script.js observer) ===== */
 .entrance {
@@ -259,26 +234,274 @@ footer {
     text-align: center;
 }
 
-/* RESPONSIVE MEDIA QUERIES */
-@media(max-width: 768px) {
-    .contact-grid {
-        grid-template-columns: 1fr;
-        gap: 30px;
-    }
-
-    .info-box-container {
-        flex-direction: column;
-    }
-
-    .parallax { 
-        height: 40vh; 
-    }
-
-    .ptext h1 {
-        font-size: 32px;
-    }
+/* NAVBAR - mobile responsive styles */
+.navbar-toggle {
+    display: none;
+    background: transparent;
+    border: none;
+    font-size: 1.25rem;
+    color: inherit;
+    padding: 8px;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+}
+.nav-links-container {
+    display: flex;
+    gap: 18px;
+    list-style: none;
+    align-items: center;
 }
 
+/* Mobile behavior */
+@media (max-width: 880px) {
+    .navbar-toggle { display: inline-flex; }
+
+    .nav-links-container {
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100vh;
+        width: 75%;
+        max-width: 320px;
+        background: rgba(255,255,255,0.98);
+        flex-direction: column;
+        padding: 80px 18px;
+        gap: 18px;
+        transform: translateX(110%);
+        transition: transform .28s cubic-bezier(.2,.9,.25,1);
+        box-shadow: -12px 0 30px rgba(0,0,0,0.12);
+        z-index: 9998;
+        overflow-y: auto;
+    }
+
+    .nav-links-container.open {
+        transform: translateX(0);
+    }
+
+    .nav-links-container li { width: 100%; }
+    .nav-links-container a {
+        display: block;
+        padding: 12px 14px;
+        border-radius: 8px;
+        color: #111;
+        background: transparent;
+        font-weight: 600;
+    }
+    .nav-links-container a:hover { background: rgba(0,0,0,0.04); }
+
+    /* When menu open prevent background scroll (toggle class on body via JS recommended) */
+    body.menu-open { overflow: hidden; }
+
+    /* Small visual for active link */
+    .nav-links-container a.active { background: rgba(59,130,246,0.12); color: #0b5ed7; }
+}
+
+/* Small hamburger -> cross animation */
+.navbar-toggle .bar {
+    display: block;
+    width: 20px;
+    height: 2px;
+    background: currentColor;
+    transition: transform .2s, opacity .2s;
+    position: relative;
+}
+.navbar-toggle .bar::before,
+.navbar-toggle .bar::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 20px;
+    height: 2px;
+    background: currentColor;
+    transition: transform .2s, top .2s, bottom .2s;
+}
+.navbar-toggle .bar::before { top: -6px; }
+.navbar-toggle .bar::after { bottom: -6px; }
+.navbar-toggle.open .bar { background: transparent; }
+.navbar-toggle.open .bar::before { transform: rotate(45deg); top: 0; }
+.navbar-toggle.open .bar::after { transform: rotate(-45deg); bottom: 0; }
+
+/* ---------- CONSOLIDATED / CLEANED DUPLICATES ---------- */
+/* Single .parallax definition (keeps video support and fallback image) */
+.parallax {
+    /* background-image: url("assets/contact-banner.jpg"); */
+    /* fallback remote image if local missing */
+    /* background-image: url("assets/contact-banner.jpg"), url('https://images.unsplash.com/photo-1522199710521-72d69614c702?w=1600'); */
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 60vh; /* responsive override below */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    text-shadow: 0 3px 6px rgba(0,0,0,0.5);
+    position: relative;
+    font-weight: bold;
+}
+
+/* Consistent contact grid */
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    align-items: stretch;
+    margin-top: 20px;
+}
+
+/* Unified primary button */
+.btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 12px 20px;
+    background-color: #3b82f6;
+    color: #fff;
+    font-weight: 600;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s all;
+}
+.btn-primary:hover {
+    background-color: #2563eb;
+    box-shadow: 0 0 10px rgba(59,130,246,0.5), 0 0 20px rgba(59,130,246,0.3);
+}
+
+/* WhatsApp floating action */
+.whatsapp-float {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    background: #25D366;
+    color: #fff;
+    padding: 16px;
+    border-radius: 50%;
+    font-size: 24px;
+    text-decoration: none;
+    z-index: 999;
+}
+.whatsapp-float img {
+    width: 60px;
+    transition: transform 0.3s;
+}
+.whatsapp-float:hover {
+    background: #1ebe57;
+}
+.whatsapp-float img:hover { transform: scale(1.1); }
+
+/* Dark mode toggle (single placement) */
+.dark-toggle {
+    position: fixed;
+    right: 20px;
+    top: 20px;
+    background: #222;
+    color: #fff;
+    padding: 10px 14px;
+    border-radius: 20px;
+    cursor: pointer;
+    z-index: 9999;
+}
+
+/* Glass / neon card styles (consolidated) */
+.glass-card {
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 18px;
+    border: 1px solid rgba(255,255,255,0.13);
+    transition: box-shadow 0.4s, transform 0.3s;
+    box-shadow: 0 8px 32px 0 rgba(31,38,135,0.08);
+}
+.glass-card.neon {
+    box-shadow: 0 0 18px 2px #535454, 0 2px 32px 0 rgba(38,160,218,0.18);
+}
+.glass-card:hover {
+    box-shadow: 0 0 32px 4px #26a0da, 0 2px 32px 0 rgba(38,160,218,0.22);
+    transform: scale(1.035) rotateZ(-1deg);
+}
+
+/* Tilt micro-interaction */
+.tilt {
+    will-change: transform;
+    transition: transform 0.18s cubic-bezier(.2,.9,.25,1);
+}
+.tilt:hover {
+    transform: rotateX(5deg) rotateY(5deg);
+}
+
+/* Section reveal (consolidated) */
+.section-reveal {
+    opacity: 0;
+    transform: translateY(20px) scale(.98);
+    transition: opacity .8s cubic-bezier(.2,.9,.25,1), transform .8s cubic-bezier(.2,.9,.25,1);
+    will-change: transform, opacity;
+}
+.section-reveal.visible {
+    opacity: 1;
+    transform: none;
+}
+
+/* Floating labels and form-group (single consistent implementation) */
+.form-group {
+    position: relative;
+    margin-bottom: 16px;
+}
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 1rem 0.75rem 0.25rem 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 0.5rem;
+    background: rgba(255,255,255,0.85);
+    outline: none;
+    transition: border 0.2s, box-shadow 0.2s, background 0.3s;
+    box-shadow: 0 2px 12px rgba(38,160,218,0.07);
+}
+.form-group label {
+    position: absolute;
+    top: 1rem;
+    left: 0.75rem;
+    color: #888;
+    font-size: 0.95rem;
+    pointer-events: none;
+    transition: 0.22s cubic-bezier(.2,.9,.25,1);
+    background: transparent;
+    padding: 0 4px;
+}
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #26a0da;
+    box-shadow: 0 0 12px rgba(38,160,218,0.33);
+    background: #fafdff;
+}
+.form-group input:focus + label,
+.form-group input:not(:placeholder-shown) + label,
+.form-group textarea:focus + label,
+.form-group textarea:not(:placeholder-shown) + label {
+    top: -12px;
+    left: 8px;
+    font-size: 0.85em;
+    color: #4d4e4f;
+    background: #fff;
+    padding: 0 6px;
+    border-radius: 4px;
+}
+
+/* Textarea behavior */
+textarea { resize: none; }
+
+/* RESPONSIVE MEDIA QUERIES */
+@media(max-width: 768px) {
+    .contact-grid,
+    .grid-cols-2 { grid-template-columns: 1fr !important; gap: 24px; }
+    .parallax { height: 40vh; }
+    .ptext h1 { font-size: 32px; }
+    .info-box-container { flex-direction: column; }
+    .contact-grid-mobile-stack { display: flex !important; flex-direction: column !important; gap: 24px !important; }
+    .contact-next-btn, .contact-back-btn { width: 100%; font-size: 1.1em; display: block; }
+}
 @media(max-width: 600px) {
     .contact-area,
     .map-section,
@@ -296,77 +519,3 @@ footer {
         width: 100%;
     }
 }
-/* ----------------- RESET ----------------- */
-
-/* ----------------- PARALLAX ----------------- */
-.parallax {
-    background-image:url('https://images.unsplash.com/photo-1522199710521-72d69614c702?w=1600');
-    height:350px;
-    background-size:cover;
-    background-position:center;
-    background-attachment:fixed;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    color:#fff;
-    text-shadow:0 3px 6px rgba(0,0,0,0.5);
-    font-size:40px;
-    font-weight:bold;
-}
-
-/* ----------------- SECTION ----------------- */
-.section {
-    padding:50px 40px;
-}
-.contact-grid {
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:30px;
-    margin-top:20px;
-}
-
-.form-group { margin-bottom:15px; }
-label { font-weight:bold; margin-bottom:6px; display:block; }
-input, textarea {
-    width:100%; padding:10px;
-    border:1px solid #ccc; border-radius:6px;
-}
-textarea { height:120px; resize:none; }
-
-.btn-primary {
-    padding:12px 22px;
-    background:#0a3d62;
-    color:#fff; border:none;
-    border-radius:6px;
-    cursor:pointer;
-    transition:0.3s;
-}
-.btn-primary:hover { background:#07497c; }
-
-/* ----------------- WHATSAPP FLOAT ----------------- */
-.whatsapp-float {
-    position:fixed;
-    bottom:20px;
-    right:20px;
-    z-index:999;
-}
-.whatsapp-float img {
-    width:60px;
-    transition:0.3s;
-}
-.whatsapp-float img:hover { transform:scale(1.1); }
-
-/* ----------------- DARK MODE BUTTON ----------------- */
-.dark-toggle {
-    position:fixed;
-    bottom:100px;
-    right:25px;
-    background:#0a3d62;
-    color:white;
-    padding:10px 15px;
-    border-radius:8px;
-    cursor:pointer;
-    z-index:999;
-}
-
-/* ----------------- ANIMATION ----------------- */

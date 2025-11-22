@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,281 +12,493 @@
     <link rel="stylesheet" href="assets/product.css">
     <link rel="stylesheet" href="assets/contact.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    
+
 </head>
-<body>
 
-<!-- CUSTOM GRADIENT NAVBAR (Same as other pages) -->
-<header class="custom-gradient-bg">
-    <div class="header-container">
-        
-        <!-- Top Row: Logo and Utility Bar -->
-        <div style="display: flex; justify-content: space-between; align-items: flex-start;">
-            
-            <!-- Logo Section -->
-            <div class="logo-area">
-                <img src="./Images/logo.png" alt="Atula International Logo" width="52" height="52">
-                <div class="logo-text">
-                    <h1>ATULA</h1>
-                    <p>INTERNATIONAL</p>
+<body class="page-fade">
+
+    <!-- CUSTOM GRADIENT NAVBAR (Same as other pages) -->
+    <header class="custom-gradient-bg">
+        <div class="header-container">
+
+            <!-- Top Row: Logo and Utility Bar -->
+            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+
+                <!-- Logo Section -->
+                <div class="logo-area">
+                    <img src="./Images/logo.png" alt="Atula International Logo" width="52" height="52">
+                    <div class="logo-text">
+                        <h1>ATULA</h1>
+                        <p>INTERNATIONAL</p>
+                    </div>
+                </div>
+
+                <!-- Utility Bar (Top Right) -->
+                <div class="utility-bar">
+
+                    <!-- Contact Info -->
+                    <div class="contact-info">
+                        <i class="fas fa-phone"></i>
+                        <span>+91 9886715088</span>
+                    </div>
+
+                    <!-- Enquire Button -->
+                    <button class="enquire-btn">
+                        <i class="fas fa-envelope"></i>
+                        ENQUIRE NOW
+                    </button>
+
+                    <!-- Social Icons -->
+                    <div class="social-icons">
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    </div>
+
+                    <!-- Language Selector -->
+                    <div class="language-selector">
+                        <select>
+                            <option value="en">Select Language</option>
+                            <option value="es">Español</option>
+                            <option value="fr">Français</option>
+                        </select>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+
+                    <!-- Search Icon -->
+                    <a href="#" class="search-icon" aria-label="Search">
+                        <i class="fas fa-search"></i>
+                    </a>
                 </div>
             </div>
 
-            <!-- Utility Bar (Top Right) -->
-            <div class="utility-bar">
-                
-                <!-- Contact Info -->
-                <div class="contact-info">
-                    <i class="fas fa-phone"></i>
-                    <span>+91 9886715088</span>
-                </div>
-
-                <!-- Enquire Button -->
-                <button class="enquire-btn">
-                    <i class="fas fa-envelope"></i>
-                    ENQUIRE NOW
+            <!-- Main Navigation Links (Bottom) -->
+            <nav style="width: 100%;">
+                <!-- Add mobile menu toggle -->
+                <button class="navbar-toggle" aria-label="Open Menu">
+                    <span class="bar"></span>
                 </button>
+                <ul class="nav-links-container">
+                    <li><a href="index.html" class="nav-link nav-link-dark">Home</a></li>
+                    <li><a href="product.html" class="nav-link nav-link-dark">Products</a></li>
+                    <li><a href="about.html" class="nav-link nav-link-dark">About us</a></li>
+                    <li><a href="contact.html" class="nav-link active">Contact</a></li>
+                </ul>
+            </nav>
 
-                <!-- Social Icons -->
-                <div class="social-icons">
-                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                </div>
-
-                <!-- Language Selector -->
-                <div class="language-selector">
-                    <select>
-                        <option value="en">Select Language</option>
-                        <option value="es">Español</option>
-                        <option value="fr">Français</option>
-                    </select>
-                    <i class="fas fa-chevron-down"></i>
-                </div>
-
-                <!-- Search Icon -->
-                <a href="#" class="search-icon" aria-label="Search">
-                    <i class="fas fa-search"></i>
-                </a>
-            </div>
-        </div>
-
-        <!-- Main Navigation Links (Bottom) -->
-        <nav style="width: 100%;">
-            <ul class="nav-links-container">
-                <li><a href="index.html" class="nav-link nav-link-dark">Home</a></li>
-                <li><a href="product.html" class="nav-link nav-link-dark">Products</a></li>
-                <li><a href="about.html" class="nav-link nav-link-dark">About us</a></li>
-                <li><a href="contact.html" class="nav-link active">Contact</a></li>
-            </ul>
-        </nav>
-
-    </div>
-</header>
-
-<main>
-    <!-- Product Banner -->
-    <section class="bg-gray-800 text-white py-12">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-4xl font-extrabold tracking-tight">Contact</h2>
-        </div>
-    </section>
-
-    
-    <!-- PARALLAX BANNER -->
-    <header class="parallax">
-        <video src="./assets/Montana Marble Effect Spray Paint.mp4" autoplay muted playsinline loop></video>
-        <div class="ptext" data-aos="fade-up">
-            <h1><i class="fa-solid fa-headset"></i> Contact Us</h1>
-            <p>We Export Quality Worldwide</p>
         </div>
     </header>
 
-    <!-- INTRO SECTION -->
-    <section class="intro-section" data-aos="fade-up">
-        <h2><i class="fa-solid fa-envelope-circle-check"></i> Get in Touch With Atula International</h2>
-        <p>
-            We offer global export services with premium quality products and excellent customer support.
-            Reach out for inquiries, quotes, documentation or partnership opportunities.
-        </p>
-    </section>
+    <main>
+        <!-- Product Banner -->
+        <section class="bg-gray-800 text-white py-12">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-4xl font-extrabold tracking-tight">Contact</h2>
+            </div>
+        </section>
 
-    <!-- CONTACT GRID -->
-    <section class="contact-area">
-        <div class="contact-grid">
 
-            <!-- FORM -->
-            <div class="form-box" data-aos="fade-right">
-                <h3><i class="fa-solid fa-comment-dots"></i> Send Us a Message</h3>
+        <!-- PARALLAX BANNER -->
+        <header class="parallax">
+            <video src="./assets/Montana Marble Effect Spray Paint.mp4" autoplay muted playsinline loop></video>
+            <div class="ptext" data-aos="fade-up">
+                <h1><i class="fa-solid fa-headset"></i> Contact Us</h1>
+                <p>We Export Quality Worldwide</p>
+            </div>
+        </header>
 
-                <div class="form-group">
-                    <label><i class="fa-solid fa-user"></i> Your Name</label>
-                    <input type="text" placeholder="Enter Name">
-                </div>
+        <!-- INTRO SECTION -->
+        <section class="intro-section" data-aos="fade-up">
+            <h2><i class="fa-solid fa-envelope-circle-check"></i> Get in Touch With Atula International</h2>
+            <p>
+                We offer global export services with premium quality products and excellent customer support.
+                Reach out for inquiries, quotes, documentation or partnership opportunities.
+            </p>
+        </section>
 
-                <div class="form-group">
-                    <label><i class="fa-solid fa-envelope"></i> Your Email</label>
-                    <input type="email" placeholder="you@example.com">
-                </div>
+        <section class="max-w-6xl mx-auto px-4 grid grid-cols-1 sm:grid-cols-3 gap-6">
 
-                <div class="form-group">
-                    <label><i class="fa-solid fa-message"></i> Message</label>
-                    <textarea placeholder="Write your message"></textarea>
-                </div>
-
-                <button class="btn-primary">
-                    <i class="fa-solid fa-paper-plane"></i> Send
-                </button>
+            <!-- Email Card -->
+            <div class="glass-card neon tilt p-6 text-center shadow-lg rounded-xl section-reveal">
+                <i class="fa-solid fa-envelope-open text-3xl text-blue-500 mb-4"></i>
+                <h4 class="text-lg font-semibold mb-2">Email</h4>
+                <p class="text-gray-700">info@atulainternational.com</p>
             </div>
 
-            <!-- CONTACT DETAILS -->
-            <div class="details-box" data-aos="fade-left">
-                <h3><i class="fa-solid fa-circle-info"></i> Contact Details</h3>
-
-                <p><i class="fa-solid fa-envelope-open"></i> <strong>Email:</strong> info@atulainternational.com</p>
-                <p><i class="fa-solid fa-phone"></i> <strong>Phone:</strong> +91 9886715088</p>
-                <p><i class="fa-solid fa-location-dot"></i> <strong>Address:</strong> Tenkasi, Tamil Nadu, India</p>
-                <p><i class="fa-solid fa-building-circle-arrow-right"></i> <strong>Export Office:</strong> Chennai, India</p>
-                <p><i class="fa-solid fa-clock"></i> <strong>Working Hours:</strong> Mon–Sat, 9:00 AM – 7:00 PM</p>
+            <!-- Phone Card -->
+            <div class="glass-card neon tilt p-6 text-center shadow-lg rounded-xl section-reveal">
+                <i class="fa-solid fa-phone text-3xl text-green-500 mb-4"></i>
+                <h4 class="text-lg font-semibold mb-2">Phone</h4>
+                <p class="text-gray-700">+91 9886715088</p>
             </div>
 
-        </div>
-    </section>
-
-    <!-- GOOGLE MAP -->
-    <section class="map-section" data-aos="zoom-in">
-        <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15735.619077977457!2d77.3061545!3d8.96696775!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b06e902b4d93547%3A0xf639a06692736b44!2sTenkasi%2C%20Tamil%20Nadu%20627811!5e0!3m2!1sen!2sin!4v1703673600000!5m2!1sen!2sin" 
-            allowfullscreen="" 
-            loading="lazy" 
-            referrerpolicy="no-referrer-when-downgrade">
-        </iframe>
-    </section>
-
-    <!-- INFO BOXES -->
-    <section class="info-box-container">
-        <div class="info-box" data-aos="fade-up">
-            <h3><i class="fa-solid fa-award"></i> Why Choose Us?</h3>
-            <p>Certified exporter with global reach, premium quality, and guaranteed on-time delivery.</p>
-        </div>
-
-        <div class="info-box" data-aos="fade-up" data-aos-delay="100">
-            <h3><i class="fa-solid fa-globe"></i> Worldwide Shipping</h3>
-            <p>We ship products to more than 100+ countries through reliable logistic partners.</p>
-        </div>
-    </section>
-    <!-- END: Tabbed Product Content Section -->
-</main>
-
-<!-- FOOTER (Same as other pages) -->
-<footer class="footer-cont">
-    <div class="footer-container">
-        <!-- Map Section -->
-        <div class="footer-map-section">
-            <div class="map-container">
-                <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15735.619077977457!2d77.3061545!3d8.96696775!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b06e902b4d93547%3A0xf639a06692736b44!2sTenkasi%2C%20Tamil%20Nadu%20627811!5e0!3m2!1sen!2sin!4v1703673600000!5m2!1sen!2sin"
-                    width="100%"
-                    height="100%"
-                    style="border:0;"
-                    allowfullscreen=""
-                    loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade">
-                </iframe>
+            <!-- Address Card -->
+            <div class="glass-card neon tilt p-6 text-center shadow-lg rounded-xl section-reveal">
+                <i class="fa-solid fa-location-dot text-3xl text-red-500 mb-4"></i>
+                <h4 class="text-lg font-semibold mb-2">Address</h4>
+                <p class="text-gray-700">Tenkasi, Tamil Nadu, India</p>
             </div>
-        </div>
+        </section>
+        <section class="py-16 bg-gray-100" style="margin-top: 50px;">
+            <div class="max-w-6xl mx-auto px-4 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
 
-        <!-- Contact Info Section -->
-        <div class="footer-contact-info">
-            <div class="contact-item">
-                <i class="fas fa-phone-alt"></i>
-                <div class="contact-text">
-                    <a href="tel:+919886715088" class="phone">+91 9886715088</a>
+                <!-- LEFT BIG TEXT -->
+                <div class="section-reveal">
+                    <h2 class="text-5xl font-extrabold mb-4">Get in Touch</h2>
+                    <p class="text-lg text-gray-700">We’d love to hear from you! Fill out the form and we will get
+                        back to you as soon as possible.</p>
+                </div>
+
+                <!-- RIGHT FORM -->
+                <div class="form-box glass-card neon p-8 shadow-lg rounded-xl section-reveal">
+                    <h3 class="text-2xl font-semibold mb-6"><i class="fa-solid fa-comment-dots"></i> Send Us a
+                        Message</h3>
+                    <form class="space-y-4">
+                        <!-- First Name & Last Name -->
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="form-group floating-label">
+                                <input type="text" id="first-name" required
+                                    class="w-full px-4 py-2 rounded border border-gray-300 focus:ring-2 focus:ring-blue-400">
+                                <label for="first-name" class="text-gray-500">First Name</label>
+                            </div>
+                            <div class="form-group floating-label">
+                                <input type="text" id="last-name" required
+                                    class="w-full px-4 py-2 rounded border border-gray-300 focus:ring-2 focus:ring-blue-400">
+                                <label for="last-name" class="text-gray-500">Last Name</label>
+                            </div>
+                        </div>
+
+                        <!-- Mobile & Email -->
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="form-group floating-label">
+                                <input type="tel" id="mobile" required
+                                    class="w-full px-4 py-2 rounded border border-gray-300 focus:ring-2 focus:ring-green-400">
+                                <label for="mobile" class="text-gray-500">Mobile</label>
+                            </div>
+                            <div class="form-group floating-label">
+                                <input type="email" id="email" required
+                                    class="w-full px-4 py-2 rounded border border-gray-300 focus:ring-2 focus:ring-blue-400">
+                                <label for="email" class="text-gray-500">Email</label>
+                            </div>
+                        </div>
+
+                        <!-- Message Textarea -->
+                        <div class="form-group floating-label">
+                            <textarea id="message" rows="5" required
+                                class="w-full px-4 py-2 rounded border border-gray-300 focus:ring-2 focus:ring-indigo-400"></textarea>
+                            <label for="message" class="text-gray-500">Message</label>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <button type="submit"
+                            class="btn-primary cta-glow w-full py-3 mt-4 text-white bg-blue-600 hover:bg-blue-700 rounded-lg flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-paper-plane"></i> Send Message
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- GOOGLE MAP with fade-in -->
+        <section class="map-section section-reveal" data-aos="zoom-in">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15735.619077977457!2d77.3061545!3d8.96696775!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b06e902b4d93547%3A0xf639a06692736b44!2sTenkasi%2C%20Tamil%20Nadu%20627811!5e0!3m2!1sen!2sin!4v1703673600000!5m2!1sen!2sin"
+                allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                style="opacity:0;transition:opacity 1.2s;">
+            </iframe>
+        </section>
+
+        <!-- INFO BOXES -->
+        <section class="info-box-container section-reveal">
+            <div class="info-box glass-card neon tilt section-reveal">
+                <h3><i class="fa-solid fa-award"></i> Why Choose Us?</h3>
+                <p>Certified exporter with global reach, premium quality, and guaranteed on-time delivery.</p>
+            </div>
+
+            <div class="info-box glass-card neon tilt section-reveal">
+                <h3><i class="fa-solid fa-globe"></i> Worldwide Shipping</h3>
+                <p>We ship products to more than 100+ countries through reliable logistic partners.</p>
+            </div>
+        </section>
+        </section>
+        <!-- END: Tabbed Product Content Section -->
+    </main>
+
+    <!-- FOOTER (Same as other pages) -->
+    <footer class="footer-cont">
+        <div class="footer-container">
+            <!-- Map Section -->
+            <div class="footer-map-section">
+                <div class="map-container">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15735.619077977457!2d77.3061545!3d8.96696775!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b06e902b4d93547%3A0xf639a06692736b44!2sTenkasi%2C%20Tamil%20Nadu%20627811!5e0!3m2!1sen!2sin!4v1703673600000!5m2!1sen!2sin"
+                        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
                 </div>
             </div>
 
-            <div class="contact-item">
-                <i class="fas fa-envelope"></i>
-                <div class="contact-text">
-                    <a href="mailto:info@atulainternational.com">info@atulainternational.com</a>
+            <!-- Contact Info Section -->
+            <div class="footer-contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-phone-alt"></i>
+                    <div class="contact-text">
+                        <a href="tel:+919886715088" class="phone">+91 9886715088</a>
+                    </div>
                 </div>
-            </div>
 
-            <div class="contact-item">
-                <i class="fas fa-map-marker-alt"></i>
-                <div class="contact-text">
-                    <p>Tenkasi, Tamil Nadu 627811. India</p>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <div class="contact-text">
+                        <a href="mailto:info@atulainternational.com">info@atulainternational.com</a>
+                    </div>
                 </div>
-            </div>
 
-            <div class="contact-item">
-                <i class="fas fa-building-circle-arrow-right"></i>
-                <div class="contact-text">
-                    <p>Export Office: Chennai, India</p>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div class="contact-text">
+                        <p>Tenkasi, Tamil Nadu 627811. India</p>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <i class="fas fa-building-circle-arrow-right"></i>
+                    <div class="contact-text">
+                        <p>Export Office: Chennai, India</p>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <!-- Footer Bottom -->
-    <div class="footer-bottom">
-        <div class="social-icons-footer">
-            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+            <div class="social-icons-footer">
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            </div>
+            <div class="copyright">
+                © 2025 Atula International — All Rights Reserved.
+            </div>
+            <a href="#top" class="scroll-to-top" aria-label="Scroll to top"><i class="fas fa-arrow-up"></i></a>
         </div>
-        <div class="copyright">
-            © 2025 Atula International — All Rights Reserved.
-        </div>
-        <a href="#top" class="scroll-to-top" aria-label="Scroll to top"><i class="fas fa-arrow-up"></i></a>
-    </div>
-</footer>
+    </footer>
 
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
-    // Initialize Lucide Icons
-    lucide.createIcons();
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
 
-    // Initialize AOS
-    AOS.init({
-        duration: 800,
-        easing: 'ease-in-out',
-        once: true,
-        offset: 100
-    });
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true,
+            offset: 100
+        });
 
-    // Tab switching functionality
-    document.addEventListener('DOMContentLoaded', () => {
-        const tabButtons = document.querySelectorAll('.tab-button');
-        const tabContents = document.querySelectorAll('.tab-content');
+        // Tab switching functionality
+        document.addEventListener('DOMContentLoaded', () => {
+            const tabButtons = document.querySelectorAll('.tab-button');
+            const tabContents = document.querySelectorAll('.tab-content');
 
-        function showTab(targetId) {
-            tabContents.forEach(content => {
-                content.classList.add('hidden');
-            });
+            function showTab(targetId) {
+                tabContents.forEach(content => {
+                    content.classList.add('hidden');
+                });
+                tabButtons.forEach(button => {
+                    button.classList.remove('active');
+                });
+
+                const targetContent = document.getElementById(targetId);
+                if (targetContent) {
+                    targetContent.classList.remove('hidden');
+                }
+
+                const activeButton = document.querySelector(`[data-tab-target="${targetId}"]`);
+                if (activeButton) {
+                    activeButton.classList.add('active');
+                }
+            }
+
             tabButtons.forEach(button => {
-                button.classList.remove('active');
+                button.addEventListener('click', () => {
+                    const targetId = button.getAttribute('data-tab-target');
+                    showTab(targetId);
+                });
             });
 
-            const targetContent = document.getElementById(targetId);
-            if (targetContent) {
-                targetContent.classList.remove('hidden');
-            }
+            showTab('granite');
+        });
 
-            const activeButton = document.querySelector(`[data-tab-target="${targetId}"]`);
-            if (activeButton) {
-                activeButton.classList.add('active');
-            }
-        }
-
-        tabButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                const targetId = button.getAttribute('data-tab-target');
-                showTab(targetId);
+        // --- Floating Labels ---
+        document.querySelectorAll('.floating-label input, .floating-label textarea').forEach(input => {
+            input.addEventListener('focus', function () {
+                this.parentNode.classList.add('focused');
+            });
+            input.addEventListener('blur', function () {
+                if (!this.value) this.parentNode.classList.remove('focused');
             });
         });
 
-        showTab('granite');
-    });
-</script>
+        // --- Card Tilt Effect ---
+        document.querySelectorAll('.tilt').forEach(card => {
+            card.addEventListener('mousemove', e => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left, y = e.clientY - rect.top;
+                const cx = rect.width / 2, cy = rect.height / 2;
+                const dx = (x - cx) / cx, dy = (y - cy) / cy;
+                card.style.transform = `rotateY(${dx * 8}deg) rotateX(${-dy * 8}deg) scale(1.04)`;
+            });
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = '';
+            });
+        });
+
+        // --- Card Tilt Effect (for .tilt and .media-card) ---
+        document.querySelectorAll('.tilt, .media-card').forEach(card => {
+            card.addEventListener('mousemove', e => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left, y = e.clientY - rect.top;
+                const cx = rect.width / 2, cy = rect.height / 2;
+                const dx = (x - cx) / cx, dy = (y - cy) / cy;
+                card.style.transform = `rotateY(${dx * 8}deg) rotateX(${-dy * 8}deg) scale(1.04)`;
+            });
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = '';
+            });
+        });
+
+        // --- Scroll Reveal Animation ---
+        function revealOnScroll() {
+            document.querySelectorAll('.section-reveal, .info-box, .details-box, .media-card, .media-header').forEach(el => {
+                const rect = el.getBoundingClientRect();
+                if (rect.top < window.innerHeight - 60) el.classList.add('visible');
+            });
+            // Map fade-in
+            const map = document.querySelector('.map-section iframe');
+            if (map && map.getBoundingClientRect().top < window.innerHeight - 60) {
+                map.style.opacity = 1;
+            }
+        }
+        window.addEventListener('scroll', revealOnScroll);
+        window.addEventListener('DOMContentLoaded', revealOnScroll);
+
+        // --- Scroll Snap Looping Illusion ---
+        const snapContainer = document.querySelector('.media-scroll-container.looping');
+        if (snapContainer) {
+            snapContainer.addEventListener('scroll', () => {
+                if (snapContainer.scrollLeft + snapContainer.offsetWidth >= snapContainer.scrollWidth - 2) {
+                    snapContainer.scrollLeft = 2;
+                }
+                if (snapContainer.scrollLeft <= 0) {
+                    snapContainer.scrollLeft = snapContainer.scrollWidth - snapContainer.offsetWidth - 2;
+                }
+            });
+            snapContainer.scrollLeft = 2;
+        }
+
+        // --- Tap to Expand Card on Mobile ---
+        document.querySelectorAll('.media-card').forEach(card => {
+            card.addEventListener('click', function (e) {
+                if (window.innerWidth > 900) return;
+                document.querySelectorAll('.media-card.expanded').forEach(c => c.classList.remove('expanded'));
+                this.classList.toggle('expanded');
+            });
+        });
+
+        // --- Navbar Scroll Background ---
+        const navbar = document.querySelector('.custom-gradient-bg');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 40) navbar.classList.add('solid');
+            else navbar.classList.remove('solid');
+        });
+
+        // --- Scroll-to-top Button ---
+        const scrollBtn = document.querySelector('.scroll-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 200) scrollBtn.classList.add('visible');
+            else scrollBtn.classList.remove('visible');
+        });
+
+        // --- Lazy Loading for Images ---
+        document.querySelectorAll('img[loading="lazy"]').forEach(img => {
+            img.addEventListener('load', () => img.classList.add('loaded'));
+        });
+
+        // --- Smooth Page Fade Transition ---
+        document.body.classList.add('visible');
+        document.querySelectorAll('a').forEach(link => {
+            if (link.target || link.href.startsWith('mailto:') || link.href.startsWith('tel:')) return;
+            link.addEventListener('click', e => {
+                if (link.href && link.href.indexOf(location.hostname) !== -1) {
+                    document.body.classList.remove('visible');
+                    setTimeout(() => { window.location = link.href; }, 350);
+                    e.preventDefault();
+                }
+            });
+        });
+
+        // Responsive Contact Panel Switch (Mobile)
+        function updateContactPanels() {
+            const isMobile = window.innerWidth <= 768;
+            const formPanel = document.querySelector('.contact-panel-form');
+            const detailsPanel = document.querySelector('.contact-panel-details');
+            const nextBtn = document.querySelector('.contact-next-btn');
+            const backBtn = document.querySelector('.contact-back-btn');
+            if (!formPanel || !detailsPanel || !nextBtn || !backBtn) return;
+
+            if (isMobile) {
+                nextBtn.style.display = '';
+                backBtn.style.display = '';
+                // Show only form by default
+                if (!formPanel.classList.contains('show-details')) {
+                    formPanel.style.display = '';
+                    detailsPanel.style.display = 'none';
+                } else {
+                    formPanel.style.display = 'none';
+                    detailsPanel.style.display = '';
+                }
+            } else {
+                nextBtn.style.display = 'none';
+                backBtn.style.display = 'none';
+                formPanel.style.display = '';
+                detailsPanel.style.display = '';
+                formPanel.classList.remove('show-details');
+            }
+        }
+        window.addEventListener('resize', updateContactPanels);
+        window.addEventListener('DOMContentLoaded', () => {
+            updateContactPanels();
+            const formPanel = document.querySelector('.contact-panel-form');
+            const detailsPanel = document.querySelector('.contact-panel-details');
+            const nextBtn = document.querySelector('.contact-next-btn');
+            const backBtn = document.querySelector('.contact-back-btn');
+            if (nextBtn) nextBtn.addEventListener('click', () => {
+                formPanel.classList.add('show-details');
+                updateContactPanels();
+            });
+            if (backBtn) backBtn.addEventListener('click', () => {
+                formPanel.classList.remove('show-details');
+                updateContactPanels();
+            });
+        });
+
+        /* Mobile nav toggle */
+        (function(){
+            const toggle = document.querySelector('.navbar-toggle');
+            const nav = document.querySelector('.nav-links-container');
+            if (!toggle || !nav) return;
+            toggle.addEventListener('click', () => {
+                const open = nav.classList.toggle('open');
+                toggle.classList.toggle('open', open);
+                document.body.classList.toggle('menu-open', open);
+            });
+            nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+                nav.classList.remove('open'); toggle.classList.remove('open'); document.body.classList.remove('menu-open');
+            }));
+        })();
+    </script>
 
 </body>
+
 </html>
