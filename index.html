@@ -27,16 +27,11 @@
             /* Dark text for the light body background */
             --text-light: #F0F0F0;
             /* Light text for the dark nav background */
-            --header-h: 88px;
-            /* Height of the header */
         }
 
         /* Set Inter font globally */
         body {
             font-family: 'Inter', sans-serif;
-            margin: 0;
-            padding: 0;
-            -webkit-font-smoothing: antialiased;
         }
 
         /* Utility links styling (Default for white background) */
@@ -1084,59 +1079,6 @@
                 animation-iteration-count: 1 !important;
             }
         }
-
-        /* Header (fixed) */
-        .custom-gradient-bg {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: var(--header-h);
-            display: flex;
-            align-items: center;
-            z-index: 1000;
-            background: linear-gradient(90deg, #0f172a, #1e293b);
-            color: #fff;
-            transition: transform .28s cubic-bezier(.2, .9, .2, 1), box-shadow .2s;
-            box-shadow: 0 2px 8px rgba(2, 6, 23, 0.12);
-            will-change: transform;
-        }
-
-        /* When hidden (scroll down) translate header fully out of view */
-        .custom-gradient-bg.hide-up {
-            transform: translateY(-110%);
-            box-shadow: none;
-        }
-
-        /* keep content below header */
-        main {
-            padding-top: var(--header-h);
-        }
-
-        /* Basic page blocks for demo */
-        .hero {
-            height: 70vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #fff;
-            background: #0b1220;
-        }
-
-        .section {
-            padding: 48px 20px;
-            max-width: 1100px;
-            margin: 0 auto;
-            background: #fff;
-            box-shadow: 0 6px 18px rgba(2, 6, 23, 0.04);
-            margin-bottom: 24px;
-            border-radius: 8px;
-        }
-
-        .small {
-            height: 600px;
-            /* to create scrollable content for testing */
-        }
     </style>
 </head>
 <!-- Body remains light gray -->
@@ -1144,7 +1086,7 @@
 <body class="bg-gray-50 min-h-screen">
 
     <!-- Header uses the custom gradient and removes the shadow for a cleaner look against a dark background -->
-    <header class="custom-gradient-bg border-b border-gray-700" id="site-header" role="banner">
+    <header class="custom-gradient-bg border-b border-gray-700">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3" style="padding-bottom: 2.75rem;">
 
             <!-- Top Row: Logo, Utility Bar, and Main Nav -->
@@ -1590,34 +1532,6 @@
             nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
                 nav.classList.remove('open'); toggle.classList.remove('open'); document.body.classList.remove('menu-open');
             }));
-        })();
-
-        // Hide header on scroll down, show on scroll up
-        (function () {
-            const header = document.getElementById('site-header');
-            if (!header) return;
-            let lastScroll = window.pageYOffset || document.documentElement.scrollTop;
-            let ticking = false;
-
-            function onScroll() {
-                const current = window.pageYOffset || document.documentElement.scrollTop;
-                // if scrolled down and beyond threshold -> hide
-                if (current > lastScroll && current > 80) {
-                    header.classList.add('hide-up');
-                } else {
-                    // scrolled up -> show
-                    header.classList.remove('hide-up');
-                }
-                lastScroll = Math.max(0, current);
-                ticking = false;
-            }
-
-            window.addEventListener('scroll', () => {
-                if (!ticking) {
-                    window.requestAnimationFrame(onScroll);
-                    ticking = true;
-                }
-            }, { passive: true });
         })();
     </script>
 </body>
